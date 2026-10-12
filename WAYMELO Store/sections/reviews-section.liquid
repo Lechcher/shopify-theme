@@ -52,6 +52,7 @@
     assign p1 = c1 | times: 100.0 | divided_by: total | round: 1
   endif
   assign avg_display = avg | round: section.settings.rating_decimals
+  assign total_pages = total | plus: 2 | divided_by: 3
 -%}
 
 {%- capture rs_star_empty -%}
@@ -183,14 +184,59 @@
   #reviews-section-{{ section.id }} .reviews-section__gallery-btn:hover {
     border-color: var(--rs-pill-active-border);
   }
-  #reviews-section-{{ section.id }} .reviews-section__gallery-btn:focus-visible {
-    outline: 2px solid var(--rs-pill-active-border);
-    outline-offset: 2px;
-  }
   #reviews-section-{{ section.id }} .reviews-section__gallery-btn svg {
     width: 16px;
     height: 16px;
     display: block;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination[hidden] {
+    display: none;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--rs-pill-border);
+    background: transparent;
+    color: var(--rs-text);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-btn:hover {
+    border-color: var(--rs-pill-active-border);
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-btn:focus-visible {
+    outline: 2px solid var(--rs-pill-active-border);
+    outline-offset: 2px;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-btn[disabled] {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-btn[disabled]:hover {
+    border-color: var(--rs-pill-border);
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-btn svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__pagination-status {
+    font-size: 0.9rem;
+    min-width: 6rem;
+    text-align: center;
   }
   #reviews-section-{{ section.id }} .reviews-section__gallery {
     display: flex;
@@ -244,6 +290,12 @@
   #reviews-section-{{ section.id }} .reviews-section__pill:focus-visible {
     outline: 2px solid var(--rs-pill-active-border);
     outline-offset: 2px;
+  }
+  #reviews-section-{{ section.id }} .reviews-section__list-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
   }
   #reviews-section-{{ section.id }} .reviews-section__list {
     display: flex;
@@ -338,7 +390,7 @@
   }
 {% endstyle %}
 
-<div id="reviews-section-{{ section.id }}" class="reviews-section" data-rs {{ section.shopify_attributes }}>
+<div id="reviews-section-{{ section.id }}" class="reviews-section" data-rs data-rs-total="{{ total }}" data-rs-page="1" {{ section.shopify_attributes }}>
   <div class="reviews-section__inner">
     <div class="reviews-section__layout{% unless section.settings.show_summary %} reviews-section__layout--no-summary{% endunless %}">
 
@@ -397,7 +449,7 @@
           <div class="reviews-section__gallery-region">
             <div class="reviews-section__gallery-head">
               <h2 class="reviews-section__heading">{{ section.settings.images_heading }}</h2>
-              <div class="reviews-section__gallery-nav">
+              <div class="reviews-section__gallery-nav" data-rs-nav>
                 <button
                   type="button"
                   class="reviews-section__gallery-btn"
@@ -503,6 +555,34 @@
             </article>
           {%- endfor -%}
         </div>
+
+        {%- if total > 3 -%}
+          <nav
+            class="reviews-section__pagination"
+            data-rs-pagination
+            aria-label="{{ section.settings.list_heading | strip_html | escape }}: pagination"
+          >
+            <button
+              type="button"
+              class="reviews-section__pagination-btn"
+              data-rs-page-prev
+              aria-label="{{ section.settings.list_heading | strip_html | escape }}: previous page"
+            >
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span class="reviews-section__pagination-status" data-rs-page-status role="status" aria-live="polite">
+              Page 1 of {{ total_pages }}
+            </span>
+            <button
+              type="button"
+              class="reviews-section__pagination-btn"
+              data-rs-page-next
+              aria-label="{{ section.settings.list_heading | strip_html | escape }}: next page"
+            >
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </nav>
+        {%- endif -%}
       </div>
 
     </div>

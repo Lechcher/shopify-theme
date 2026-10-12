@@ -286,10 +286,82 @@
   }
 }
 
-.footer__dmca-badge {
-  display: block;
-  line-height: 0;
+.footer__images_badges {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
   margin-top: 1.5rem;
+}
+
+.footer__images_badges img {
+  display: block;
+}
+
+.footer-trust-logos-simple {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.simple-trustpilot-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: opacity 0.15s ease;
+}
+
+.trustpilot-icon-star {
+  display: inline-flex;
+  align-items: center;
+}
+
+.trustpilot-title-text {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.trustpilot-stars-mini {
+  color: #00b67a;
+  letter-spacing: 0.05em;
+  font-size: 1.05em;
+}
+
+.trustpilot-review-count {
+  color: #00b67a;
+  text-decoration: underline;
+}
+
+.footer-dmca-badge {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid #0f2a3a;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: fit-content;
+}
+
+.dmca-tag-left {
+  background: #16a34a;
+  color: #ffffff;
+  padding: 4px 8px;
+}
+
+.dmca-tag-right {
+  background: #0f2a3a;
+  color: #ffffff;
+  padding: 4px 8px;
 }
 
 .footer__content-bottom-wrapper--center {

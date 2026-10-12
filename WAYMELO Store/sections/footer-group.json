@@ -166,6 +166,20 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "trust_logos_CGCTnY": {
+          "type": "trust_logos",
+          "settings": {
+            "trustpilot_enable": true,
+            "trustpilot_url": "",
+            "trustpilot_label": "Trustpilot",
+            "trustpilot_rating": "★★★★★",
+            "trustpilot_count": "13,578",
+            "dmca_enable": true,
+            "dmca_url": "",
+            "dmca_left": "DMCA",
+            "dmca_right": "PROTECTED"
+          }
+        },
         "text_hj4qnx": {
           "type": "text",
           "settings": {
@@ -189,6 +203,7 @@
         }
       },
       "block_order": [
+        "trust_logos_CGCTnY",
         "text_hj4qnx",
         "text_LLgkWG",
         "link_list_h9iYDq"

@@ -76,6 +76,13 @@
             "color_swatch_mapping": "Rose Gold: #b76e79\nMidnight: #111827\nCream White: #f4efe6"
           }
         },
+        "quantity_selector_dbD9MG": {
+          "type": "quantity_selector",
+          "settings": {
+            "input_text_color": "#000000",
+            "label_size": 20
+          }
+        },
         "text_hfcGJe": {
           "type": "text",
           "settings": {
@@ -251,35 +258,6 @@
             "row_padding": 14,
             "letter_spacing": 0
           }
-        },
-        "product_reviews_BtgBXw": {
-          "type": "product_reviews",
-          "settings": {
-            "show_placeholder_image": true,
-            "image_1": "shopify://shop_images/buue3.png",
-            "reviewer_1": "<em>Lisa R.</em>",
-            "text_1": "<p>Show what your customers had to say about their experience.</p>",
-            "image_2": "shopify://shop_images/Layer_1.png",
-            "reviewer_2": "James S.",
-            "text_2": "<p>Show what your customers had to say about their experience.</p>",
-            "image_3": "shopify://shop_images/Layer_2.png",
-            "reviewer_3": "<em>Reviewer 3</em>",
-            "text_3": "<p>Show what your customers had to say about their experience.</p>",
-            "text_color": "#000000",
-            "text_alignment": "center",
-            "text_size": 15,
-            "reviewer_text_size": 12,
-            "display_stars": true,
-            "star_color": "#7a5168",
-            "star_size": 14,
-            "image_shape": "circle",
-            "product_reviews_image_size": 58,
-            "product_reviews_card": true,
-            "product_reviews_card_color": "#ffffff",
-            "show_on_left": true,
-            "line_height": 0,
-            "letter_spacing": 0
-          }
         }
       },
       "block_order": [
@@ -288,6 +266,7 @@
         "text_4UAXfW",
         "description",
         "variant_picker",
+        "quantity_selector_dbD9MG",
         "text_hfcGJe",
         "buy_buttons",
         "text_cBgayA",
@@ -297,8 +276,7 @@
         "collapsible_tab_pnakVM",
         "collapsible_tab_VBrdmj",
         "collapsible_tab_9jUktt",
-        "collapsible_tab_mXtiYD",
-        "product_reviews_BtgBXw"
+        "collapsible_tab_mXtiYD"
       ],
       "custom_css": [
         ".alert-text + .product__text {margin: 1rem 0;}",
@@ -321,7 +299,7 @@
         "media_shadow": false,
         "show_media_border": false,
         "media_border_color": "#000000",
-        "thumbnail_layout": "stack",
+        "thumbnail_layout": "carousel",
         "thumbnail_slides_per_column": 5,
         "thumbnail_border_radius": 6,
         "thumbnail_border_color": "#d8d8d8",
@@ -540,104 +518,91 @@
         "padding_bottom": 36
       }
     },
-    "blocky_testimonials_PGazLm": {
-      "type": "blocky-testimonials",
+    "reviews_section_7Waym": {
+      "type": "reviews-section",
       "blocks": {
-        "review_stars_qNwpYT": {
-          "type": "review-stars",
+        "review_a1": {
+          "type": "review",
           "settings": {
             "rating": 5,
-            "star_color": "#ffcc00",
-            "review_text_color": "#000000",
-            "empty_stars_style": "hidden",
-            "review_text": "Based on over <strong>1000+</strong> Reviews",
-            "review_font_size": 16,
-            "show_in_card": true,
-            "card_border_radius": 12,
-            "card_background_color": "#ffffff"
+            "author": "Donald Turner",
+            "date": "09/21/2026",
+            "verified": true,
+            "body": "<p>I'm really happy with how our picture looks. The colors are soft and pretty.</p>",
+            "image": "shopify://shop_images/B_n_co_th__lam_gh__20261012154548.jpg"
           }
         },
-        "title_LGhqW8": {
-          "type": "title",
+        "review_a2": {
+          "type": "review",
           "settings": {
-            "title": "<strong>Testimonials</strong>",
-            "title_size": 60,
-            "title_color": "#000000"
+            "rating": 5,
+            "author": "Evelyn King",
+            "date": "09/18/2026",
+            "verified": true,
+            "body": "<p>Beautiful quality and it arrived quickly. Would order again.</p>",
+            "image": "shopify://shop_images/Layer_1.png"
           }
         },
-        "body_6zwNnN": {
-          "type": "body",
+        "review_a3": {
+          "type": "review",
           "settings": {
-            "body_text": "<p>Show why your customers love your product. Give their experiences to show how you have made a difference.</p>",
-            "body_size": 18,
-            "body_color": "#000000"
+            "rating": 4,
+            "author": "Marcus Lee",
+            "date": "09/12/2026",
+            "verified": true,
+            "body": "<p>Great buy, only wish it came in more colors.</p>",
+            "image": "shopify://shop_images/Layer_2.png"
           }
         },
-        "tags_yTnQHq": {
-          "type": "tags",
+        "review_a4": {
+          "type": "review",
           "settings": {
-            "tag_1": "<b>&quotHigh Quality&quot</b>",
-            "tag_2": "<b>&quotEasy to Use&quot</b>",
-            "tag_3": "<b>&quotFast Delivery&quot</b>",
-            "tag_4": "<b>&quotWorth Every Penny&quot</b>",
-            "tag_text_color": "#000000",
-            "tag_font_size": 16,
-            "tags_border_radius": 12,
-            "tilt_tags": true,
-            "tags_background_color": "#ffffff"
+            "rating": 5,
+            "author": "Sofia Martinez",
+            "date": "09/05/2026",
+            "verified": false,
+            "body": "<p>Exactly as pictured and the print is crisp.</p>"
           }
         },
-        "testimonial_w646eF": {
-          "type": "testimonial",
+        "review_a5": {
+          "type": "review",
           "settings": {
-            "heading_1": "<strong>A Lifesaver for Long Flights!</strong>",
-            "desc_1": "<p>\"We took a 12-hour flight with our 4-month-old, and this pillow saved my arms! Baby slept peacefully for hours, and I finally got to rest too.\"</p>",
-            "author_1": "<em>Emily R.</em>",
-            "location_1": "<em>Seattle, WA</em>",
-            "heading_2": "<strong>Must-Have Travel Essential</strong>",
-            "desc_2": "<p>\"The shoulder strap is genius. It keeps the pillow completely stable in tight economy seats, so feeding and napping on the plane was a breeze.\"</p>",
-            "author_2": "<em>Sarah M.</em>",
-            "location_2": "<em>Dallas, TX</em>",
-            "heading_3": "<strong>Best Flight Purchase Ever</strong>",
-            "desc_3": "<p>\"Super comfortable, breathable, and so easy to clean after our trip. My baby slept like a rock at 30,000 feet. Highly recommended for flying parents!\"</p>",
-            "author_3": "<em>Jessica T.</em>",
-            "location_3": "<em>Miami, FL</em>",
-            "heading_color": "#000000",
-            "desc_color": "#000000",
-            "heading_font_size": 20,
-            "desc_font_size": 18,
-            "desc_line_height": 1.5,
-            "heading_desc_gap": 8,
-            "author_font_size": 16,
-            "location_font_size": 16,
-            "media_shape": "circle",
-            "media_width": 75,
-            "star_color": "#ffcc00",
-            "show_stars": true,
-            "content_container_gap": "1.5rem",
-            "card_content_alignment": "left",
-            "card_background_color": "#f3f3f3",
-            "show_card_shadow": true,
-            "show_border_above_author": false,
-            "play_button_color": "#ffffff",
-            "play_button_background_color": "#000000"
+            "rating": 5,
+            "author": "James Carter",
+            "date": "08/29/2026",
+            "verified": true,
+            "body": "<p>Second order from this store and still impressed.</p>"
           }
         }
       },
       "block_order": [
-        "review_stars_qNwpYT",
-        "title_LGhqW8",
-        "body_6zwNnN",
-        "tags_yTnQHq",
-        "testimonial_w646eF"
+        "review_a1",
+        "review_a2",
+        "review_a3",
+        "review_a4",
+        "review_a5"
       ],
-      "name": "Blocky Testimonials",
       "settings": {
-        "desktop_content_alignment": "center",
-        "mobile_content_alignment": "center",
-        "text_container_gap": "2.5rem",
-        "border_radius": 15,
+        "images_heading": "Reviews with Images",
+        "list_heading": "Top reviews",
+        "all_reviews_label": "All Reviews",
+        "star_word": "Star",
+        "verified_label": "Verified Purchase",
+        "total_label": "reviews",
+        "show_summary": true,
+        "rating_decimals": 1,
+        "gallery_item_width": 180,
+        "review_image_width": 96,
+        "star_size": 18,
+        "average_value_size": 40,
         "background_color": "#ffffff",
+        "text_color": "#000000",
+        "heading_color": "#000000",
+        "star_color": "#f5a623",
+        "pill_border_color": "#e3e3e3",
+        "pill_active_border_color": "#000000",
+        "pill_text_color": "#8a8a8a",
+        "pill_active_text_color": "#000000",
         "page_width": 1200,
         "padding_top": 36,
         "padding_bottom": 36
@@ -731,6 +696,40 @@
         "padding_bottom": 52
       }
     },
+    "newsletter_HjqpNj": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_gHCQzk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_CPD6XK": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "email_form_kKrjKF": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_gHCQzk",
+        "paragraph_CPD6XK",
+        "email_form_kKrjKF"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "blocky_section_divider_7AQYYY": {
       "type": "blocky-section-divider",
       "name": "Blocky Section Divider",
@@ -743,100 +742,6 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
-    },
-    "1791684316ff9dae81": {
-      "type": "_blocks",
-      "settings": {}
-    },
-    "reviews_section_7Waym": {
-      "type": "reviews-section",
-      "blocks": {
-        "review_a1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "author": "Donald Turner",
-            "date": "09/21/2026",
-            "verified": true,
-            "body": "<p>I'm really happy with how our picture looks. The colors are soft and pretty.</p>",
-            "image": "shopify://shop_images/buue3.png"
-          }
-        },
-        "review_a2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "author": "Evelyn King",
-            "date": "09/18/2026",
-            "verified": true,
-            "body": "<p>Beautiful quality and it arrived quickly. Would order again.</p>",
-            "image": "shopify://shop_images/Layer_1.png"
-          }
-        },
-        "review_a3": {
-          "type": "review",
-          "settings": {
-            "rating": 4,
-            "author": "Marcus Lee",
-            "date": "09/12/2026",
-            "verified": true,
-            "body": "<p>Great buy, only wish it came in more colors.</p>",
-            "image": "shopify://shop_images/Layer_2.png"
-          }
-        },
-        "review_a4": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "author": "Sofia Martinez",
-            "date": "09/05/2026",
-            "verified": false,
-            "body": "<p>Exactly as pictured and the print is crisp.</p>"
-          }
-        },
-        "review_a5": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "author": "James Carter",
-            "date": "08/29/2026",
-            "verified": true,
-            "body": "<p>Second order from this store and still impressed.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "review_a1",
-        "review_a2",
-        "review_a3",
-        "review_a4",
-        "review_a5"
-      ],
-      "settings": {
-        "images_heading": "Reviews with Images",
-        "list_heading": "Top reviews",
-        "all_reviews_label": "All Reviews",
-        "star_word": "Star",
-        "verified_label": "Verified Purchase",
-        "total_label": "reviews",
-        "show_summary": true,
-        "rating_decimals": 1,
-        "gallery_item_width": 180,
-        "review_image_width": 96,
-        "star_size": 18,
-        "average_value_size": 40,
-        "background_color": "#ffffff",
-        "text_color": "#000000",
-        "heading_color": "#000000",
-        "star_color": "#f5a623",
-        "pill_border_color": "#e3e3e3",
-        "pill_active_border_color": "#000000",
-        "pill_text_color": "#8a8a8a",
-        "pill_active_text_color": "#000000",
-        "page_width": 1200,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -846,10 +751,9 @@
     "179162975708a3df6e",
     "blocky_product_feature_3_3LE4A8",
     "blocky_video_with_text_97hNbH",
-    "blocky_testimonials_PGazLm",
+    "reviews_section_7Waym",
     "blocky_faq_cFeeU6",
-    "blocky_section_divider_7AQYYY",
-    "1791684316ff9dae81",
-    "reviews_section_7Waym"
+    "newsletter_HjqpNj",
+    "blocky_section_divider_7AQYYY"
   ]
 }

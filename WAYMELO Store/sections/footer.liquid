@@ -41,8 +41,15 @@
     if section.blocks.size == 1 and section.blocks[0].type == 'brand_information' and brand_empty and has_social_icons == false and section.settings.newsletter_enable == false and section.settings.enable_follow_on_shop == false
       assign only_empty_brand = true
     endif
+
+    assign content_blocks_size = 0
+    for block in section.blocks
+      unless block.type == 'image_badges' or block.type == 'trust_logos'
+        assign content_blocks_size = content_blocks_size | plus: 1
+      endunless
+    endfor
   -%}
-  {%- if section.blocks.size > 0
+  {%- if content_blocks_size > 0
     or section.settings.newsletter_enable
     or section.settings.show_social
     and has_social_icons == true
@@ -50,13 +57,13 @@
   -%}
     {%- unless only_empty_brand -%}
       <div class="footer__content-top page-width">
-        {%- if section.blocks.size > 0 -%}
+        {%- if content_blocks_size > 0 -%}
           {%- liquid
-            if section.blocks.size == 9
+            if content_blocks_size == 9
               assign footer_grid_class = 'grid--3-col-tablet'
-            elsif section.blocks.size > 6
+            elsif content_blocks_size > 6
               assign footer_grid_class = 'grid--4-col-desktop'
-            elsif section.blocks.size > 4
+            elsif content_blocks_size > 4
               assign footer_grid_class = 'grid--3-col-tablet'
             endif
           -%}
@@ -67,6 +74,7 @@
             {% endif %}
           >
             {%- for block in section.blocks -%}
+              {%- unless block.type == 'image_badges' or block.type == 'trust_logos' -%}
               <div
                 class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
@@ -155,6 +163,7 @@
                     </div>
                 {%- endcase -%}
               </div>
+              {%- endunless -%}
             {%- endfor -%}
           </div>
         {%- endif -%}
@@ -290,26 +299,93 @@
           </div>
         {%- endif -%}
 
-        {%- comment -%}
-          DMCA.com protection badge. Change dmca_protection_id to update the store's badge.
-        {%- endcomment -%}
-        {%- assign dmca_protection_id = 'a4d778c3-abcf-45c9-ae83-b157c525078c' -%}
-        <div class="footer__dmca-badge">
-          <a
-            href="//www.dmca.com/Protection/Status.aspx?ID={{ dmca_protection_id }}"
-            title="DMCA.com Protection Status"
-            class="dmca-badge"
+        {%- assign image_badges_blocks = section.blocks | where: 'type', 'image_badges' -%}
+        {%- if image_badges_blocks.size > 0 -%}
+          {%- assign badges_gap = image_badges_blocks.first.settings.badges_gap -%}
+          <div
+            class="footer__images_badges"
+            style="gap: {{ badges_gap }}px;"
+            {{ image_badges_blocks.first.shopify_attributes }}
           >
-            <img
-              src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID={{ dmca_protection_id }}"
-              alt="DMCA.com Protection Status"
-              width="121"
-              height="24"
-              loading="lazy"
-            >
-          </a>
-        </div>
-        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" defer></script>
+            {%- for block in image_badges_blocks -%}
+              {%- if block.settings.badge_1_image != blank -%}
+                {%- assign badge_1_alt = block.settings.badge_1_image.alt | default: shop.name -%}
+                {%- if block.settings.badge_1_link != blank -%}
+                  <a href="{{ block.settings.badge_1_link }}">
+                {%- endif -%}
+                {{
+                  block.settings.badge_1_image
+                  | image_url: width: block.settings.badge_1_width
+                  | image_tag:
+                    width: block.settings.badge_1_width,
+                    height: block.settings.badge_1_height,
+                    alt: badge_1_alt,
+                    loading: 'lazy'
+                }}
+                {%- if block.settings.badge_1_link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+              {%- if block.settings.badge_2_image != blank -%}
+                {%- assign badge_2_alt = block.settings.badge_2_image.alt | default: shop.name -%}
+                {%- if block.settings.badge_2_link != blank -%}
+                  <a href="{{ block.settings.badge_2_link }}">
+                {%- endif -%}
+                {{
+                  block.settings.badge_2_image
+                  | image_url: width: block.settings.badge_2_width
+                  | image_tag:
+                    width: block.settings.badge_2_width,
+                    height: block.settings.badge_2_height,
+                    alt: badge_2_alt,
+                    loading: 'lazy'
+                }}
+                {%- if block.settings.badge_2_link != blank -%}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- assign trust_logos_blocks = section.blocks | where: 'type', 'trust_logos' -%}
+        {%- if trust_logos_blocks.size > 0 -%}
+          <div class="footer-trust-logos-simple" {{ trust_logos_blocks.first.shopify_attributes }}>
+            {%- for block in trust_logos_blocks -%}
+              {%- if block.settings.trustpilot_enable -%}
+                <a
+                  href="{{ block.settings.trustpilot_url | default: 'https://www.trustpilot.com' }}"
+                  target="_blank"
+                  rel="noopener"
+                  class="simple-trustpilot-line"
+                  aria-label="{{ block.settings.trustpilot_label | default: 'Trustpilot' | escape }} reviews"
+                >
+                  <span class="trustpilot-icon-star" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                      <path d="M12 1.5l3.2 6.5 7.2 1-5.2 5.1 1.2 7.1L12 17.8 5.6 21.2l1.2-7.1L1.6 9l7.2-1L12 1.5z" fill="#00b67a"></path>
+                      <path d="M12 17.8l-4.1 2.2.8-4.6L12 17.8z" fill="#005128"></path>
+                    </svg>
+                  </span>
+                  <span class="trustpilot-title-text">{{ block.settings.trustpilot_label | default: 'Trustpilot' | escape }}</span>
+                  <span class="trustpilot-stars-mini" aria-hidden="true">{{ block.settings.trustpilot_rating | default: '★★★★★' }}</span>
+                  <span class="trustpilot-review-count">{{ block.settings.trustpilot_count | default: '13,578' | escape }}</span>
+                </a>
+              {%- endif -%}
+              {%- if block.settings.dmca_enable -%}
+                <a
+                  href="{{ block.settings.dmca_url | default: 'https://www.dmca.com' }}"
+                  target="_blank"
+                  rel="noopener"
+                  class="footer-dmca-badge"
+                  aria-label="{{ block.settings.dmca_left | default: 'DMCA' | escape }} {{ block.settings.dmca_right | default: 'PROTECTED' | escape }}"
+                >
+                  <span class="dmca-tag-left">{{ block.settings.dmca_left | default: 'DMCA' | escape }}</span>
+                  <span class="dmca-tag-right">{{ block.settings.dmca_right | default: 'PROTECTED' | escape }}</span>
+                </a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
       </div>
     </div>
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
@@ -439,6 +515,156 @@
             }
           ],
           "default": "center"
+        }
+      ]
+    },
+    {
+      "type": "image_badges",
+      "name": "Image badges",
+      "settings": [
+        {
+          "type": "range",
+          "id": "badges_gap",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "Spacing between badges",
+          "default": 8
+        },
+        {
+          "type": "header",
+          "content": "Badge 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_1_image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "badge_1_link",
+          "label": "Link"
+        },
+        {
+          "type": "range",
+          "id": "badge_1_width",
+          "min": 10,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "Width",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "badge_1_height",
+          "min": 10,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.footer.blocks.image_badges.settings.badge_1_height.label",
+          "default": 40
+        },
+        {
+          "type": "header",
+          "content": "t:sections.footer.blocks.image_badges.settings.badge_2_header.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "badge_2_image",
+          "label": "t:sections.footer.blocks.image_badges.settings.badge_2_image.label"
+        },
+        {
+          "type": "url",
+          "id": "badge_2_link",
+          "label": "t:sections.footer.blocks.image_badges.settings.badge_2_link.label"
+        },
+        {
+          "type": "range",
+          "id": "badge_2_width",
+          "min": 10,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.footer.blocks.image_badges.settings.badge_2_width.label",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "badge_2_height",
+          "min": 10,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "label": "t:sections.footer.blocks.image_badges.settings.badge_2_height.label",
+          "default": 40
+        }
+      ]
+    },
+    {
+      "type": "trust_logos",
+      "name": "Trust logos",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Trustpilot"
+        },
+        {
+          "type": "checkbox",
+          "id": "trustpilot_enable",
+          "label": "Show Trustpilot line",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "trustpilot_url",
+          "label": "Trustpilot link"
+        },
+        {
+          "type": "text",
+          "id": "trustpilot_label",
+          "label": "Trustpilot label",
+          "default": "Trustpilot"
+        },
+        {
+          "type": "text",
+          "id": "trustpilot_rating",
+          "label": "Trustpilot rating",
+          "default": "★★★★★"
+        },
+        {
+          "type": "text",
+          "id": "trustpilot_count",
+          "label": "Trustpilot review count",
+          "default": "13,578"
+        },
+        {
+          "type": "header",
+          "content": "DMCA"
+        },
+        {
+          "type": "checkbox",
+          "id": "dmca_enable",
+          "label": "Show DMCA tag",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "dmca_url",
+          "label": "DMCA link"
+        },
+        {
+          "type": "text",
+          "id": "dmca_left",
+          "label": "DMCA left text",
+          "default": "DMCA"
+        },
+        {
+          "type": "text",
+          "id": "dmca_right",
+          "label": "DMCA right text",
+          "default": "PROTECTED"
         }
       ]
     }
