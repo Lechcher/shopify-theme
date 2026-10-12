@@ -184,7 +184,7 @@
           "type": "text",
           "settings": {
             "heading": "<strong>About Us</strong>",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p><p><strong>Business Information</strong><br/>Brand: WAYMELO<br/>Legal Entity: ASHLEY LIL BOUTIQUE LLC<br/>Owner: ASHLEY</p>"
+            "subtext": "<p><strong>Waymelo – Travel Comfort, your way.</strong><br/>We craft premium travel essentials designed for maximum comfort, so you can enjoy every journey your way.</p><p><strong>Business Information</strong><br/>Brand: WAYMELO<br/>Legal Entity: ASHLEY LIL BOUTIQUE LLC<br/>Owner: ASHLEY</p>"
           }
         },
         "text_LLgkWG": {
@@ -212,7 +212,7 @@
         "color_scheme": "scheme-2",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": false,
+        "enable_follow_on_shop": true,
         "show_social": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
