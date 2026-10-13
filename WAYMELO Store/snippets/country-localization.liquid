@@ -3,6 +3,7 @@
 
   Accepts:
     - localPosition: pass in the position in which the form is coming up to create specific IDs
+    - show_flag: (optional) when true, renders the selected country's flag before the country label
 {%- endcomment -%}
 
 {%- liquid
@@ -33,6 +34,16 @@
     aria-controls="{{ localPosition }}-country-results"
     aria-describedby="{{ localPosition }}Label"
   >
+    {%- if show_flag -%}
+      <img
+        class="footer__country-flag"
+        src="https://flagcdn.com/w20/{{ localization.country.iso_code | downcase }}.png"
+        srcset="https://flagcdn.com/w40/{{ localization.country.iso_code | downcase }}.png 2x"
+        width="20"
+        alt="{{ localization.country.name | escape }}"
+        loading="lazy"
+      >
+    {%- endif -%}
     <span>
       {{- localization.country.name }} |
       {{ localization.country.currency.iso_code }}
