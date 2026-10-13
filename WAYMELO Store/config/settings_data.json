@@ -157,6 +157,11 @@
         "type": "shopify://apps/blocky/blocks/styling-embed/e725332a-8975-4ad2-9807-b0cce44a010c",
         "disabled": false,
         "settings": {}
+      },
+      "6544682535036668446": {
+        "type": "shopify://apps/pumper-bundles/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
