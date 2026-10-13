@@ -147,61 +147,6 @@
             "radius": 16
           }
         },
-        "bundle_stack_by9EPR": {
-          "type": "bundle_stack",
-          "settings": {
-            "options_count": 3,
-            "default_selected": 3,
-            "title_1": "1. Just For Me",
-            "discount_badge_1": "",
-            "tag_1": "Free Shipping",
-            "save_text_1": "",
-            "price_1": "$89.99",
-            "compare_price_1": "$150",
-            "ribbon_1": "",
-            "quantity_1": 1,
-            "title_2": "2. Me + A Gift",
-            "discount_badge_2": "58% OFF",
-            "tag_2": "",
-            "save_text_2": "Save more $174",
-            "price_2": "$125.99",
-            "compare_price_2": "$300",
-            "ribbon_2": "Most Popular",
-            "quantity_2": 2,
-            "title_3": "3. Share The Love",
-            "discount_badge_3": "64% OFF",
-            "tag_3": "",
-            "save_text_3": "Save more $288",
-            "price_3": "$161.98",
-            "compare_price_3": "$450",
-            "ribbon_3": "Best Value",
-            "quantity_3": 3,
-            "bg_color": "#ffffff",
-            "selected_bg_color": "#faf7f4",
-            "border_color": "#d8d8d8",
-            "selected_border_color": "#7a5168",
-            "border_width": 1,
-            "radius": 12,
-            "radio_color": "#7a5168",
-            "title_color": "#1a1a1a",
-            "title_size": 18,
-            "price_color": "#1a1a1a",
-            "price_size": 22,
-            "compare_color": "#9a9a9a",
-            "compare_size": 15,
-            "sale_text_color": "#d81b4a",
-            "sale_text_size": 14,
-            "badge_bg_color": "#7a5168",
-            "badge_text_color": "#ffffff",
-            "badge_text_size": 13,
-            "tag_bg_color": "#eef2f0",
-            "tag_text_color": "#7a5168",
-            "tag_text_size": 12,
-            "ribbon_bg_color": "#7a5168",
-            "ribbon_text_color": "#ffffff",
-            "ribbon_text_size": 12
-          }
-        },
         "text_hfcGJe": {
           "type": "text",
           "settings": {
@@ -214,6 +159,13 @@
             "margin_bottom": 0,
             "line_height": 0,
             "letter_spacing": 0
+          }
+        },
+        "pumper_bundles_app_block_qb_EHeEkM": {
+          "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
+          "settings": {
+            "selected_product": "{{section.settings.product}}",
+            "using_page_builder": false
           }
         },
         "buy_buttons": {
@@ -358,8 +310,8 @@
         "description",
         "variant_picker",
         "countdown_deals_WJJ7np",
-        "bundle_stack_by9EPR",
         "text_hfcGJe",
+        "pumper_bundles_app_block_qb_EHeEkM",
         "buy_buttons",
         "payment_badges_edFzPC",
         "guarantee_badge_AaBfap",
@@ -378,7 +330,7 @@
       ],
       "settings": {
         "product_source": "current",
-        "product": "",
+        "product": "wearable-nursing-pillow",
         "content_gap": 48,
         "mobile_content_gap": 28,
         "content_vertical_gap": 12,

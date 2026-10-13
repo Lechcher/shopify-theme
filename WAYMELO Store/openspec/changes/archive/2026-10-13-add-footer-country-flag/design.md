@@ -32,17 +32,17 @@ Constraints from the request: flags come from the flagcdn.com CDN, and only the 
 
 The country name text lives inside the snippet's button, so the flag must be rendered from within the snippet to sit to the left of that text. Because the snippet is shared, a new optional parameter (defaulting to off) keeps the header and announcement bar unchanged while the footer call site passes `show_flag: true`. Alternatives: duplicating the country picker into a footer-only snippet (rejected — duplicates ~130 lines and diverges from upstream), or positioning a flag with CSS outside the button (rejected — fragile, and the flag would not move with the label or dropdown state).
 
-**2. Build the flag URL from the country ISO code on the flagcdn.com CDN.**
+**2. Build the flag URL from the country ISO code on the flagcdn.com CDN, using the `w20` PNG variant.**
 
-`localization.country.iso_code` is already available in the snippet. Lower-case it and interpolate into `https://flagcdn.com/<code>.svg`. SVG is used for crispness at all densities. Alternatives: PNG size variants (`w40`, etc.) — rejected because SVG avoids choosing a fixed raster size; self-hosted assets — rejected as out of scope per the request.
+`localization.country.iso_code` is already available in the snippet. Lower-case it and interpolate into `https://flagcdn.com/w20/<code>.png`, with `https://flagcdn.com/w40/<code>.png 2x` as the `srcset` for high-density displays (per the store owner's requested markup). Alternatives: the SVG variant (`https://flagcdn.com/<code>.svg`) — initially chosen for crispness, then replaced at the store owner's request with the `w20` raster variant and `srcset`; self-hosted assets — rejected as out of scope per the request.
 
-**3. Render the flag as an `<img>` with fixed dimensions, `alt` set to the country name, and `loading="lazy"`.**
+**3. Render the flag as an `<img>` with `width="20"`, no fixed height, `alt` set to the country name, and `loading="lazy"`.**
 
-A fixed width/height (approximately `2.4rem x 1.8rem`, matching the disclosure's text scale) reserves space so the button does not shift as the image loads, satisfying the no-layout-shift requirement. `alt` carries the country name so the image is not an unlabeled graphic. `loading="lazy"` avoids competing with above-the-fold resources. Note: the adjacent text already names the country, so `alt` is somewhat redundant for screen readers; this is accepted to keep the flag self-describing, and could be switched to a decorative `alt=""` later without changing behavior.
+flagcdn `w20` PNGs preserve each flag's own aspect ratio, so no single `height` attribute fits every country; the store owner's markup therefore sets only `width`. The flag's height is left to the image ratio, constrained by a `max-height` in CSS so tall flags cannot overflow the 4rem-tall disclosure button. `alt` carries the country name so the image is not an unlabeled graphic, and `loading="lazy"` avoids competing with above-the-fold resources. Note: the adjacent text already names the country, so `alt` is somewhat redundant for screen readers; this is accepted to keep the flag self-describing. Omitting `height` trips theme-check's `ImgWidthAndHeight` rule; this is an accepted, documented lint error (see Risks).
 
 **4. Scope the styling to the footer and keep it minimal.**
 
-The flag gets a small class (e.g. `.footer__country-flag`) and is styled from `assets/section-footer.css` with an inline alignment (vertical-align/margin) and a `flex-shrink: 0` so it keeps its size inside the flex button. A footer-scoped rule keeps the header/announcement-bar visuals untouched and matches the existing pattern of styling footer pieces in `section-footer.css` (as the DMCA badge change does).
+The flag gets a small class (e.g. `.footer__country-flag`) and is styled from `assets/section-footer.css` with `width: 2rem`, `height: auto`, a `max-height` guard, `flex-shrink: 0`, and a small right margin so it keeps its size and sits inline before the country label inside the flex button. A footer-scoped rule keeps the header/announcement-bar visuals untouched and matches the existing pattern of styling footer pieces in `section-footer.css` (as the DMCA badge change does).
 
 ## Risks / Trade-offs
 

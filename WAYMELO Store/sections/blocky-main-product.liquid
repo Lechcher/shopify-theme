@@ -780,12 +780,12 @@
                 </blocky-scroll-to>
               {%- when 'payment_badges' -%}
                 <div class="list-payment" style="--bky-pay-size: {{ block.settings.icon_size }}px; justify-content: {{ block.settings.alignment }};" {{ block.shopify_attributes }}>
-                  {%- for type in shop.enabled_payment_types -%}
-                    {%- assign payment_type = type | strip -%}
-                    <div class="list-payment__item">
-                      {{ payment_type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                    </div>
-                  {%- endfor -%}
+                  {%- render 'payment-icon-list',
+                    types: shop.enabled_payment_types,
+                    item_tag: 'div',
+                    item_class: 'list-payment__item',
+                    svg_class: 'icon icon--full-color'
+                  -%}
                 </div>
               {%- when 'delivery_deadline' -%}
                 <div
@@ -1492,7 +1492,7 @@
                         {%- assign is_color_option = true -%}
                       {%- endif -%}
                       <fieldset class="blocky-product-options">
-                        <legend class="blocky-product-option-name">{{ option.name }}</legend>
+                        <legend class="blocky-product-option-name">{% if is_color_option %}Choose Your Color{% else %}{{ option.name }}{% endif %}</legend>
                         {%- if block.settings.picker_type == 'dropdown' -%}
                           <select class="blocky-product-option-select" data-blocky-option-position="{{ option.position }}">
                             {%- for value in option.values -%}

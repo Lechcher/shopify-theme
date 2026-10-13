@@ -93,11 +93,13 @@
 
   {% if shop.enabled_payment_types != blank %}
     <div class="ai-payment-panel-{{ ai_gen_id }}__methods" aria-label="Accepted payment methods">
-      {% for type in shop.enabled_payment_types %}
-        <span class="ai-payment-panel-{{ ai_gen_id }}__tile" aria-label="{{ type | replace: '_', ' ' | capitalize | escape }}">
-          {{ type | payment_type_svg_tag }}
-        </span>
-      {% endfor %}
+      {%- capture payment_tile_class -%}ai-payment-panel-{{ ai_gen_id }}__tile{%- endcapture -%}
+      {%- render 'payment-icon-list',
+        types: shop.enabled_payment_types,
+        item_tag: 'span',
+        item_class: payment_tile_class,
+        aria_label_from_type: true
+      -%}
     </div>
   {% endif %}
 </div>
