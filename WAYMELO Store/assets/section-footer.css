@@ -171,6 +171,31 @@
   text-align: center;
 }
 
+.footer__logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.footer__logo-block__image-wrapper {
+  max-width: 100%;
+}
+
+.footer__logo-block__image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer__logo-block__follow {
+  display: flex;
+  justify-content: center;
+}
+
 .footer__list-social.list-social:only-child {
   justify-content: center;
 }

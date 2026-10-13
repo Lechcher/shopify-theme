@@ -141,6 +141,14 @@
         "settings": {
           "color_scheme": "scheme-3"
         }
+      },
+      "help-button": {
+        "type": "help-button",
+        "settings": {
+          "label": "Need Help?",
+          "link": "/pages/contact",
+          "open_in_new_tab": true
+        }
       }
     },
     "content_for_index": [],

@@ -11,161 +11,17 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "cloned_blockyc_footer_h6VHbN": {
-      "type": "cloned-blockyc-footer",
-      "blocks": {
-        "payment_jngVd4": {
-          "type": "payment",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1092/8884/9694/files/Visa_e3b66003-aef7-4b3f-8a9d-5a83c84bd7f7.svg?v=1791683243",
-            "image_alt": "Visa"
-          }
-        },
-        "payment_yFrcfY": {
-          "type": "payment",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1092/8884/9694/files/Mastercard_1526e2bf-5ddc-43e7-9c58-efd7afcf789d.svg?v=1791683243",
-            "image_alt": "Mastercard"
-          }
-        },
-        "payment_DbKbmU": {
-          "type": "payment",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1092/8884/9694/files/PayPal_ab79b113-4fe3-4924-9400-fbacedd35bd3.svg?v=1791683243",
-            "image_alt": "PayPal"
-          }
-        },
-        "payment_tEfJUN": {
-          "type": "payment",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1092/8884/9694/files/ApplePay_747722aa-2821-4ef8-8974-de39269ff46d.svg?v=1791683243",
-            "image_alt": "Apple Pay"
-          }
-        },
-        "payment_QkjXgF": {
-          "type": "payment",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/1092/8884/9694/files/PayPal_72648b43-c1a6-4558-abb6-fc2767082ccc_252d2d1d-25a4-404c-bd6f-f75827ec7046.svg?v=1791683243",
-            "image_alt": "American Express"
-          }
-        },
-        "link_VJc83j": {
-          "type": "link",
-          "settings": {
-            "label": "Shipping Policy",
-            "link": "",
-            "link_url": "https://chefpreserve.com/pages/shipping-policy"
-          }
-        },
-        "link_htpNUF": {
-          "type": "link",
-          "settings": {
-            "label": "Return Policy",
-            "link": "",
-            "link_url": "https://chefpreserve.com/pages/return-policy"
-          }
-        },
-        "link_6pCRqi": {
-          "type": "link",
-          "settings": {
-            "label": "Terms of Service",
-            "link": "",
-            "link_url": "https://chefpreserve.com/pages/terms-of-service"
-          }
-        },
-        "link_rckNNn": {
-          "type": "link",
-          "settings": {
-            "label": "Privacy Policy",
-            "link": "",
-            "link_url": "https://chefpreserve.com/pages/privacy-policy"
-          }
-        },
-        "link_rcBndR": {
-          "type": "link",
-          "settings": {
-            "label": "Contact Us",
-            "link": "",
-            "link_url": "https://chefpreserve.com/pages/contact"
-          }
-        },
-        "link_JkeC4m": {
-          "type": "link",
-          "settings": {
-            "label": "Do Not Sell My Data",
-            "link": "",
-            "link_url": "https://chefpreserve.com/pages/do-not-sell-my-data-policy"
-          }
-        }
-      },
-      "block_order": [
-        "payment_jngVd4",
-        "payment_yFrcfY",
-        "payment_DbKbmU",
-        "payment_tEfJUN",
-        "payment_QkjXgF",
-        "link_VJc83j",
-        "link_htpNUF",
-        "link_6pCRqi",
-        "link_rckNNn",
-        "link_rcBndR",
-        "link_JkeC4m"
-      ],
-      "disabled": true,
-      "name": "BKY - Footer",
-      "settings": {
-        "logo": "shopify://shop_images/Words_Logo_white.png",
-        "logo_url": "https://cdn.shopify.com/s/files/1/1092/8884/9694/files/chef_preserve._19_8fe0b423-ebea-42aa-8efa-98d73a7c64c3_4ed396fa-8f67-41d7-a9c7-b25b0e063204.png?v=1791683246",
-        "logo_alt": "WAYMELO",
-        "logo_width": 125,
-        "mobile_logo_width": 110,
-        "logo_bottom_gap": 20,
-        "icon_size": 50,
-        "mobile_icon_size": 43,
-        "icons_gap": 15,
-        "mobile_icons_gap": 8,
-        "contact_title": "contact",
-        "contact_line_1": "ASHLEY LIL BOUTIQUE LLC",
-        "contact_line_2": "1375 shinbone rd Russelvile, TN 37860",
-        "contact_line_3": "care@waymelo.com",
-        "contact_width": 305,
-        "policies_title": "policies",
-        "link_gap": 11,
-        "link_color": "#ffffff",
-        "heading_font_family": "'Plus Jakarta Sans', Assistant, sans-serif",
-        "body_font_family": "Inter, Assistant, sans-serif",
-        "heading_size": 16,
-        "mobile_heading_size": 14,
-        "heading_weight": 600,
-        "heading_color": "#ffffff",
-        "body_size": 16,
-        "mobile_body_size": 14,
-        "body_color": "#ffffff",
-        "line_height": 1.5,
-        "content_gap": 12,
-        "columns_gap": 77,
-        "mobile_columns_gap": 32,
-        "side_padding": 24,
-        "copyright_text": "Copyright © {year} Waymelo. All Rights Reserved.",
-        "copyright_size": 15,
-        "mobile_copyright_size": 12,
-        "copyright_color": "#ffffff",
-        "divider_color": "#15151533",
-        "divider_width": 1,
-        "divider_top_gap": 44,
-        "mobile_divider_top_gap": 28,
-        "divider_bottom_gap": 24,
-        "page_width": 1220,
-        "padding_top": 80,
-        "padding_bottom": 24,
-        "background_color": "#7a5168",
-        "border_color": "#d1d1d1",
-        "border_top_width": 1
-      }
-    },
     "footer": {
       "type": "footer",
       "blocks": {
+        "logo_follow_EMKR6G": {
+          "type": "logo_follow",
+          "settings": {
+            "logo_image": "shopify://shop_images/Words_Logo_white.png",
+            "logo_width": 120,
+            "enable_follow_on_shop": true
+          }
+        },
         "trust_logos_CGCTnY": {
           "type": "trust_logos",
           "settings": {
@@ -203,6 +59,7 @@
         }
       },
       "block_order": [
+        "logo_follow_EMKR6G",
         "trust_logos_CGCTnY",
         "text_hj4qnx",
         "text_LLgkWG",
@@ -225,7 +82,6 @@
     }
   },
   "order": [
-    "cloned_blockyc_footer_h6VHbN",
     "footer"
   ]
 }

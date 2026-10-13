@@ -390,7 +390,8 @@
   }
 {% endstyle %}
 
-<div id="reviews-section-{{ section.id }}" class="reviews-section" data-rs data-rs-total="{{ total }}" data-rs-page="1" {{ section.shopify_attributes }}>
+<div id="reviews-section-{{ section.id }}" class="reviews-section" data-rs data-rs-total="{{ total }}" data-rs-avg="{{ avg_display }}" data-rs-avg-pct="{{ avg_pct }}" data-rs-page="1" {{ section.shopify_attributes }}>
+  <span id="trustshop-review" class="reviews-section__anchor" aria-hidden="true"></span>
   <div class="reviews-section__inner">
     <div class="reviews-section__layout{% unless section.settings.show_summary %} reviews-section__layout--no-summary{% endunless %}">
 

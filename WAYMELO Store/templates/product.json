@@ -27,7 +27,7 @@
             "price_size": 22,
             "price_bold": true,
             "show_sale_badge": true,
-            "sale_badge_label": "<b>SALE</b>",
+            "sale_badge_label": "<strong>SALE</strong>",
             "sale_badge_use_gradient": false,
             "sale_badge_bg": "#7a5168",
             "sale_badge_gradient": "linear-gradient(to right, #e53e3e, #e07b39)",
@@ -76,11 +76,49 @@
             "color_swatch_mapping": "Rose Gold: #b76e79\nMidnight: #111827\nCream White: #f4efe6"
           }
         },
-        "quantity_selector_dbD9MG": {
-          "type": "quantity_selector",
+        "bundle_deals_zrd347": {
+          "type": "bundle_deals",
+          "disabled": true,
           "settings": {
-            "input_text_color": "#000000",
-            "label_size": 20
+            "title_1": "1 Pair",
+            "price_1": "$89.99",
+            "compare_price_1": "$150",
+            "save_text_1": "Save 40%",
+            "badge_1": "",
+            "quantity_1": 1,
+            "title_2": "2 Pair",
+            "price_2": "$125.99",
+            "compare_price_2": "$300",
+            "save_text_2": "Save 58%",
+            "badge_2": "MOST POPULAR",
+            "quantity_2": 2,
+            "title_3": "3 Pair",
+            "price_3": "$161.98",
+            "compare_price_3": "$450",
+            "save_text_3": "Save 64%",
+            "badge_3": "BEST VALUE",
+            "quantity_3": 3,
+            "default_selected": 2,
+            "bg_color": "#ffffff",
+            "selected_bg_color": "#f8ede1",
+            "border_color": "#000000",
+            "selected_border_color": "#d98e5f",
+            "border_width": 1,
+            "radius": 16,
+            "title_color": "#000000",
+            "title_size": 20,
+            "price_color": "#000000",
+            "price_size": 24,
+            "compare_color": "#999999",
+            "compare_size": 16,
+            "save_bg_color": "#d98e5f",
+            "save_text_color": "#ffffff",
+            "save_text_size": 14,
+            "badge_use_gradient": true,
+            "badge_bg_color": "#d98e5f",
+            "badge_gradient": "linear-gradient(90deg, rgba(74, 50, 38, 1), rgba(201, 138, 94, 1) 100%)",
+            "badge_text_color": "#ffffff",
+            "badge_text_size": 13
           }
         },
         "countdown_deals_WJJ7np": {
@@ -111,6 +149,26 @@
             "border_color": "#000000",
             "border_width": 1,
             "radius": 16
+          }
+        },
+        "shipping_checkpoints_8qeMd3": {
+          "type": "shipping-checkpoints",
+          "settings": {
+            "text_1": "Purchase",
+            "start_date_1": 1,
+            "end_date_1": 2,
+            "text_2": "Shipped",
+            "start_date_2": 6,
+            "end_date_2": 7,
+            "text_3": "Delivered",
+            "start_date_3": 14,
+            "end_date_3": 15,
+            "text_4": "",
+            "start_date_4": 14,
+            "end_date_4": 15,
+            "text_size": 12,
+            "line_height": 0,
+            "letter_spacing": 0
           }
         },
         "text_hfcGJe": {
@@ -152,29 +210,6 @@
           "settings": {
             "icon_size": 38,
             "alignment": "center"
-          }
-        },
-        "urgency_progress_MJrkni": {
-          "type": "urgency_progress",
-          "settings": {
-            "headline": "SELLING OUT FAST",
-            "subtext": "Due to high demand, limited quantities available",
-            "feature_1": "1 Week Delivery",
-            "feature_2": "Free Shipping",
-            "feature_3": "Easy to Return",
-            "primary_color": "#7a5168",
-            "third_color": "#ebe5e8",
-            "section_radius": 12,
-            "bar_radius": 20,
-            "show_shadow": false,
-            "sold_percent": 93,
-            "heading_size": 18,
-            "subtext_size": 14,
-            "icon_text_size": 12,
-            "icon_size": 18,
-            "progress_text_size": 16,
-            "line_height": 0,
-            "letter_spacing": 0
           }
         },
         "guarantee_badge_AaBfap": {
@@ -289,12 +324,12 @@
         "text_4UAXfW",
         "description",
         "variant_picker",
-        "quantity_selector_dbD9MG",
+        "bundle_deals_zrd347",
         "countdown_deals_WJJ7np",
+        "shipping_checkpoints_8qeMd3",
         "text_hfcGJe",
         "buy_buttons",
         "payment_badges_edFzPC",
-        "urgency_progress_MJrkni",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
         "collapsible_tab_pnakVM",

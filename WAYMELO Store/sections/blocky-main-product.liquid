@@ -6,6 +6,10 @@
 <link href="https://cdn.jsdelivr.net/npm/glidejs@2.1.0/dist/css/glide.core.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 <script src="{{ 'blocky-image-video-slider.js' | asset_url }}" defer></script>
+{%- assign bky_has_psr = section.blocks | where: 'type', 'product-server-rating' -%}
+{%- if bky_has_psr.size > 0 -%}
+  <script src="{{ 'product-server-rating.js' | asset_url }}" defer></script>
+{%- endif -%}
 
 {%- liquid
   assign current_template_product = product
@@ -471,6 +475,18 @@
                     </span>
                   {%- endif -%}
                 </div>
+              {%- when 'product-server-rating' -%}
+                <div
+                  class="product-server-rating-wrapper"
+                  data-product-server-rating
+                  hidden
+                  {{ block.shopify_attributes }}
+                >
+                  <a class="product-server-rating" href="#trustshop-review">
+                    <span class="product-server-rating__stars" style="--rating-percent: 0%;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <p><span class="product-server-rating__count"></span> reviews</p>
+                  </a>
+                </div>
               {%- when 'rating_text_icon' -%}
                 {%- capture rti_star_outline -%}<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5L14.41 8.68L21.99 8.76L15.9 13.27L18.17 20.49L12 16.1L5.83 20.49L8.1 13.27L2.01 8.76L9.59 8.68Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter"></path></svg>{%- endcapture -%}
                 {%- capture rti_star_fill -%}<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 1.5L14.41 8.68L21.99 8.76L15.9 13.27L18.17 20.49L12 16.1L5.83 20.49L8.1 13.27L2.01 8.76L9.59 8.68Z"></path></svg>{%- endcapture -%}
@@ -799,6 +815,8 @@
                     </blocky-timer>
                   {%- endif -%}
                 </div>
+              {%- when 'delivery' -%}
+                {% render 'blocky-lys-delivery', block: block %}
               {%- when 'alert_text' -%}
                 <div
                   class="blocky-alert-text"
@@ -964,6 +982,65 @@
                     {%- endif -%}
                   {%- endfor -%}
                 </blocky-bundle-deals>
+              {%- when 'bundle_stack' -%}
+                <blocky-bundle-stack
+                  class="blocky-bundle-stack"
+                  role="group"
+                  aria-label="Bundle options"
+                  style="--bs-bg-color: {{ block.settings.bg_color }}; --bs-selected-bg-color: {{ block.settings.selected_bg_color }}; --bs-border-color: {{ block.settings.border_color }}; --bs-selected-border-color: {{ block.settings.selected_border_color }}; --bs-border-width: {{ block.settings.border_width }}px; --bs-radius: {{ block.settings.radius }}px; --bs-radio-color: {{ block.settings.radio_color }}; --bs-title-color: {{ block.settings.title_color }}; --bs-title-size: {{ block.settings.title_size }}px; --bs-price-color: {{ block.settings.price_color }}; --bs-price-size: {{ block.settings.price_size }}px; --bs-compare-color: {{ block.settings.compare_color }}; --bs-compare-size: {{ block.settings.compare_size }}px; --bs-sale-color: {{ block.settings.sale_text_color }}; --bs-sale-size: {{ block.settings.sale_text_size }}px; --bs-badge-bg: {{ block.settings.badge_bg_color }}; --bs-badge-color: {{ block.settings.badge_text_color }}; --bs-badge-size: {{ block.settings.badge_text_size }}px; --bs-tag-bg: {{ block.settings.tag_bg_color }}; --bs-tag-color: {{ block.settings.tag_text_color }}; --bs-tag-size: {{ block.settings.tag_text_size }}px; --bs-ribbon-bg: {{ block.settings.ribbon_bg_color }}; --bs-ribbon-color: {{ block.settings.ribbon_text_color }}; --bs-ribbon-size: {{ block.settings.ribbon_text_size }}px;"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- for i in (1..block.settings.options_count) -%}
+                    {%- liquid
+                      assign bs_title_key = 'title_' | append: i
+                      assign bs_badge_key = 'discount_badge_' | append: i
+                      assign bs_tag_key = 'tag_' | append: i
+                      assign bs_save_key = 'save_text_' | append: i
+                      assign bs_price_key = 'price_' | append: i
+                      assign bs_compare_key = 'compare_price_' | append: i
+                      assign bs_ribbon_key = 'ribbon_' | append: i
+                      assign bs_qty_key = 'quantity_' | append: i
+                      assign bs_title = block.settings[bs_title_key]
+                      assign bs_is_selected = false
+                      if block.settings.default_selected == i
+                        assign bs_is_selected = true
+                      endif
+                    -%}
+                    {%- if bs_title != blank -%}
+                      <button
+                        type="button"
+                        class="blocky-bs-row{% if bs_is_selected %} is-selected{% endif %}"
+                        data-bs-quantity="{{ block.settings[bs_qty_key] }}"
+                        aria-pressed="{% if bs_is_selected %}true{% else %}false{% endif %}"
+                      >
+                        <span class="blocky-bs-radio" aria-hidden="true"></span>
+                        <span class="blocky-bs-body">
+                          <span class="blocky-bs-title-row">
+                            <span class="blocky-bs-title">{{ bs_title }}</span>
+                            {%- if block.settings[bs_badge_key] != blank -%}
+                              <span class="blocky-bs-badge">{{ block.settings[bs_badge_key] }}</span>
+                            {%- endif -%}
+                            {%- if block.settings[bs_tag_key] != blank -%}
+                              <span class="blocky-bs-tag">{{ block.settings[bs_tag_key] }}</span>
+                            {%- endif -%}
+                          </span>
+                          {%- if block.settings[bs_save_key] != blank -%}
+                            <span class="blocky-bs-sale">{{ block.settings[bs_save_key] }}</span>
+                          {%- endif -%}
+                        </span>
+                        <span class="blocky-bs-prices">
+                          <span class="blocky-bs-price">{{ block.settings[bs_price_key] }}</span>
+                          {%- if block.settings[bs_compare_key] != blank -%}
+                            <s class="blocky-bs-compare">{{ block.settings[bs_compare_key] }}</s>
+                          {%- endif -%}
+                        </span>
+                        {%- if block.settings[bs_ribbon_key] != blank -%}
+                          <span class="blocky-bs-ribbon">{{ block.settings[bs_ribbon_key] }}</span>
+                        {%- endif -%}
+                      </button>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </blocky-bundle-stack>
               {%- when 'accordion' -%}
                 <div
                   class="blocky-accordion"
@@ -2538,6 +2615,129 @@
       }
     });
   }
+
+  if (!customElements.get('blocky-bundle-stack')) {
+    customElements.define('blocky-bundle-stack', class extends HTMLElement {
+      connectedCallback() {
+        if (this.initialized) return;
+        this.initialized = true;
+
+        this.addEventListener('click', (event) => {
+          const row = event.target.closest('.blocky-bs-row');
+          if (row) this.selectRow(row);
+        });
+
+        const preselected = this.querySelector('.blocky-bs-row.is-selected');
+        if (preselected) this.applyQuantity(preselected);
+      }
+
+      selectRow(row) {
+        this.querySelectorAll('.blocky-bs-row').forEach((item) => {
+          const selected = item === row;
+          item.classList.toggle('is-selected', selected);
+          item.setAttribute('aria-pressed', selected ? 'true' : 'false');
+        });
+        this.applyQuantity(row);
+      }
+
+      applyQuantity(row) {
+        const quantity = Math.max(1, parseInt(row.dataset.bsQuantity, 10) || 1);
+        const root = this.closest('blocky-featured-product');
+        if (!root) return;
+
+        const quantityInput = root.querySelector('[data-blocky-quantity-input]');
+        if (quantityInput) {
+          quantityInput.value = quantity;
+          quantityInput.dispatchEvent(new Event('input', { bubbles: true }));
+          return;
+        }
+
+        const formQuantity = root.querySelector('[data-blocky-form-quantity]');
+        if (formQuantity) formQuantity.value = quantity;
+      }
+    });
+  }
+
+  if (!customElements.get('blocky-delivery')) {
+    customElements.define('blocky-delivery', class extends HTMLElement {
+      connectedCallback() {
+        this.triggers = Array.from(this.querySelectorAll('[data-bd-open]'));
+        this.panels = Array.from(this.querySelectorAll('[data-bd-panel]'));
+        this.overlay = this.querySelector('[data-bd-overlay]');
+
+        this.onTriggerClick = this.onTriggerClick.bind(this);
+        this.onCloseClick = this.onCloseClick.bind(this);
+        this.onKeyDown = this.onKeyDown.bind(this);
+        this.onDocumentClick = this.onDocumentClick.bind(this);
+
+        this.triggers.forEach((trigger) => trigger.addEventListener('click', this.onTriggerClick));
+        this.querySelectorAll('[data-bd-close]').forEach((button) => button.addEventListener('click', this.onCloseClick));
+        if (this.overlay) this.overlay.addEventListener('click', this.onCloseClick);
+
+        document.addEventListener('click', this.onDocumentClick);
+        document.addEventListener('keydown', this.onKeyDown);
+      }
+
+      disconnectedCallback() {
+        document.removeEventListener('click', this.onDocumentClick);
+        document.removeEventListener('keydown', this.onKeyDown);
+      }
+
+      onTriggerClick(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        var name = event.currentTarget.getAttribute('data-bd-open');
+        var panel = this.querySelector('[data-bd-panel="' + name + '"]');
+        var isOpen = panel && !panel.hidden;
+
+        this.closeAll();
+        if (!isOpen) this.open(name, panel);
+      }
+
+      onCloseClick(event) {
+        event.preventDefault();
+        this.closeAll();
+      }
+
+      onDocumentClick(event) {
+        if (event.target.closest('[data-bd-panel]')) return;
+        this.closeAll();
+      }
+
+      onKeyDown(event) {
+        if (event.key === 'Escape' || event.code === 'Escape') this.closeAll();
+      }
+
+      open(name, panel) {
+        if (!panel) return;
+        panel.hidden = false;
+        panel.classList.add('is-open');
+
+        var trigger = this.querySelector('[data-bd-open="' + name + '"]');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'true');
+          trigger.classList.add('is-open');
+        }
+
+        if (this.overlay && name === 'modal') this.overlay.hidden = false;
+      }
+
+      closeAll() {
+        this.panels.forEach((panel) => {
+          panel.hidden = true;
+          panel.classList.remove('is-open');
+        });
+
+        if (this.overlay) this.overlay.hidden = true;
+
+        this.triggers.forEach((trigger) => {
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.classList.remove('is-open');
+        });
+      }
+    });
+  }
 </script>
 
 {% schema %}
@@ -2678,6 +2878,71 @@
         { "type": "color_background", "id": "badge_gradient", "label": "Background gradient", "default": "linear-gradient(90deg, #4a3226, #c98a5e)", "visible_if": "{{ block.settings.badge_use_gradient == true }}" },
         { "type": "color", "id": "badge_text_color", "label": "Text color", "default": "#ffffff" },
         { "type": "range", "id": "badge_text_size", "label": "Text size", "min": 10, "max": 18, "step": 1, "unit": "px", "default": 13 }
+      ]
+    },
+    {
+      "type": "bundle_stack",
+      "name": "Bundle Stack",
+      "limit": 1,
+      "settings": [
+        { "type": "range", "id": "options_count", "label": "Number of options", "min": 1, "max": 3, "step": 1, "default": 3, "info": "Options beyond this number are hidden." },
+        { "type": "range", "id": "default_selected", "label": "Preselected option", "min": 0, "max": 3, "step": 1, "default": 3, "info": "0 = none. The preselected option's quantity is applied to the add-to-cart form on load." },
+        { "type": "header", "content": "Option 1" },
+        { "type": "text", "id": "title_1", "label": "Title", "default": "Just Mine", "info": "Leave blank to hide this option. Emoji are supported." },
+        { "type": "text", "id": "discount_badge_1", "label": "Discount badge", "info": "e.g. 15% OFF. Leave blank to hide." },
+        { "type": "text", "id": "tag_1", "label": "Tag", "default": "Free Shipping", "info": "Optional secondary pill, e.g. Free Shipping. Leave blank to hide." },
+        { "type": "text", "id": "save_text_1", "label": "Sale text", "info": "e.g. Save $69.10. Leave blank to hide." },
+        { "type": "text", "id": "price_1", "label": "Price", "default": "$76.99", "info": "Display-only text. Leave blank to hide." },
+        { "type": "text", "id": "compare_price_1", "label": "Compare at price", "default": "$100.00", "info": "Struck-through. Leave blank to hide." },
+        { "type": "text", "id": "ribbon_1", "label": "Ribbon", "info": "e.g. Most Popular, Best Value, Yours Free. Leave blank to hide." },
+        { "type": "range", "id": "quantity_1", "label": "Add-to-cart quantity", "min": 1, "max": 10, "step": 1, "default": 1, "info": "Quantity applied to the add-to-cart form when this option is selected." },
+        { "type": "header", "content": "Option 2" },
+        { "type": "text", "id": "title_2", "label": "Title", "default": "Me + Mom ⭐", "info": "Leave blank to hide this option. Emoji are supported." },
+        { "type": "text", "id": "discount_badge_2", "label": "Discount badge", "default": "15% OFF", "info": "e.g. 15% OFF. Leave blank to hide." },
+        { "type": "text", "id": "tag_2", "label": "Tag", "info": "Optional secondary pill, e.g. Free Shipping. Leave blank to hide." },
+        { "type": "text", "id": "save_text_2", "label": "Sale text", "default": "Save $69.10", "info": "e.g. Save $69.10. Leave blank to hide." },
+        { "type": "text", "id": "price_2", "label": "Price", "default": "$130.90", "info": "Display-only text. Leave blank to hide." },
+        { "type": "text", "id": "compare_price_2", "label": "Compare at price", "default": "$200.00", "info": "Struck-through. Leave blank to hide." },
+        { "type": "text", "id": "ribbon_2", "label": "Ribbon", "default": "Most Popular", "info": "e.g. Most Popular, Best Value, Yours Free. Leave blank to hide." },
+        { "type": "range", "id": "quantity_2", "label": "Add-to-cart quantity", "min": 1, "max": 10, "step": 1, "default": 2, "info": "Quantity applied to the add-to-cart form when this option is selected." },
+        { "type": "header", "content": "Option 3" },
+        { "type": "text", "id": "title_3", "label": "Title", "default": "Holiday Trio 🔥", "info": "Leave blank to hide this option. Emoji are supported." },
+        { "type": "text", "id": "discount_badge_3", "label": "Discount badge", "default": "20% OFF", "info": "e.g. 20% OFF. Leave blank to hide." },
+        { "type": "text", "id": "tag_3", "label": "Tag", "info": "Optional secondary pill, e.g. Free Shipping. Leave blank to hide." },
+        { "type": "text", "id": "save_text_3", "label": "Sale text", "default": "Save $115.20", "info": "e.g. Save $115.20. Leave blank to hide." },
+        { "type": "text", "id": "price_3", "label": "Price", "default": "$184.80", "info": "Display-only text. Leave blank to hide." },
+        { "type": "text", "id": "compare_price_3", "label": "Compare at price", "default": "$300.00", "info": "Struck-through. Leave blank to hide." },
+        { "type": "text", "id": "ribbon_3", "label": "Ribbon", "default": "Best Value", "info": "e.g. Most Popular, Best Value, Yours Free. Leave blank to hide." },
+        { "type": "range", "id": "quantity_3", "label": "Add-to-cart quantity", "min": 1, "max": 10, "step": 1, "default": 3, "info": "Quantity applied to the add-to-cart form when this option is selected." },
+        { "type": "header", "content": "Row design" },
+        { "type": "color", "id": "bg_color", "label": "Row background", "default": "#ffffff" },
+        { "type": "color", "id": "selected_bg_color", "label": "Selected row background", "default": "#e8f5e9" },
+        { "type": "color", "id": "border_color", "label": "Row border", "default": "#d8d8d8" },
+        { "type": "color", "id": "selected_border_color", "label": "Selected row border", "default": "#1f6f43" },
+        { "type": "range", "id": "border_width", "label": "Border width", "min": 1, "max": 4, "step": 1, "unit": "px", "default": 1 },
+        { "type": "range", "id": "radius", "label": "Border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 12 },
+        { "type": "color", "id": "radio_color", "label": "Radio circle color", "default": "#1f6f43" },
+        { "type": "header", "content": "Typography" },
+        { "type": "color", "id": "title_color", "label": "Title color", "default": "#1a1a1a" },
+        { "type": "range", "id": "title_size", "label": "Title size", "min": 12, "max": 28, "step": 1, "unit": "px", "default": 18 },
+        { "type": "color", "id": "price_color", "label": "Price color", "default": "#1a1a1a" },
+        { "type": "range", "id": "price_size", "label": "Price size", "min": 14, "max": 32, "step": 1, "unit": "px", "default": 22 },
+        { "type": "color", "id": "compare_color", "label": "Compare at price color", "default": "#9a9a9a" },
+        { "type": "range", "id": "compare_size", "label": "Compare at price size", "min": 10, "max": 28, "step": 1, "unit": "px", "default": 15 },
+        { "type": "color", "id": "sale_text_color", "label": "Sale text color", "default": "#d81b4a" },
+        { "type": "range", "id": "sale_text_size", "label": "Sale text size", "min": 10, "max": 20, "step": 1, "unit": "px", "default": 14 },
+        { "type": "header", "content": "Discount badge" },
+        { "type": "color", "id": "badge_bg_color", "label": "Badge background", "default": "#1f6f43" },
+        { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#ffffff" },
+        { "type": "range", "id": "badge_text_size", "label": "Badge text size", "min": 8, "max": 20, "step": 1, "unit": "px", "default": 13 },
+        { "type": "header", "content": "Tag" },
+        { "type": "color", "id": "tag_bg_color", "label": "Tag background", "default": "#eef2f0" },
+        { "type": "color", "id": "tag_text_color", "label": "Tag text color", "default": "#1f6f43" },
+        { "type": "range", "id": "tag_text_size", "label": "Tag text size", "min": 8, "max": 20, "step": 1, "unit": "px", "default": 12 },
+        { "type": "header", "content": "Ribbon" },
+        { "type": "color", "id": "ribbon_bg_color", "label": "Ribbon background", "default": "#1f6f43" },
+        { "type": "color", "id": "ribbon_text_color", "label": "Ribbon text color", "default": "#ffffff" },
+        { "type": "range", "id": "ribbon_text_size", "label": "Ribbon text size", "min": 8, "max": 18, "step": 1, "unit": "px", "default": 12 }
       ]
     },
     {
@@ -2842,6 +3107,63 @@
           { "value": "col-reverse", "label": "Timer first" }
         ] },
         { "type": "text_alignment", "id": "text_alignment", "label": "Text alignment", "default": "center" },
+        { "type": "header", "content": "Typography" },
+        { "type": "range", "id": "line_height", "min": 0, "max": 2.5, "step": 0.1, "label": "Text line height", "info": "0 = use default", "default": 0 },
+        { "type": "range", "id": "letter_spacing", "min": -2, "max": 5, "step": 0.1, "unit": "px", "label": "Text letter spacing", "default": 0 }
+      ]
+    },
+    {
+      "type": "delivery",
+      "name": "Delivery",
+      "limit": 1,
+      "settings": [
+        { "type": "header", "content": "Destination line" },
+        { "type": "inline_richtext", "id": "destination_label", "label": "Label", "default": "Deliver to:" },
+        { "type": "header", "content": "Update preferences modal" },
+        { "type": "text", "id": "modal_title", "label": "Title", "default": "Update Your Preferences" },
+        { "type": "text", "id": "modal_note", "label": "Instruction text", "default": "Select your shipping country" },
+        { "type": "text", "id": "save_button_text", "label": "Save button text", "default": "Save & Continue" },
+        { "type": "inline_richtext", "id": "policy_text", "label": "Policy note", "default": "Learn more about our <b>Shipping Policy</b>" },
+        { "type": "url", "id": "policy_url", "label": "Shipping policy link" },
+        { "type": "header", "content": "Arrival line" },
+        { "type": "inline_richtext", "id": "arrival_text", "label": "Label", "info": "Enter [DATE] to show the estimated date range", "default": "Order today, get it as early as: [DATE]" },
+        { "type": "number", "id": "earliest_days", "label": "Earliest (days from today)", "default": 7 },
+        { "type": "number", "id": "latest_days", "label": "Latest (days from today)", "default": 10 },
+        { "type": "header", "content": "Delivery method popover" },
+        { "type": "text", "id": "method_title", "label": "Popover title", "default": "Delivery Method" },
+        { "type": "text", "id": "method_name", "label": "Method name", "default": "Standard Shipping:" },
+        { "type": "text", "id": "method_range", "label": "Method time range", "default": "(7 - 10 business days)" },
+        { "type": "text", "id": "placed_label", "label": "Order placed label", "default": "Order Placed:" },
+        { "type": "text", "id": "ships_label", "label": "Order ships label", "default": "Order Ships:" },
+        { "type": "text", "id": "delivered_label", "label": "Delivered label", "default": "Delivered:" },
+        { "type": "number", "id": "ship_start_days", "label": "Ships: earliest (days from today)", "default": 1 },
+        { "type": "number", "id": "ship_end_days", "label": "Ships: latest (days from today)", "default": 2 },
+        { "type": "header", "content": "Detail notes" },
+        { "type": "inline_richtext", "id": "note_1", "label": "Note 1", "default": "Orders can be cancelled or modified within 2 hours after being placed." },
+        { "type": "inline_richtext", "id": "note_2", "label": "Note 2", "default": "Canvas/ Poster/ Metal Sign: These packages cannot be delivered to a PO box." },
+        { "type": "inline_richtext", "id": "note_3", "label": "Note 3" },
+        { "type": "header", "content": "Date format" },
+        { "type": "select", "id": "date_format", "label": "Format", "default": "month %e", "options": [
+          { "value": "day, month, %e", "label": "Monday, January 1" },
+          { "value": "month %e", "label": "January 1" },
+          { "value": "%e. month", "label": "1. January" }
+        ] },
+        { "type": "select", "id": "day_label", "label": "Day labels", "default": "%A", "options": [
+          { "value": "%a", "label": "Mon" },
+          { "value": "%A", "label": "Monday" }
+        ] },
+        { "type": "select", "id": "month_label", "label": "Month labels", "default": "%B", "options": [
+          { "value": "%b", "label": "Jan" },
+          { "value": "%B", "label": "January" }
+        ] },
+        { "type": "header", "content": "Design" },
+        { "type": "color", "id": "text_color", "label": "Text color", "default": "#4a4a4a" },
+        { "type": "color", "id": "strong_color", "label": "Emphasis color", "default": "#111111" },
+        { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#111111" },
+        { "type": "color", "id": "bg_color", "label": "Background", "default": "#ffffff" },
+        { "type": "color", "id": "border_color", "label": "Border", "default": "#e5e5e5" },
+        { "type": "range", "id": "radius", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Corner radius", "default": 16 },
+        { "type": "range", "id": "text_size", "min": 10, "max": 24, "step": 1, "unit": "px", "label": "Text size", "default": 14 },
         { "type": "header", "content": "Typography" },
         { "type": "range", "id": "line_height", "min": 0, "max": 2.5, "step": 0.1, "label": "Text line height", "info": "0 = use default", "default": 0 },
         { "type": "range", "id": "letter_spacing", "min": -2, "max": 5, "step": 0.1, "unit": "px", "label": "Text letter spacing", "default": 0 }
@@ -3221,6 +3543,12 @@
         { "type": "image_picker", "id": "image_6", "label": "Fallback Image" },
         { "type": "collection", "id": "collection_6", "label": "Collection" }
       ]
+    },
+    {
+      "type": "product-server-rating",
+      "name": "Product Server Rating",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "review-stars",
