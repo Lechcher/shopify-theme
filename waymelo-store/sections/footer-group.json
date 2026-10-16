@@ -40,14 +40,14 @@
           "type": "text",
           "settings": {
             "heading": "<strong>About Us</strong>",
-            "subtext": "<p><strong>Waymelo – Travel Comfort, your way.</strong><br/>We craft premium travel essentials designed for maximum comfort, so you can enjoy every journey your way.</p><p><strong>Business Information</strong><br/>Brand: WAYMELO<br/>Legal Entity: ASHLEY LIL BOUTIQUE LLC<br/>Owner: ASHLEY</p>"
+            "subtext": "<p><strong>Waymelo – Travel Comfort, your way.</strong><br/>We craft premium travel essentials designed for maximum comfort, so you can enjoy every journey your way.</p><p><strong>Business Information</strong><br/>Brand: WAYMELO<br/>Legal Entity: <strong>TAY Global Commerce LLC</strong><br/>Owner: ASHLEY</p>"
           }
         },
         "text_LLgkWG": {
           "type": "text",
           "settings": {
             "heading": "<strong>Contact Information</strong>",
-            "subtext": "<p>Business: ASHLEY LIL BOUTIQUE LLC<br/>Contact Person: ASHLEY<br/><br/><strong>Business Contact</strong><br/>Email: care@waymelo.com<br/>Phone / WhatsApp: +1 321-233-3336<br/>Support: 24/7</p>"
+            "subtext": "<p>Business: <strong>TAY Global Commerce LLC</strong><br/>Contact Person: ASHLEY<br/><br/><strong>Business Contact</strong><br/>Email: care@waymelo.com<br/>Phone / WhatsApp: +1 321-233-3336<br/>Support: 24/7</p>"
           }
         },
         "link_list_h9iYDq": {

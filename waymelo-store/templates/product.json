@@ -81,7 +81,7 @@
         "text_4UAXfW": {
           "type": "text",
           "settings": {
-            "text": "Give Your Arms a Break! The Wearable Nursing Pillow That Makes Feeding on the Go Easier & More Comfortable.&nbsp;",
+            "text": "",
             "text_style": "body",
             "text_color": "#000000",
             "text_size": 16,
@@ -124,18 +124,10 @@
             "using_page_builder": false
           }
         },
-        "text_hfcGJe": {
-          "type": "text",
+        "custom_liquid_3JEXmK": {
+          "type": "custom_liquid",
           "settings": {
-            "text": "Enjoy Hands-Free Comfort Today",
-            "text_style": "body",
-            "text_color": "#000000",
-            "text_size": 12,
-            "text_alignment": "center",
-            "margin_top": 0,
-            "margin_bottom": 0,
-            "line_height": 0,
-            "letter_spacing": 0
+            "custom_liquid": "<div style=\"margin:2px 0;\">\n  <label for=\"color-choices\"\n    style=\"display:block;margin-bottom:6px;font-weight:700;font-size:14px;\">\n    Different Color Requests\n  </label>\n\n  <input\n    id=\"color-choices\"\n    type=\"text\"\n    name=\"properties[Different Color Requests]\"\n    form=\"{{ product_form_id }}\"\n    maxlength=\"150\"\n    placeholder=\"e.g. 1 Pink, 1 Blue\"\n    style=\"width:100%;height:40px;padding:8px 12px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;\"\n  >\n\n  <small style=\"display:block;margin-top:6px;color:#555;font-size:12px;font-weight:600;line-height:1.5;\">\n    Only fill this in if you want different colors for your items. Leave blank to keep your selected color.\n  </small>\n</div>"
           }
         },
         "buy_buttons": {
@@ -163,6 +155,19 @@
           "settings": {
             "icon_size": 38,
             "alignment": "center"
+          }
+        },
+        "complementary_yXe6Bn": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "make_collapsible_row": false,
+            "icon": "sell",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "pagination_style": "counter",
+            "image_ratio": "square",
+            "enable_quick_add": false
           }
         },
         "guarantee_badge_AaBfap": {
@@ -280,9 +285,10 @@
         "description",
         "variant_picker",
         "pumper_bundles_app_block_qb_EHeEkM",
-        "text_hfcGJe",
+        "custom_liquid_3JEXmK",
         "buy_buttons",
         "payment_badges_edFzPC",
+        "complementary_yXe6Bn",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
         "collapsible_tab_pnakVM",
