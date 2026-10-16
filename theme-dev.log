@@ -1,0 +1,61 @@
+Γò¡ΓöÇ success ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò«
+Γöé                                                                              Γöé
+Γöé  Preview your theme (t)                                                      Γöé
+Γöé    ΓÇó [1]                                                                     Γöé
+Γöé                                                                              Γöé
+Γöé  Next steps                                                                  Γöé
+Γöé    ΓÇó Share your theme preview (p) [2]                                        Γöé
+Γöé      https://pz43jg-b8.myshopify.com/?preview_theme_id=207000437022          Γöé
+Γöé    ΓÇó Customize your theme at the theme editor (e) [3]                        Γöé
+Γöé    ΓÇó Preview your gift cards (g) [4]                                         Γöé
+Γöé                                                                              Γöé
+Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓò»
+[1] http://127.0.0.1:9292
+[2] https://pz43jg-b8.myshopify.com/?preview_theme_id=207000437022
+[3] https://pz43jg-b8.myshopify.com/admin/themes/207000437022/editor?hr=9292
+[4] http://127.0.0.1:9292/gift_cards/[store_id]/preview
+
+ΓÇó 16:00:11 Request ┬╗    GET 200 / 
+ΓÇó 16:00:13 Request ┬╗    GET 200 /products/wearable-nursing-pillow 
+ΓÇó 16:00:15 Request ┬╗   POST 200 /shopify_pay/accelerated_checkout 
+ΓÇó 16:03:49  Synced ┬╗ update assets/section-footer.css
+ΓÇó 16:10:07  Synced ┬╗ update snippets/country-localization.liquid
+ΓÇó 16:10:39  Synced ┬╗ update assets/section-footer.css
+ΓÇó 16:12:00 Request ┬╗    GET 200 /products/wearable-nursing-pillow?cb=1791882719 
+ΓÇó 16:12:01 Request ┬╗    GET 200 /products/wearable-nursing-pillow?cb=1791882719 
+ΓÇó 16:12:02 Request ┬╗   POST 200 /shopify_pay/accelerated_checkout 
+ΓÇó 16:15:02 Request ┬╗    GET 200 /products/wearable-nursing-pillow?cb=1791882901 
+ΓÇó 16:15:08 Request ┬╗    GET 200 /products/wearable-nursing-pillow?cb=1791882907 
+ΓÇó 16:18:45 Request ┬╗    GET 200 /?cb=1791883124 
+ΓÇó 16:18:46 Request ┬╗    GET 200 /products/wearable-nursing-pillow 
+ΓÇó 16:18:53 Request ┬╗   POST 401 /localization 
+ΓÇó 16:20:43 Request ┬╗    GET 200 /products/wearable-nursing-pillow 
+ΓÇó 16:20:44 Request ┬╗   POST 200 /shopify_pay/accelerated_checkout 
+ΓÇó 16:20:47 Request ┬╗   POST 401 /localization 
+ΓÇó 16:23:05 Request ┬╗    GET 200 /products/wearable-nursing-pillow 
+ΓÇó 16:23:10 Request ┬╗   POST 401 /localization 
+ΓÇó 16:26:04 Request ┬╗    GET 200 /products/wearable-nursing-pillow?country=US&cb=1791883563 
+ΓÇó 16:26:09 Request ┬╗    GET 200 /products/wearable-nursing-pillow?country=GB&cb=1791883568 
+ΓÇó 16:26:13 Request ┬╗    GET 200 /products/wearable-nursing-pillow?country=FR&cb=1791883572 
+ΓÇó 16:26:17 Request ┬╗    GET 200 /products/wearable-nursing-pillow?country=JP&cb=1791883576 
+ΓÇó 16:28:36 Request ┬╗    GET 200 /products/wearable-nursing-pillow?country=US&cb=1791883715 
+ΓÇó 16:40:43  Synced ┬╗ update config/markets.json
+ΓÇó 16:40:43  Synced ┬╗ update snippets/country-localization.liquid
+ΓÇó 16:40:44  Synced ┬╗ update assets/section-footer.css
+ΓÇó 16:40:44  Synced ┬╗ update sections/footer.liquid
+ΓÇó 16:40:44  Synced ┬╗ update templates/product.json
+ΓÇó 16:40:44  Synced ┬╗ update config/settings_data.json
+ΓÇó 16:45:52  Synced ┬╗ update snippets/country-localization.liquid
+ΓÇó 16:46:39  Synced ┬╗ update snippets/country-localization.liquid
+ΓÇó 16:47:23  Synced ┬╗ update sections/footer.liquid
+ΓÇó 16:48:06  Synced ┬╗ update assets/section-footer.css
+ΓÇó 16:53:16  Synced ┬╗ update sections/blocky-main-product.liquid
+ΓÇó 16:54:29  Synced ┬╗ update sections/blocky-main-product.liquid
+ΓÇó 17:15:32  Synced ┬╗ update snippets/payment-icon-list.liquid
+ΓÇó 17:18:01  Synced ┬╗ update sections/footer.liquid
+ΓÇó 17:18:37  Synced ┬╗ update sections/blocky-main-product.liquid
+ΓÇó 17:19:06  Synced ┬╗ update sections/main-product.liquid
+ΓÇó 17:19:43  Synced ┬╗ update blocks/ai_gen_block_bcb0398.liquid
+ΓÇó 17:34:15  Synced ┬╗ update snippets/blocky-main-product-css.liquid
+ΓÇó 17:48:14  Synced ┬╗ update sections/blocky-main-product.liquid
+ΓÇó 17:48:15  Synced ┬╗ update snippets/blocky-main-product-css.liquid
