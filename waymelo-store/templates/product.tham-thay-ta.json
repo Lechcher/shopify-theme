@@ -191,7 +191,7 @@
             "heading": "Product Details",
             "icon": "none",
             "heading_size": 16,
-            "content": "<p>✔ <strong>100% Breathable Cotton & Pearl Cotton</strong> – Soft, skin-friendly cotton cover paired with high-resilience pearl cotton filling that holds its shape for lasting comfort.<br/>✔ <strong>Flight-Ready 3-Point Support</strong> – Integrated infant head pillow and back/arm cushion support baby at the ideal height, relieving arm fatigue in tight airplane seats.<br/>✔ <strong>Secure Wearable Design</strong> – Adjustable shoulder and waist straps keep the pillow stably attached to you for safe, hands-free feeding and peaceful flight naps.<br/>✔ <strong>Removable & Washable Cover</strong> – Features a smooth zip-off cover for quick, effortless cleaning after travel messes.<br/>✔ <strong>Compact & Travel-Portable</strong> – Modular, lightweight design easily packs into carry-on bags, making long-haul journeys hassle-free.</p>",
+            "content": "<p></p><p><strong>Portable Changing Surface</strong><br/>The foldable changing pad provides a dedicated surface for diaper changes during outings, travel, and everyday use.</p><p><strong>Waterproof Changing Mat</strong><br/>The waterproof surface helps prevent moisture from passing through the mat and makes small messes easier to wipe away.</p><p><strong>Easy-Access Wipes Pocket</strong><br/>A dedicated wipes pocket allows access when the pad is open or folded. Insert your preferred wipes pack or a compatible reusable wipes pouch.</p><p><strong>Organized Storage</strong><br/>Two inner mesh pockets hold diapers and small changing essentials. An outer pocket provides additional space for parents’ personal items.</p><p><strong>Detachable Storage Section</strong><br/>The storage section can be detached when you only need the changing mat, giving you flexibility for different situations.</p><p><strong>Compact Carrying Design</strong><br/>Fold the pad closed between uses. The hook-and-loop straps and buckle loop offer convenient carrying and attachment options for a diaper bag or stroller.</p>",
             "content_size": 14,
             "page": "",
             "open_by_default": false,
@@ -207,7 +207,7 @@
             "heading": "How To Use",
             "icon": "none",
             "heading_size": 16,
-            "content": "<p>✔ <strong>Wear & Secure</strong> – Fasten the adjustable shoulder and waist straps around yourself to fit comfortably before taking your seat on the plane.<br/>✔ <strong>Position Baby</strong> – Place your baby on the pillow, resting their head on the built-in round cushion for ergonomic support during feeding or naptime.<br/>✔ <strong>Relax Hands-Free</strong> – Enjoy pain-free arms as the 3-point support system holds baby securely at the perfect height throughout the flight.<br/>✔ <strong>Care & Clean</strong> – Simply unzip the 100% cotton cover and machine wash on a gentle cycle after your trip for quick, effortless maintenance.</p>",
+            "content": "<p><strong>1. Pack Your Supplies</strong><br/>Place diapers and changing essentials in the inner mesh pockets. Insert a compatible wipes pack into the wipes pocket with its opening aligned for easy access.</p><p><strong>2. Choose a Suitable Surface</strong><br/>Unfold the pad on a stable, flat surface, with the waterproof changing side facing upward. Keep supplies within reach before placing your baby down.</p><p><strong>3. Change Your Baby</strong><br/>Position your baby in the center of the mat and use the accessible wipes and supplies as needed. Keep your baby within arm’s reach and never leave them unattended.</p><p><strong>4. Clean After Each Use</strong><br/>Remove any waste and wipe the changing surface clean. Follow the product’s care instructions for cleaning products and washing methods.</p><p><strong>5. Dry and Fold</strong><br/>Allow the pad to dry completely, refill your supplies, and fold it closed. Fasten the closure before packing it away.</p><p><strong>6. Carry or Attach</strong><br/>Place the folded pad in your diaper bag or use the carrying loop. When attaching it to a stroller, follow the stroller manufacturer’s accessory guidelines.</p>",
             "content_size": 14,
             "page": "",
             "open_by_default": false,
@@ -360,6 +360,7 @@
       "blocks": {
         "ai_gen_block_a021675_mGdeCW": {
           "type": "ai_gen_block_a021675",
+          "disabled": true,
           "settings": {
             "video_1": "shopify://files/videos/b0de7a670dfd47649eab19b95e4e5f64.HD-1080p-4.8Mbps-96370967.mp4",
             "video_2": "shopify://files/videos/a09c85bbe3874fb497872c70465032c2.HD-1080p-4.8Mbps-96370965.mp4",
@@ -431,6 +432,7 @@
         "feature_d7iDcb",
         "feature_b6fVTa"
       ],
+      "disabled": true,
       "name": "Blocky Product Feature 2",
       "settings": {
         "body_text": "PRODUCT FEATURES",
@@ -483,6 +485,7 @@
         "title_nDYf4Y",
         "body_zYyMTy"
       ],
+      "disabled": true,
       "name": "Blocky Video and Text",
       "settings": {
         "video": "shopify://files/videos/0dc875a0619941ecafe56c2dc8db073d.HD-1080p-7.2Mbps-96414420.mp4",
@@ -606,6 +609,7 @@
         "review_cUryjU",
         "review_ra6AQV"
       ],
+      "disabled": true,
       "settings": {
         "images_heading": "<strong>Reviews with Images</strong>",
         "list_heading": "Top reviews",
@@ -638,8 +642,8 @@
         "question_CF8zA8": {
           "type": "question",
           "settings": {
-            "question": "Is BabyEase safe to use?&nbsp;",
-            "content": "<p>Yes, when used as intended and under <strong>constant adult supervision</strong>. Waymelo's Wearable Nursing Pillow is designed for feeding, cuddling, travel, and keeping your baby comfortable while they rest in your arms. Always keep your baby’s <strong>face and airway clear</strong>, and never use BabyEase as a car-seat replacement or safety restraint.</p>",
+            "question": "1. What can I store in the changing pad?",
+            "content": "<p>Two inner mesh pockets hold diapers and small changing essentials, while an outer pocket provides space for personal items. The dedicated wipes pocket keeps wipes easily accessible.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"
@@ -648,8 +652,8 @@
         "question_cLHAnz": {
           "type": "question",
           "settings": {
-            "question": "Does BabyEase fit different body sizes?&nbsp;",
-            "content": "<p>Yes. The adjustable neck strap lets you customize the fit and positioning for greater comfort.</p>",
+            "question": "2. Can I access the wipes without unfolding the pad?",
+            "content": "<p>Yes. The wipes pocket is accessible when the pad is open or folded. Insert a compatible wipes pack or reusable pouch with its opening aligned with the pocket opening.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"
@@ -658,8 +662,8 @@
         "question_LF7aE4": {
           "type": "question",
           "settings": {
-            "question": "What can I use BabyEase for?&nbsp;",
-            "content": "<p>BabyEase is designed for <strong>bottle feeding, breastfeeding, cuddling, relaxing, and travel</strong>. It helps support your baby while keeping them close and making longer holding sessions more comfortable.</p>",
+            "question": "&nbsp;3. Is the changing surface waterproof and easy to clean?&nbsp;",
+            "content": "<p>Yes. The waterproof changing surface helps prevent moisture from passing through and wipes clean easily. Follow the product’s care instructions and allow it to dry completely before folding and storing.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"
@@ -668,8 +672,8 @@
         "question_KtVzDN": {
           "type": "question",
           "settings": {
-            "question": "&nbsp;Why choose BabyEase over a regular pillow?",
-            "content": "<p>A regular pillow can shift around and require constant adjusting. <strong>BabyEase’s curved shape and adjustable strap help keep the support in place</strong>, giving you a way more comfortable setup.</p>",
+            "question": "&nbsp;4. Is it convenient for outings and travel?&nbsp;",
+            "content": "<p>Yes. The pad folds into a compact shape for carrying in a diaper bag, and its straps and buckle loop provide additional carrying options. Unfold it on a stable, flat surface for diaper changes and always keep your baby within arm’s reach.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"

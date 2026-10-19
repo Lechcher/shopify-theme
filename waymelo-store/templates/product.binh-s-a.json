@@ -217,7 +217,7 @@
             "heading": "Product Details",
             "icon": "none",
             "heading_size": 16,
-            "content": "<p>✔ <strong>100% Breathable Cotton & Pearl Cotton</strong> – Soft, skin-friendly cotton cover paired with high-resilience pearl cotton filling that holds its shape for lasting comfort.<br/>✔ <strong>Flight-Ready 3-Point Support</strong> – Integrated infant head pillow and back/arm cushion support baby at the ideal height, relieving arm fatigue in tight airplane seats.<br/>✔ <strong>Secure Wearable Design</strong> – Adjustable shoulder and waist straps keep the pillow stably attached to you for safe, hands-free feeding and peaceful flight naps.<br/>✔ <strong>Removable & Washable Cover</strong> – Features a smooth zip-off cover for quick, effortless cleaning after travel messes.<br/>✔ <strong>Compact & Travel-Portable</strong> – Modular, lightweight design easily packs into carry-on bags, making long-haul journeys hassle-free.</p>",
+            "content": "<p>🍼 <strong>17oz Large Capacity</strong> – Perfect for multiple feedings.</p><p>🌡️ <strong>Fast & Precise Heating</strong> – Adjustable temperature from 98°F–131°F.</p><p>✨ <strong>Premium 316 Stainless Steel</strong> – Durable, food-grade interior with safety lock.</p><p>🔋 <strong>14,800mAh Battery</strong> – Rechargeable with 45W fast charging.</p><p>✈️ <strong>Cordless & Travel-Friendly</strong> – Perfect for outings, road trips, and travel with your baby.</p>",
             "content_size": 14,
             "page": "",
             "open_by_default": false,
@@ -233,7 +233,7 @@
             "heading": "How To Use",
             "icon": "none",
             "heading_size": 16,
-            "content": "<p>✔ <strong>Wear & Secure</strong> – Fasten the adjustable shoulder and waist straps around yourself to fit comfortably before taking your seat on the plane.<br/>✔ <strong>Position Baby</strong> – Place your baby on the pillow, resting their head on the built-in round cushion for ergonomic support during feeding or naptime.<br/>✔ <strong>Relax Hands-Free</strong> – Enjoy pain-free arms as the 3-point support system holds baby securely at the perfect height throughout the flight.<br/>✔ <strong>Care & Clean</strong> – Simply unzip the 100% cotton cover and machine wash on a gentle cycle after your trip for quick, effortless maintenance.</p>",
+            "content": "<p><strong>Step 1: Add Milk or Water</strong><br/>Pour breast milk or water into the warmer. Do not exceed the 17oz (500ml) capacity.</p><p><strong>Step 2: Turn It On</strong><br/>Press the power button to start the device.</p><p><strong>Step 3: Set the Temperature</strong><br/>Select your desired temperature using the controls and LED display.</p><p><strong>Step 4: Wait for Heating</strong><br/>Allow the warmer to reach the selected temperature.</p><p><strong>Step 5: Check & Feed</strong><br/>Check the milk temperature before feeding your baby. Pour into a clean baby bottle and enjoy feeding time!</p>",
             "content_size": 14,
             "page": "",
             "open_by_default": false,
@@ -305,7 +305,7 @@
       ],
       "settings": {
         "product_source": "current",
-        "product": "wearable-nursing-pillow",
+        "product": "babyease-wearable-nursing-pillow-for-moms-copy",
         "content_gap": 48,
         "mobile_content_gap": 28,
         "content_vertical_gap": 12,
@@ -389,6 +389,7 @@
       "blocks": {
         "ai_gen_block_a021675_mGdeCW": {
           "type": "ai_gen_block_a021675",
+          "disabled": true,
           "settings": {
             "video_1": "shopify://files/videos/b0de7a670dfd47649eab19b95e4e5f64.HD-1080p-4.8Mbps-96370967.mp4",
             "video_2": "shopify://files/videos/a09c85bbe3874fb497872c70465032c2.HD-1080p-4.8Mbps-96370965.mp4",
@@ -419,8 +420,8 @@
             "side": "left",
             "y_offset": 32,
             "title_position": "above",
-            "title": "Hands-Free Wearable Design",
-            "text": "<p>Adjustable shoulder and waist straps lock the pillow in place, relieving arm strain and letting baby sleep securely on long flights.</p>"
+            "title": "&nbsp;<strong>17oz Large Capacity</strong>&nbsp;",
+            "text": "<p>500ml capacity for convenient feeding at home or on the go.</p>"
           }
         },
         "feature_44Kfqk": {
@@ -429,8 +430,8 @@
             "side": "left",
             "y_offset": -20,
             "title_position": "above",
-            "title": "Breathable Premium Fabrics",
-            "text": "<p>Crafted with a 100% soft cotton cover and high-resilience pearl cotton filling for all-day cozy, cool comfort in tight cabin seats.</p><p></p>"
+            "title": "&nbsp;<strong>Fast & Precise Heating</strong>&nbsp;",
+            "text": "<p>Adjustable temperature from 98°F to 131°F with an easy-to-read LED display.</p>"
           }
         },
         "feature_d7iDcb": {
@@ -439,8 +440,8 @@
             "side": "right",
             "y_offset": 32,
             "title_position": "above",
-            "title": "3-Point Ergonomic Support",
-            "text": "<p>Includes a built-in infant head pillow and back support cushion to keep baby elevated at the ideal feeding and napping height.</p>"
+            "title": "&nbsp;<strong>14,800mAh Rechargeable Battery</strong>&nbsp;",
+            "text": "<p>Cordless convenience with 45W fast charging for busy parents.</p>"
           }
         },
         "feature_b6fVTa": {
@@ -449,8 +450,8 @@
             "side": "right",
             "y_offset": -20,
             "title_position": "above",
-            "title": "Easy Zip-Off & Washable Cover",
-            "text": "<p>Equipped with a smooth zipper for quick removal, making cleanup effortless after in-flight spills or messes.</p>"
+            "title": "&nbsp;<strong>Premium 316 Stainless Steel</strong>&nbsp;",
+            "text": "<p>Food-grade stainless steel interior with a built-in safety lock.</p>"
           }
         }
       },
@@ -463,12 +464,12 @@
       "name": "Blocky Product Feature 2",
       "settings": {
         "body_text": "PRODUCT FEATURES",
-        "title": "New Best Selling Product",
+        "title": "&nbsp;Warm Milk, Happy Baby, Anywhere!&nbsp;",
         "title_size": 40,
         "title_color": "#000000",
         "body_size": 13,
         "body_color": "#000000",
-        "device_image": "shopify://shop_images/718UT_sRTzL._AC_SL1500.jpg",
+        "device_image": "shopify://shop_images/Gemini_Generated_Image_g2993tg2993tg299.png",
         "device_image_alt": "",
         "device_link": "",
         "device_height": 400,
@@ -512,6 +513,7 @@
         "title_nDYf4Y",
         "body_zYyMTy"
       ],
+      "disabled": true,
       "name": "Blocky Video and Text",
       "settings": {
         "video": "shopify://files/videos/0dc875a0619941ecafe56c2dc8db073d.HD-1080p-7.2Mbps-96414420.mp4",
@@ -635,6 +637,7 @@
         "review_cUryjU",
         "review_ra6AQV"
       ],
+      "disabled": true,
       "settings": {
         "images_heading": "<strong>Reviews with Images</strong>",
         "list_heading": "Top reviews",
@@ -667,8 +670,8 @@
         "question_CF8zA8": {
           "type": "question",
           "settings": {
-            "question": "Is BabyEase safe to use?&nbsp;",
-            "content": "<p>Yes, when used as intended and under <strong>constant adult supervision</strong>. Waymelo's Wearable Nursing Pillow is designed for feeding, cuddling, travel, and keeping your baby comfortable while they rest in your arms. Always keep your baby’s <strong>face and airway clear</strong>, and never use BabyEase as a car-seat replacement or safety restraint.</p>",
+            "question": "1. Can I use it to warm both milk and water?",
+            "content": "<p>Yes. The warmer is designed for milk and water, with adjustable temperature settings. Select the appropriate setting and follow the included instructions for each type of liquid.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"
@@ -677,8 +680,8 @@
         "question_cLHAnz": {
           "type": "question",
           "settings": {
-            "question": "Does BabyEase fit different body sizes?&nbsp;",
-            "content": "<p>Yes. The adjustable neck strap lets you customize the fit and positioning for greater comfort.</p>",
+            "question": "2. What is the capacity of the warmer?",
+            "content": "<p>The warmer holds up to 17 oz of liquid. Follow the maximum fill marking when filling, and prepare only the amount needed for your feeding routine.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"
@@ -687,8 +690,8 @@
         "question_LF7aE4": {
           "type": "question",
           "settings": {
-            "question": "What can I use BabyEase for?&nbsp;",
-            "content": "<p>BabyEase is designed for <strong>bottle feeding, breastfeeding, cuddling, relaxing, and travel</strong>. It helps support your baby while keeping them close and making longer holding sessions more comfortable.</p>",
+            "question": "3. Does it need to stay plugged in during use?",
+            "content": "<p>The rechargeable battery allows portable use without a continuous power connection. Battery life varies depending on the starting liquid temperature, selected setting, amount of liquid, and frequency of use.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"
@@ -697,8 +700,8 @@
         "question_KtVzDN": {
           "type": "question",
           "settings": {
-            "question": "&nbsp;Why choose BabyEase over a regular pillow?",
-            "content": "<p>A regular pillow can shift around and require constant adjusting. <strong>BabyEase’s curved shape and adjustable strap help keep the support in place</strong>, giving you a way more comfortable setup.</p>",
+            "question": "4. How do I use and clean the warmer?",
+            "content": "<p>Charge the device, add milk or water within the fill limit, and select your desired temperature according to the included instructions. Check the liquid temperature before feeding. After use, switch off, allow it to cool, and clean the liquid-contact parts as directed. Keep the charging port dry and do not submerge the electronic components.</p>",
             "default_open": false,
             "icon_code": "",
             "icon_color": "#000000"

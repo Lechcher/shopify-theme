@@ -146,8 +146,8 @@
             "add_to_cart_text": "ADD TO CART",
             "sold_out_text": "Sold out",
             "unavailable_text": "Unavailable",
-            "margin_top": 0.2,
-            "margin_bottom": 1.1
+            "margin_top": 1,
+            "margin_bottom": 1.7
           }
         },
         "payment_badges_edFzPC": {
@@ -155,19 +155,6 @@
           "settings": {
             "icon_size": 38,
             "alignment": "center"
-          }
-        },
-        "complementary_yXe6Bn": {
-          "type": "complementary",
-          "settings": {
-            "block_heading": "Pairs well with",
-            "make_collapsible_row": false,
-            "icon": "sell",
-            "product_list_limit": 10,
-            "products_per_page": 3,
-            "pagination_style": "counter",
-            "image_ratio": "square",
-            "enable_quick_add": false
           }
         },
         "guarantee_badge_AaBfap": {
@@ -288,7 +275,6 @@
         "custom_liquid_3JEXmK",
         "buy_buttons",
         "payment_badges_edFzPC",
-        "complementary_yXe6Bn",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
         "collapsible_tab_pnakVM",
@@ -306,7 +292,7 @@
       "settings": {
         "product_source": "current",
         "product": "wearable-nursing-pillow",
-        "content_gap": 48,
+        "content_gap": 76,
         "mobile_content_gap": 28,
         "content_vertical_gap": 12,
         "media_size": 46,
@@ -547,7 +533,7 @@
             "date": "",
             "verified": true,
             "body": "<p>We took a 12-hour flight with our 4-month-old, and this pillow saved my arms! Baby slept peacefully for hours, and I finally got to rest too.</p>",
-            "image": "shopify://shop_images/B_n_hay_them_nhi_u_ng_i_20261013181753.jpg"
+            "image": "shopify://shop_images/gghgh.jpg"
           }
         },
         "review_a2": {
@@ -795,6 +781,13 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "179217406534353e97": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -807,6 +800,7 @@
     "reviews_section_7Waym",
     "blocky_faq_cFeeU6",
     "newsletter_HjqpNj",
-    "blocky_section_divider_7AQYYY"
+    "blocky_section_divider_7AQYYY",
+    "179217406534353e97"
   ]
 }
