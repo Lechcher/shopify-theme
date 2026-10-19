@@ -27,7 +27,7 @@ The product page has no native way to add related items to the cart alongside th
 
 ## Impact
 
-- `sections/blocky-main-product.liquid` — new `buy_more_save` case in the `{% case block.type %}` switch, block schema entry, and `presets` entry; new `blocky-buy-more-save` custom element in the section's inline script; a `data-*` data block on the block wrapper carrying the save percent, price mode, product ids, and per-product JSON for the popup.
+- `sections/blocky-main-product.liquid` — new `buy_more_save` case in the `{% case block.type %}` switch, block schema entry, and `presets` entry; new `blocky-buy-more-save` custom element in the section's inline script; `data-*` attributes on the block wrapper carrying the save percentage, max products, and the current product id, plus per-row `data-*` attributes carrying each variant's id, price, and compare-at price.
 - `snippets/blocky-main-product-css.liquid` — scoped styles for the block, the row layout, the preview popup modal, and mobile/desktop layout.
 - Reuses existing theme infrastructure: Shopify product recommendations endpoint, `shop.money_format`, the section's `addToCart`/`openCartDrawer` helpers, and the `formatMoney`/cart-update flow.
 - No new external dependencies. No breaking changes to existing blocks or settings.
