@@ -175,15 +175,37 @@
           "widget_type": "review-widget"
         }
       },
-      "15275635838956666001": {
-        "type": "shopify://apps/vol-upsell-cross-sell/blocks/starwise-bundle-app-embed/019cb79f-8545-707c-9f2c-cbfcaed95a68",
-        "disabled": false,
-        "settings": {}
-      },
       "17595556821664008138": {
         "type": "shopify://apps/zoorix-cross-sell/blocks/zoorix-head/51fffd07-f9df-4d6a-b901-6d14b243dcad",
         "disabled": false,
         "settings": {}
+      },
+      "144831480468751239": {
+        "type": "shopify://apps/essential-upsell/blocks/app-embed/50627fd9-24fd-4250-8614-accc12826d80",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": false,
+        "settings": {
+          "greeting_message": "",
+          "show_featured_products": true,
+          "featured_products": [],
+          "background_color": "#FFFFFF",
+          "font_color": "#000000",
+          "agent_invert_activator_colors": true,
+          "button_color": "#000000",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "agent_inherit_fonts": true,
+          "agent_font": "system_ui_n4",
+          "agent_font_size": 14,
+          "agent_activator_font_size": 16,
+          "agent_border_radius": 16
+        }
       }
     },
     "color_schemes": {

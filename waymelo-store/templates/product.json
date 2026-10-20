@@ -12,6 +12,44 @@
     "main": {
       "type": "blocky-main-product",
       "blocks": {
+        "product_reviews_2_gTgAra": {
+          "type": "product_reviews_2",
+          "disabled": true,
+          "settings": {
+            "show_placeholder_image": true,
+            "heading_1": "Game changer for outings",
+            "reviewer_1": "<em>Anita R.</em>",
+            "text_1": "<p><br/>Based on over <strong>1000+</strong> Reviews<br/><br/></p>",
+            "heading_2": "Exactly what I needed",
+            "reviewer_2": "<em>Reviewer 2</em>",
+            "text_2": "<p>Show what your customers had to say about their experience.</p>",
+            "heading_3": "Highly recommend",
+            "reviewer_3": "<em>Reviewer 3</em>",
+            "text_3": "<p>Show what your customers had to say about their experience.</p>",
+            "show_verified": true,
+            "verified_text": "Verified Customer",
+            "verified_text_size": 14,
+            "display_stars": true,
+            "star_color": "#e0a458",
+            "star_size": 20,
+            "card_bg_color": "#ffffff",
+            "card_border_color": "#000000",
+            "card_border_radius": 20,
+            "accent_color": "#d98e5f",
+            "bar_color": "#d98e5f",
+            "heading_color": "#000000",
+            "heading_size": 22,
+            "text_color": "#000000",
+            "text_size": 16,
+            "reviewer_color": "#000000",
+            "reviewer_text_size": 16,
+            "avatar_size": 56,
+            "avatar_border_width": 2,
+            "hide_arrows": false,
+            "show_on_left": false,
+            "hide_on_mobile": false
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -261,9 +299,14 @@
             "row_padding": 14,
             "letter_spacing": 0
           }
+        },
+        "judge_me_reviews_preview_badge_Wz6wam": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
         }
       },
       "block_order": [
+        "product_reviews_2_gTgAra",
         "title",
         "price",
         "product_server_rating_cFNHhg",
@@ -280,7 +323,8 @@
         "collapsible_tab_pnakVM",
         "collapsible_tab_VBrdmj",
         "collapsible_tab_9jUktt",
-        "collapsible_tab_mXtiYD"
+        "collapsible_tab_mXtiYD",
+        "judge_me_reviews_preview_badge_Wz6wam"
       ],
       "custom_css": [
         ".alert-text + .product__text {margin: 1rem 0;}",
@@ -353,8 +397,8 @@
         "font_size": 18,
         "font_size_mobile": 14,
         "padding_y": 12,
-        "autoplay_enabled": false,
-        "autoplay_interval": 4,
+        "autoplay_enabled": true,
+        "autoplay_interval": 2,
         "show_arrows": false,
         "anim_duration": 300,
         "anim_easing": "ease-out"
@@ -399,6 +443,17 @@
     "blocky_product_feature_3_3LE4A8": {
       "type": "blocky-product-feature-3",
       "blocks": {
+        "feature_JHGFRN": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "side": "left",
+            "y_offset": 0,
+            "title_position": "below",
+            "title": "FEATURE",
+            "text": ""
+          }
+        },
         "feature_JpkBCA": {
           "type": "feature",
           "settings": {
@@ -441,6 +496,7 @@
         }
       },
       "block_order": [
+        "feature_JHGFRN",
         "feature_JpkBCA",
         "feature_44Kfqk",
         "feature_d7iDcb",
@@ -454,7 +510,7 @@
         "title_color": "#000000",
         "body_size": 13,
         "body_color": "#000000",
-        "device_image": "shopify://shop_images/https_3A_2F_2Fnuzzlenestbed.com_2Fcdn_2Fshop_2Ffiles_2Fe63f078c-1ef0-4e91-8922-e06d7ccfa2be_4d45e437-437c-408a-bb6a-43a1605df29c.jpg",
+        "device_image": "shopify://shop_images/cvcv.jpg",
         "device_image_alt": "",
         "device_link": "",
         "device_height": 400,
@@ -477,6 +533,18 @@
     "blocky_video_with_text_97hNbH": {
       "type": "blocky-video-with-text",
       "blocks": {
+        "review_stars_UEiWbj": {
+          "type": "review-stars",
+          "disabled": true,
+          "settings": {
+            "rating": 5,
+            "star_color": "#ffcc00",
+            "review_text_color": "#000000",
+            "empty_stars_style": "hidden",
+            "review_text": "",
+            "review_font_size": 16
+          }
+        },
         "title_nDYf4Y": {
           "type": "title",
           "settings": {
@@ -492,11 +560,24 @@
             "body_size": 16,
             "body_color": "#000000"
           }
+        },
+        "button_7pw4pz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Make It Yours →",
+            "button_link": "shopify://products/wearable-nursing-pillow",
+            "button_border_radius": "round",
+            "button_style": "regular",
+            "button_background_color": "#7A5168",
+            "button_text_color": "#FFFFFF"
+          }
         }
       },
       "block_order": [
+        "review_stars_UEiWbj",
         "title_nDYf4Y",
-        "body_zYyMTy"
+        "body_zYyMTy",
+        "button_7pw4pz"
       ],
       "name": "Blocky Video and Text",
       "settings": {
@@ -525,47 +606,25 @@
     "reviews_section_7Waym": {
       "type": "reviews-section",
       "blocks": {
-        "review_a1": {
+        "review_Wjf7Pg": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "author": "Emily R.",
-            "date": "",
+            "author": "Sarah M",
+            "date": "01/01/2026",
             "verified": true,
-            "body": "<p>We took a 12-hour flight with our 4-month-old, and this pillow saved my arms! Baby slept peacefully for hours, and I finally got to rest too.</p>",
-            "image": "shopify://shop_images/gghgh.jpg"
+            "body": "<p><br/>Absolutely love this nursing pillow! The quality is amazing, and changing to a plastic buckle makes it so much easier and more secure to use. Highly recommended for new moms!<br/><br/></p>",
+            "image": "shopify://shop_images/vghh.jpg"
           }
         },
-        "review_a2": {
+        "review_nyBfQP": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "author": "Laura K.",
+            "author": "Ashley Wilson",
             "date": "",
             "verified": true,
-            "body": "<p>The 100% cotton cover feels super gentle on my baby's sensitive skin, and the pearl cotton filling holds its shape well without flattening out. The zipper can be a bit tight to zip back on after washing, but overall it's a very solid and well-made pillow.</p>",
-            "image": "shopify://shop_images/photo_2026-10-12_17-37-59.jpg"
-          }
-        },
-        "review_a3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "author": "David K.",
-            "date": "",
-            "verified": true,
-            "body": "<p>I used to get severe shoulder pain holding our baby during red-eye flights. With this strap system, my baby slept peacefully the whole flight and I could finally close my eyes and rest.</p>"
-          }
-        },
-        "review_a4": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "author": "Jessica T.",
-            "date": "",
-            "verified": true,
-            "body": "<p>Super comfortable, breathable, and so easy to clean after our trip. My baby slept like a rock at 30,000 feet. Highly recommended for flying parents!</p>",
-            "image": "shopify://shop_images/Baby_nursing_pillow_on_suitcase_20261012173947.jpg"
+            "body": "<p>The cushioning feels soft and supportive. It's a lovely addition to my baby's feeding essentials</p>"
           }
         },
         "review_a5": {
@@ -577,6 +636,78 @@
             "verified": true,
             "body": "<p>Feeding sessions used to leave my shoulders and neck so sore, but this pillow lifts baby to the perfect latch height effortlessly. The 3-point support really takes the pressure off my arms. The strap takes a second to adjust, but it’s a total lifesaver for long nursing sessions!</p>",
             "image": "shopify://shop_images/https_3A_2F_2Fnuzzlenestbed.com_2Fcdn_2Fshop_2Ffiles_2FIMG_4412_246fcbed-7429-4b2b-9ee1-3d63afb91559.jpg"
+          }
+        },
+        "review_a4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Jessica T.",
+            "date": "",
+            "verified": true,
+            "body": "<p>Super comfortable, breathable, and so easy to clean after our trip. My baby slept like a rock at 30,000 feet. Highly recommended for flying parents!</p>",
+            "image": "shopify://shop_images/dsfgf_2157dcbd-ea05-463f-9f5c-764f2a257b82.jpg"
+          }
+        },
+        "review_a2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Laura K.",
+            "date": "",
+            "verified": true,
+            "body": "<p>The 100% cotton cover feels super gentle on my baby's sensitive skin, and the pearl cotton filling holds its shape well without flattening out. The zipper can be a bit tight to zip back on after washing, but overall it's a very solid and well-made pillow.</p>",
+            "image": "shopify://shop_images/photo_2026-10-12_17-37-59_5f7c1079-aa70-4b77-8c65-2deda147a75a.jpg"
+          }
+        },
+        "review_8XVNjh": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Sarah Thompson",
+            "date": "",
+            "verified": true,
+            "body": "<p>I love the adjustable strap. It makes the pillow easier to position during feeding</p>"
+          }
+        },
+        "review_MhztXn": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Jessica Miller",
+            "date": "",
+            "verified": true,
+            "body": "<p>The whale pattern is absolutely adorable! The colors are soft and look beautiful in person.</p>"
+          }
+        },
+        "review_Htfcha": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Emily Carter",
+            "date": "01/01/2026",
+            "verified": true,
+            "body": "<p><br/>This pillow provides extra support while I'm feeding my baby. I love how comfortable it feels!</p>"
+          }
+        },
+        "review_a1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "Emily R.",
+            "date": "",
+            "verified": true,
+            "body": "<p>We took a 12-hour flight with our 4-month-old, and this pillow saved my arms! Baby slept peacefully for hours, and I finally got to rest too.</p>"
+          }
+        },
+        "review_a3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "author": "David K.",
+            "date": "",
+            "verified": true,
+            "body": "<p>I used to get severe shoulder pain holding our baby during red-eye flights. With this strap system, my baby slept peacefully the whole flight and I could finally close my eyes and rest.</p>"
           }
         },
         "review_wch9ap": {
@@ -607,16 +738,21 @@
             "date": "",
             "verified": true,
             "body": "<p>This pillow has been a daily lifesaver for bottle feeding at home. The 3-point support takes all the weight off my arms while sitting on the couch. The cotton cover is super soft, though zipping it back on after washing requires a little patience. Overall, a very solid purchase!</p>",
-            "image": "shopify://shop_images/https_3A_2F_2Fnuzzlenestbed.com_2Fcdn_2Fshop_2Ffiles_2Fhf_20261007_223045_2e6fe8e5-ecb4-4255-908e-32d22eb3f60b.jpg"
+            "image": "shopify://shop_images/Create_realistic_product_review___20261020081526.jpg"
           }
         }
       },
       "block_order": [
-        "review_a1",
-        "review_a2",
-        "review_a3",
-        "review_a4",
+        "review_Wjf7Pg",
+        "review_nyBfQP",
         "review_a5",
+        "review_a4",
+        "review_a2",
+        "review_8XVNjh",
+        "review_MhztXn",
+        "review_Htfcha",
+        "review_a1",
+        "review_a3",
         "review_wch9ap",
         "review_cUryjU",
         "review_ra6AQV"
@@ -788,6 +924,12 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "179242884483554a12": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -801,6 +943,7 @@
     "blocky_faq_cFeeU6",
     "newsletter_HjqpNj",
     "blocky_section_divider_7AQYYY",
-    "179217406534353e97"
+    "179217406534353e97",
+    "179242884483554a12"
   ]
 }

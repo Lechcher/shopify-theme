@@ -41,6 +41,10 @@
           "type": "product-server-rating",
           "settings": {}
         },
+        "judge_me_reviews_preview_badge_fEpbmw": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "delivery_jCU86n": {
           "type": "delivery",
           "settings": {
@@ -157,10 +161,6 @@
             "alignment": "center"
           }
         },
-        "upsell_com_ex_reconvert_product_recommendations_FDAANj": {
-          "type": "shopify://apps/upsell-com-ex-reconvert/blocks/product-recommendations/72c64c30-2f7c-4a71-ae4c-efd1d5d1d2e2",
-          "settings": {}
-        },
         "guarantee_badge_AaBfap": {
           "type": "guarantee_badge",
           "settings": {
@@ -271,6 +271,7 @@
         "title",
         "price",
         "product_server_rating_cFNHhg",
+        "judge_me_reviews_preview_badge_fEpbmw",
         "delivery_jCU86n",
         "text_4UAXfW",
         "description",
@@ -279,7 +280,6 @@
         "custom_liquid_3JEXmK",
         "buy_buttons",
         "payment_badges_edFzPC",
-        "upsell_com_ex_reconvert_product_recommendations_FDAANj",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
         "collapsible_tab_pnakVM",

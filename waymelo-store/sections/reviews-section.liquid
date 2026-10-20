@@ -25,12 +25,6 @@
     if block.settings.image != blank
       assign image_count = image_count | plus: 1
     endif
-    if block.settings.image_2 != blank
-      assign image_count = image_count | plus: 1
-    endif
-    if block.settings.image_3 != blank
-      assign image_count = image_count | plus: 1
-    endif
     if r == 5
       assign c5 = c5 | plus: 1
     elsif r == 4
@@ -370,14 +364,8 @@
   #reviews-section-{{ section.id }} .reviews-section__review-body > :last-child {
     margin-bottom: 0;
   }
-  #reviews-section-{{ section.id }} .reviews-section__review-images {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-  }
   #reviews-section-{{ section.id }} .reviews-section__review-image {
-    margin-top: 0;
+    margin-top: 0.75rem;
   }
   #reviews-section-{{ section.id }} .reviews-section__review-image img {
     display: block;
@@ -528,217 +516,9 @@
       position: static;
     }
   }
-  #reviews-section-{{ section.id }} .reviews-section__sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__write-btn {
-    font: inherit;
-    font-size: 0.9rem;
-    line-height: 1;
-    padding: 0.6rem 1.1rem;
-    border-radius: 999px;
-    border: 1px solid var(--rs-pill-active-border);
-    background: transparent;
-    color: var(--rs-text);
-    cursor: pointer;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__write-btn:hover {
-    background: rgba(0, 0, 0, 0.04);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__write-btn:focus-visible {
-    outline: 2px solid var(--rs-pill-active-border);
-    outline-offset: 2px;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form {
-    margin: 0 0 1.5rem;
-    padding: 1.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.02);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form[hidden] {
-    display: none;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-heading {
-    margin: 0 0 1rem;
-    font-size: 1.1rem;
-    color: var(--rs-heading);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-row {
-    display: block;
-    margin: 0 0 1rem;
-    border: 0;
-    padding: 0;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-label {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__required {
-    color: #c0392b;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-input {
-    font: inherit;
-    width: 100%;
-    padding: 0.6rem 0.75rem;
-    border: 1px solid var(--rs-pill-border);
-    border-radius: 8px;
-    background: var(--rs-bg);
-    color: var(--rs-text);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-input:focus-visible {
-    outline: 2px solid var(--rs-pill-active-border);
-    outline-offset: 1px;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-input[aria-invalid="true"] {
-    border-color: #c0392b;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-textarea {
-    resize: vertical;
-    min-height: 5rem;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-file {
-    padding: 0.5rem;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-error {
-    display: block;
-    margin-top: 0.35rem;
-    font-size: 0.85rem;
-    color: #c0392b;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__rating-input {
-    display: inline-flex;
-    flex-direction: row-reverse;
-    gap: 2px;
-    justify-content: flex-end;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__rating-radio {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__rating-star {
-    color: rgba(0, 0, 0, 0.22);
-    cursor: pointer;
-    line-height: 0;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__rating-star svg {
-    display: block;
-    width: var(--rs-star-size);
-    height: var(--rs-star-size);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__rating-radio:checked ~ .reviews-section__rating-star {
-    color: var(--rs-star);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__rating-radio:focus-visible ~ .reviews-section__rating-star {
-    outline: 2px solid var(--rs-pill-active-border);
-    outline-offset: 2px;
-    border-radius: 4px;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__preview-item {
-    position: relative;
-    width: 72px;
-    height: 72px;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__preview-item img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.04);
-  }
-  #reviews-section-{{ section.id }} .reviews-section__preview-remove {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    border-radius: 50%;
-    border: 1px solid var(--rs-pill-border);
-    background: var(--rs-bg);
-    color: var(--rs-text);
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__preview-remove:focus-visible {
-    outline: 2px solid var(--rs-pill-active-border);
-    outline-offset: 1px;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-status:empty {
-    display: none;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-status {
-    margin: 0 0 1rem;
-    font-size: 0.9rem;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-status[data-rs-status-kind="error"] {
-    color: #c0392b;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-status[data-rs-status-kind="success"] {
-    color: #1a7f37;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-submit {
-    font: inherit;
-    padding: 0.65rem 1.25rem;
-    border-radius: 999px;
-    border: 1px solid var(--rs-pill-active-border);
-    background: var(--rs-pill-active-border);
-    color: var(--rs-bg);
-    cursor: pointer;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-submit[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-cancel {
-    font: inherit;
-    padding: 0.65rem 1.25rem;
-    border-radius: 999px;
-    border: 1px solid var(--rs-pill-border);
-    background: transparent;
-    color: var(--rs-text);
-    cursor: pointer;
-  }
-  #reviews-section-{{ section.id }} .reviews-section__form-submit:focus-visible,
-  #reviews-section-{{ section.id }} .reviews-section__form-cancel:focus-visible {
-    outline: 2px solid var(--rs-pill-active-border);
-    outline-offset: 2px;
-  }
 {% endstyle %}
 
-<div id="reviews-section-{{ section.id }}" class="reviews-section" data-rs data-rs-total="{{ total }}" data-rs-avg="{{ avg_display }}" data-rs-avg-pct="{{ avg_pct }}" data-rs-decimals="{{ section.settings.rating_decimals }}" data-rs-page="1" {{ section.shopify_attributes }}>
+<div id="reviews-section-{{ section.id }}" class="reviews-section" data-rs data-rs-total="{{ total }}" data-rs-avg="{{ avg_display }}" data-rs-avg-pct="{{ avg_pct }}" data-rs-page="1" {{ section.shopify_attributes }}>
   <span id="trustshop-review" class="reviews-section__anchor" aria-hidden="true"></span>
   <div class="reviews-section__inner">
     <div class="reviews-section__layout{% unless section.settings.show_summary %} reviews-section__layout--no-summary{% endunless %}">
@@ -760,34 +540,34 @@
                 {{ rs_star_full }}{{ rs_star_full }}{{ rs_star_full }}{{ rs_star_full }}{{ rs_star_full }}
               </span>
             </div>
-            <span class="reviews-section__average-total"><span data-rs-total-count>{{ total }}</span> {{ section.settings.total_label }}</span>
+            <span class="reviews-section__average-total">{{ total }} {{ section.settings.total_label }}</span>
           </div>
 
           <div class="reviews-section__distribution">
             <div class="reviews-section__dist-row">
               <span>5 {{ section.settings.star_word }}</span>
-              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" data-rs-dist="5" style="width: {{ p5 }}%;"></span></span>
-              <span class="reviews-section__dist-pct" data-rs-dist-pct="5">{{ p5 }}%</span>
+              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" style="width: {{ p5 }}%;"></span></span>
+              <span class="reviews-section__dist-pct">{{ p5 }}%</span>
             </div>
             <div class="reviews-section__dist-row">
               <span>4 {{ section.settings.star_word }}</span>
-              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" data-rs-dist="4" style="width: {{ p4 }}%;"></span></span>
-              <span class="reviews-section__dist-pct" data-rs-dist-pct="4">{{ p4 }}%</span>
+              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" style="width: {{ p4 }}%;"></span></span>
+              <span class="reviews-section__dist-pct">{{ p4 }}%</span>
             </div>
             <div class="reviews-section__dist-row">
               <span>3 {{ section.settings.star_word }}</span>
-              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" data-rs-dist="3" style="width: {{ p3 }}%;"></span></span>
-              <span class="reviews-section__dist-pct" data-rs-dist-pct="3">{{ p3 }}%</span>
+              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" style="width: {{ p3 }}%;"></span></span>
+              <span class="reviews-section__dist-pct">{{ p3 }}%</span>
             </div>
             <div class="reviews-section__dist-row">
               <span>2 {{ section.settings.star_word }}</span>
-              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" data-rs-dist="2" style="width: {{ p2 }}%;"></span></span>
-              <span class="reviews-section__dist-pct" data-rs-dist-pct="2">{{ p2 }}%</span>
+              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" style="width: {{ p2 }}%;"></span></span>
+              <span class="reviews-section__dist-pct">{{ p2 }}%</span>
             </div>
             <div class="reviews-section__dist-row">
               <span>1 {{ section.settings.star_word }}</span>
-              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" data-rs-dist="1" style="width: {{ p1 }}%;"></span></span>
-              <span class="reviews-section__dist-pct" data-rs-dist-pct="1">{{ p1 }}%</span>
+              <span class="reviews-section__dist-bar"><span class="reviews-section__dist-fill" style="width: {{ p1 }}%;"></span></span>
+              <span class="reviews-section__dist-pct">{{ p1 }}%</span>
             </div>
           </div>
         </div>
@@ -819,32 +599,28 @@
             </div>
             <ul class="reviews-section__gallery" data-rs-gallery>
               {%- for block in section.blocks -%}
-                {%- assign gallery_image_ids = 'image,image_2,image_3' | split: ',' -%}
-                {%- for image_id in gallery_image_ids -%}
-                  {%- assign gallery_image = block.settings[image_id] -%}
-                  {%- if gallery_image != blank -%}
-                    {%- assign photo_alt = gallery_image.alt | default: block.settings.author -%}
-                    <li class="reviews-section__gallery-item">
-                      <button
-                        type="button"
-                        class="reviews-section__photo"
-                        data-rs-photo-open
-                        data-rs-full="{{ gallery_image | image_url: width: 1600 }}"
-                        data-rs-caption="{{ block.settings.author | escape }}"
-                        data-rs-alt="{{ photo_alt | escape }}"
-                        aria-label="{{ section.settings.images_heading | strip_html | escape }}: {{ photo_alt | escape }}"
+                {%- if block.settings.image != blank -%}
+                  {%- assign photo_alt = block.settings.image.alt | default: block.settings.author -%}
+                  <li class="reviews-section__gallery-item">
+                    <button
+                      type="button"
+                      class="reviews-section__photo"
+                      data-rs-photo-open
+                      data-rs-full="{{ block.settings.image | image_url: width: 1600 }}"
+                      data-rs-caption="{{ block.settings.author | escape }}"
+                      data-rs-alt="{{ photo_alt | escape }}"
+                      aria-label="{{ section.settings.images_heading | strip_html | escape }}: {{ photo_alt | escape }}"
+                    >
+                      <img
+                        src="{{ block.settings.image | image_url: width: 400 }}"
+                        alt="{{ block.settings.author | escape }}"
+                        width="{{ section.settings.gallery_item_width }}"
+                        height="{{ section.settings.gallery_item_width }}"
+                        loading="lazy"
                       >
-                        <img
-                          src="{{ gallery_image | image_url: width: 400 }}"
-                          alt="{{ block.settings.author | escape }}"
-                          width="{{ section.settings.gallery_item_width }}"
-                          height="{{ section.settings.gallery_item_width }}"
-                          loading="lazy"
-                        >
-                      </button>
-                    </li>
-                  {%- endif -%}
-                {%- endfor -%}
+                    </button>
+                  </li>
+                {%- endif -%}
               {%- endfor -%}
             </ul>
           </div>
@@ -852,151 +628,28 @@
 
         <div class="reviews-section__list-head">
           <h2 class="reviews-section__heading">{{ section.settings.list_heading }}</h2>
-          <button
-            type="button"
-            class="reviews-section__write-btn"
-            data-rs-form-open
-            aria-expanded="false"
-            aria-controls="reviews-section-form-{{ section.id }}"
-          >
-            {{ section.settings.write_review_label }}
-          </button>
         </div>
 
         <div class="reviews-section__pills" role="group" aria-label="{{ section.settings.list_heading | strip_html | escape }}">
           <button type="button" class="reviews-section__pill is-active" data-rs-filter="all" aria-pressed="true">
-            {{ section.settings.all_reviews_label }} (<span data-rs-count="all">{{ total }}</span>)
+            {{ section.settings.all_reviews_label }} ({{ total }})
           </button>
           <button type="button" class="reviews-section__pill" data-rs-filter="5" aria-pressed="false">
-            5 {{ section.settings.star_word }} (<span data-rs-count="5">{{ c5 }}</span>)
+            5 {{ section.settings.star_word }} ({{ c5 }})
           </button>
           <button type="button" class="reviews-section__pill" data-rs-filter="4" aria-pressed="false">
-            4 {{ section.settings.star_word }} (<span data-rs-count="4">{{ c4 }}</span>)
+            4 {{ section.settings.star_word }} ({{ c4 }})
           </button>
           <button type="button" class="reviews-section__pill" data-rs-filter="3" aria-pressed="false">
-            3 {{ section.settings.star_word }} (<span data-rs-count="3">{{ c3 }}</span>)
+            3 {{ section.settings.star_word }} ({{ c3 }})
           </button>
           <button type="button" class="reviews-section__pill" data-rs-filter="2" aria-pressed="false">
-            2 {{ section.settings.star_word }} (<span data-rs-count="2">{{ c2 }}</span>)
+            2 {{ section.settings.star_word }} ({{ c2 }})
           </button>
           <button type="button" class="reviews-section__pill" data-rs-filter="1" aria-pressed="false">
-            1 {{ section.settings.star_word }} (<span data-rs-count="1">{{ c1 }}</span>)
+            1 {{ section.settings.star_word }} ({{ c1 }})
           </button>
         </div>
-
-        <form
-          class="reviews-section__form"
-          id="reviews-section-form-{{ section.id }}"
-          data-rs-form
-          data-rs-endpoint="{{ section.settings.submit_endpoint | escape }}"
-          data-rs-field-rating="{{ section.settings.field_rating | escape }}"
-          data-rs-field-name="{{ section.settings.field_name | escape }}"
-          data-rs-field-email="{{ section.settings.field_email | escape }}"
-          data-rs-field-body="{{ section.settings.field_body | escape }}"
-          data-rs-field-images="{{ section.settings.field_images | escape }}"
-          novalidate
-          hidden
-        >
-          <h3 class="reviews-section__form-heading">{{ section.settings.form_heading }}</h3>
-
-          <fieldset class="reviews-section__form-row reviews-section__form-rating" data-rs-control="rating">
-            <legend class="reviews-section__form-label">
-              Rating <span class="reviews-section__required" aria-hidden="true">*</span>
-            </legend>
-            <div class="reviews-section__rating-input">
-              {%- for star in (1..5) reversed -%}
-                <input
-                  type="radio"
-                  class="reviews-section__rating-radio"
-                  id="reviews-section-rating-{{ section.id }}-{{ star }}"
-                  name="rating"
-                  value="{{ star }}"
-                  aria-describedby="reviews-section-error-{{ section.id }}-rating"
-                  required
-                >
-                <label class="reviews-section__rating-star" for="reviews-section-rating-{{ section.id }}-{{ star }}">
-                  {{ rs_star_full }}
-                  <span class="reviews-section__sr-only">{{ star }} {{ section.settings.star_word }}</span>
-                </label>
-              {%- endfor -%}
-            </div>
-            <span class="reviews-section__form-error" id="reviews-section-error-{{ section.id }}-rating" data-rs-error="rating"></span>
-          </fieldset>
-
-          <div class="reviews-section__form-row">
-            <label class="reviews-section__form-label" for="reviews-section-name-{{ section.id }}">
-              Name <span class="reviews-section__required" aria-hidden="true">*</span>
-            </label>
-            <input
-              type="text"
-              class="reviews-section__form-input"
-              id="reviews-section-name-{{ section.id }}"
-              name="author"
-              autocomplete="name"
-              data-rs-control="name"
-              aria-describedby="reviews-section-error-{{ section.id }}-name"
-              required
-            >
-            <span class="reviews-section__form-error" id="reviews-section-error-{{ section.id }}-name" data-rs-error="name"></span>
-          </div>
-
-          <div class="reviews-section__form-row">
-            <label class="reviews-section__form-label" for="reviews-section-email-{{ section.id }}">
-              Email (optional)
-            </label>
-            <input
-              type="email"
-              class="reviews-section__form-input"
-              id="reviews-section-email-{{ section.id }}"
-              name="email"
-              autocomplete="email"
-              data-rs-control="email"
-              aria-describedby="reviews-section-error-{{ section.id }}-email"
-            >
-            <span class="reviews-section__form-error" id="reviews-section-error-{{ section.id }}-email" data-rs-error="email"></span>
-          </div>
-
-          <div class="reviews-section__form-row">
-            <label class="reviews-section__form-label" for="reviews-section-body-{{ section.id }}">
-              Your review <span class="reviews-section__required" aria-hidden="true">*</span>
-            </label>
-            <textarea
-              class="reviews-section__form-input reviews-section__form-textarea"
-              id="reviews-section-body-{{ section.id }}"
-              name="body"
-              rows="4"
-              data-rs-control="body"
-              aria-describedby="reviews-section-error-{{ section.id }}-body"
-              required
-            ></textarea>
-            <span class="reviews-section__form-error" id="reviews-section-error-{{ section.id }}-body" data-rs-error="body"></span>
-          </div>
-
-          <div class="reviews-section__form-row">
-            <label class="reviews-section__form-label" for="reviews-section-images-{{ section.id }}">
-              Add photos (up to 3)
-            </label>
-            <input
-              type="file"
-              class="reviews-section__form-input reviews-section__form-file"
-              id="reviews-section-images-{{ section.id }}"
-              name="images"
-              accept="image/*"
-              multiple
-              data-rs-images
-              aria-describedby="reviews-section-error-{{ section.id }}-images"
-            >
-            <div class="reviews-section__preview" data-rs-preview></div>
-            <span class="reviews-section__form-error" id="reviews-section-error-{{ section.id }}-images" data-rs-error="images"></span>
-          </div>
-
-          <p class="reviews-section__form-status" data-rs-status role="status" aria-live="polite"></p>
-
-          <div class="reviews-section__form-actions">
-            <button type="submit" class="reviews-section__form-submit" data-rs-submit>Submit review</button>
-            <button type="button" class="reviews-section__form-cancel" data-rs-form-cancel>Cancel</button>
-          </div>
-        </form>
 
         <div class="reviews-section__list" data-rs-list>
           {%- for block in section.blocks -%}
@@ -1028,36 +681,27 @@
               {%- if block.settings.body != blank -%}
                 <div class="reviews-section__review-body">{{ block.settings.body }}</div>
               {%- endif -%}
-              {%- assign review_image_ids = 'image,image_2,image_3' | split: ',' -%}
-              {%- capture review_photos -%}
-                {%- for image_id in review_image_ids -%}
-                  {%- assign review_image = block.settings[image_id] -%}
-                  {%- if review_image != blank -%}
-                    {%- assign photo_alt = review_image.alt | default: block.settings.author -%}
-                    <div class="reviews-section__review-image">
-                      <button
-                        type="button"
-                        class="reviews-section__photo"
-                        data-rs-photo-open
-                        data-rs-full="{{ review_image | image_url: width: 1600 }}"
-                        data-rs-caption="{{ block.settings.author | escape }}"
-                        data-rs-alt="{{ photo_alt | escape }}"
-                        aria-label="{{ section.settings.list_heading | strip_html | escape }}: {{ photo_alt | escape }}"
-                      >
-                        <img
-                          src="{{ review_image | image_url: width: 300 }}"
-                          alt="{{ block.settings.author | escape }}"
-                          width="{{ section.settings.review_image_width }}"
-                          height="{{ section.settings.review_image_width }}"
-                          loading="lazy"
-                        >
-                      </button>
-                    </div>
-                  {%- endif -%}
-                {%- endfor -%}
-              {%- endcapture -%}
-              {%- if review_photos != blank -%}
-                <div class="reviews-section__review-images">{{ review_photos }}</div>
+              {%- if block.settings.image != blank -%}
+                {%- assign photo_alt = block.settings.image.alt | default: block.settings.author -%}
+                <div class="reviews-section__review-image">
+                  <button
+                    type="button"
+                    class="reviews-section__photo"
+                    data-rs-photo-open
+                    data-rs-full="{{ block.settings.image | image_url: width: 1600 }}"
+                    data-rs-caption="{{ block.settings.author | escape }}"
+                    data-rs-alt="{{ photo_alt | escape }}"
+                    aria-label="{{ section.settings.list_heading | strip_html | escape }}: {{ photo_alt | escape }}"
+                  >
+                    <img
+                      src="{{ block.settings.image | image_url: width: 300 }}"
+                      alt="{{ block.settings.author | escape }}"
+                      width="{{ section.settings.review_image_width }}"
+                      height="{{ section.settings.review_image_width }}"
+                      loading="lazy"
+                    >
+                  </button>
+                </div>
               {%- endif -%}
             </article>
           {%- endfor -%}
@@ -1094,50 +738,6 @@
 
     </div>
   </div>
-
-  <template data-rs-new-review>
-    <article class="reviews-section__review" data-rating="5">
-      <div
-        class="reviews-section__stars reviews-section__review-stars"
-        role="img"
-        aria-label=""
-        style="--rs-rating-pct: 100%;"
-      >
-        <span class="reviews-section__stars-underlay" aria-hidden="true">
-          {{ rs_star_empty }}{{ rs_star_empty }}{{ rs_star_empty }}{{ rs_star_empty }}{{ rs_star_empty }}
-        </span>
-        <span class="reviews-section__stars-overlay" aria-hidden="true">
-          {{ rs_star_full }}{{ rs_star_full }}{{ rs_star_full }}{{ rs_star_full }}{{ rs_star_full }}
-        </span>
-      </div>
-      <div class="reviews-section__review-meta">
-        <span class="reviews-section__review-author" data-rs-new-author></span>
-      </div>
-      <div class="reviews-section__review-body" data-rs-new-body></div>
-      <div class="reviews-section__review-images" data-rs-new-images></div>
-    </article>
-  </template>
-
-  <template data-rs-new-photo>
-    <div class="reviews-section__review-image">
-      <button
-        type="button"
-        class="reviews-section__photo"
-        data-rs-photo-open
-        data-rs-full=""
-        data-rs-caption=""
-        data-rs-alt=""
-      >
-        <img
-          src=""
-          alt=""
-          width="{{ section.settings.review_image_width }}"
-          height="{{ section.settings.review_image_width }}"
-          loading="lazy"
-        >
-      </button>
-    </div>
-  </template>
 
   <div
     class="reviews-section__viewer"
@@ -1230,57 +830,6 @@
       "label": "Total count label",
       "default": "reviews",
       "info": "Shown after the total count in the rating summary, for example \"69 reviews\"."
-    },
-
-    { "type": "header", "content": "Review submission" },
-    {
-      "type": "text",
-      "id": "write_review_label",
-      "label": "\"Write a review\" button label",
-      "default": "Write a review"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "form_heading",
-      "label": "Submission form heading",
-      "default": "Write a review"
-    },
-    {
-      "type": "url",
-      "id": "submit_endpoint",
-      "label": "Submission endpoint URL",
-      "info": "Reviews are POSTed here as multipart/form-data. Leave blank to disable submissions. Any review app or app proxy that accepts the field names below can be used."
-    },
-    {
-      "type": "text",
-      "id": "field_rating",
-      "label": "Rating field name",
-      "default": "rating"
-    },
-    {
-      "type": "text",
-      "id": "field_name",
-      "label": "Name field name",
-      "default": "name"
-    },
-    {
-      "type": "text",
-      "id": "field_email",
-      "label": "Email field name",
-      "default": "email"
-    },
-    {
-      "type": "text",
-      "id": "field_body",
-      "label": "Review text field name",
-      "default": "body"
-    },
-    {
-      "type": "text",
-      "id": "field_images",
-      "label": "Images field name",
-      "default": "images",
-      "info": "Each attached image is sent under this field name."
     },
 
     { "type": "header", "content": "Rating summary" },
@@ -1466,18 +1015,7 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Review photo",
-          "info": "Up to three photos can be shown per review."
-        },
-        {
-          "type": "image_picker",
-          "id": "image_2",
-          "label": "Review photo 2"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_3",
-          "label": "Review photo 3"
+          "label": "Review photo"
         }
       ]
     }
