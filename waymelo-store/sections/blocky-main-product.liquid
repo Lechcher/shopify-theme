@@ -1655,6 +1655,103 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'buy_more_save' -%}
+                {%- liquid
+                  assign bms_percent = block.settings.save_percent | default: 20
+                  assign bms_max = block.settings.max_products | default: 5
+                  assign bms_claim_text = block.settings.claim_button_text | default: 'Claim Offer'
+                  assign bms_preview_text = block.settings.preview_button_text | default: 'Preview'
+                  assign bms_margin_top = block.settings.margin_top | default: 1.5
+                  assign bms_margin_bottom = block.settings.margin_bottom | default: 1.5
+                -%}
+                <blocky-buy-more-save
+                  class="blocky-bms"
+                  id="blocky-bms-{{ block.id }}"
+                  data-save-percent="{{ bms_percent }}"
+                  data-max-products="{{ bms_max }}"
+                  data-product-id="{{ product.id }}"
+                  data-show-save-tag="{{ block.settings.show_save_tag }}"
+                  data-save-tag-text="Save {{ bms_percent }}%"
+                  data-claim-text="{{ bms_claim_text | escape }}"
+                  data-preview-text="{{ bms_preview_text | escape }}"
+                  data-overlay-opacity="{{ block.settings.popup_overlay_color_opacity | default: 60 }}"
+                  style="margin-top: {{ bms_margin_top }}rem; margin-bottom: {{ bms_margin_bottom }}rem;
+                    --bms-block-gap: {{ block.settings.block_gap | default: 14 }}px;
+                    --bms-row-gap: {{ block.settings.row_gap | default: 14 }}px;
+                    --bms-row-bg: {{ block.settings.row_bg_color | default: '#ffffff' }};
+                    --bms-row-border: {{ block.settings.row_border_color | default: '#e4e4e4' }};
+                    --bms-row-border-width: {{ block.settings.row_border_width | default: 1 }}px;
+                    --bms-row-radius: {{ block.settings.row_radius | default: 12 }}px;
+                    --bms-row-padding: {{ block.settings.row_padding | default: 14 }}px;
+                    --bms-heading-color: {{ block.settings.heading_color | default: '#111111' }};
+                    --bms-heading-size: {{ block.settings.heading_size | default: 24 }}px;
+                    --bms-subtitle-color: {{ block.settings.subtitle_color | default: '#666666' }};
+                    --bms-subtitle-size: {{ block.settings.subtitle_size | default: 14 }}px;
+                    --bms-thumb-size: {{ block.settings.thumbnail_size | default: 80 }}px;
+                    --bms-thumb-radius: {{ block.settings.thumbnail_radius | default: 8 }}px;
+                    --bms-select-color: {{ block.settings.select_color | default: '#000000' }};
+                    --bms-select-bg: {{ block.settings.select_bg_color | default: '#ffffff' }};
+                    --bms-select-border: {{ block.settings.select_border_color | default: '#000000' }};
+                    --bms-select-size: {{ block.settings.select_size | default: 20 }}px;
+                    --bms-variant-text: {{ block.settings.variant_text_color | default: '#111111' }};
+                    --bms-variant-text-size: {{ block.settings.variant_text_size | default: 14 }}px;
+                    --bms-variant-bg: {{ block.settings.variant_bg_color | default: '#ffffff' }};
+                    --bms-variant-border: {{ block.settings.variant_border_color | default: '#d8d8d8' }};
+                    --bms-variant-radius: {{ block.settings.variant_radius | default: 6 }}px;
+                    --bms-price-color: {{ block.settings.price_color | default: '#111111' }};
+                    --bms-price-size: {{ block.settings.price_size | default: 18 }}px;
+                    --bms-compare-color: {{ block.settings.compare_color | default: '#999999' }};
+                    --bms-compare-size: {{ block.settings.compare_size | default: 14 }}px;
+                    --bms-tag-bg: {{ block.settings.tag_bg_color | default: '#d98e5f' }};
+                    --bms-tag-text: {{ block.settings.tag_text_color | default: '#ffffff' }};
+                    --bms-tag-text-size: {{ block.settings.tag_text_size | default: 12 }}px;
+                    --bms-claim-bg: {{ block.settings.claim_bg_color | default: '#000000' }};
+                    --bms-claim-text: {{ block.settings.claim_text_color | default: '#ffffff' }};
+                    --bms-claim-height: {{ block.settings.claim_height | default: 52 }}px;
+                    --bms-claim-text-size: {{ block.settings.claim_text_size | default: 16 }}px;
+                    --bms-claim-radius: {{ block.settings.claim_radius | default: 8 }}px;
+                    --bms-popup-bg: {{ block.settings.popup_bg_color | default: '#ffffff' }};
+                    --bms-popup-text: {{ block.settings.popup_text_color | default: '#111111' }};
+                    --bms-popup-text-size: {{ block.settings.popup_text_size | default: 14 }}px;
+                    --bms-popup-heading-size: {{ block.settings.popup_heading_size | default: 24 }}px;
+                    --bms-popup-radius: {{ block.settings.popup_radius | default: 16 }}px;
+                    --bms-popup-max-width: {{ block.settings.popup_max_width | default: 900 }}px;
+                    --bms-overlay-opacity: 0.{{ block.settings.popup_overlay_color_opacity | default: 60 }};"
+                  hidden
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="blocky-bms__head">
+                    {%- if block.settings.heading != blank -%}
+                      <h2 class="blocky-bms__heading">{{ block.settings.heading }}</h2>
+                    {%- endif -%}
+                    {%- if block.settings.subtitle != blank -%}
+                      <p class="blocky-bms__subtitle">{{ block.settings.subtitle }}</p>
+                    {%- endif -%}
+                  </div>
+                  <ul class="blocky-bms__list" id="blocky-bms-{{ block.id }}-list" data-bms-list></ul>
+                  <div class="blocky-bms__claim">
+                    <button type="button" class="blocky-bms__claim-button" data-bms-claim disabled>
+                      <span data-bms-claim-text>{{ bms_claim_text }}</span>
+                    </button>
+                    <p class="blocky-bms__claim-status" data-bms-claim-status role="status" aria-live="polite" hidden></p>
+                  </div>
+                  <div
+                    class="blocky-bms__popup"
+                    data-bms-popup
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="blocky-bms-{{ block.id }}-popup-title"
+                    hidden
+                  >
+                    <div class="blocky-bms__popup-overlay" data-bms-popup-overlay></div>
+                    <div class="blocky-bms__popup-panel">
+                      <button type="button" class="blocky-bms__popup-close" data-bms-popup-close aria-label="Close preview">
+                        <svg viewBox="0 0 18 17" fill="none" aria-hidden="true" focusable="false"><path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.433 7.433 7.433a.5.5 0 00.707-.707L9.712 8.545l7.433-7.433A.5.5 0 0016.438.405L9.005 7.838 1.572.405A.5.5 0 00.865 1.112l7.433 7.433-7.433 7.433z" fill="currentColor"></path></svg>
+                      </button>
+                      <div class="blocky-bms__popup-body" data-bms-popup-body></div>
+                    </div>
+                  </div>
+                </blocky-buy-more-save>
             {%- endcase -%}
           {%- endfor -%}
         </div>
@@ -2738,6 +2835,671 @@
       }
     });
   }
+  if (!customElements.get('blocky-buy-more-save')) {
+    customElements.define('blocky-buy-more-save', class extends HTMLElement {
+      connectedCallback() {
+        if (this.initialized) return;
+        this.initialized = true;
+
+        this.savePercent = Math.max(0, Math.min(100, Number(this.dataset.savePercent) || 0));
+        this.maxProducts = Math.max(1, Math.min(5, Number(this.dataset.maxProducts) || 5));
+        this.productId = this.dataset.productId || '';
+        this.showSaveTag = this.dataset.showSaveTag === 'true';
+        this.saveTagText = this.dataset.saveTagText || '';
+        this.claimText = this.dataset.claimText || 'Claim Offer';
+        this.previewText = this.dataset.previewText || 'Preview';
+
+        this.list = this.querySelector('[data-bms-list]');
+        this.claimButton = this.querySelector('[data-bms-claim]');
+        this.claimStatus = this.querySelector('[data-bms-claim-status]');
+        this.popup = this.querySelector('[data-bms-popup]');
+        this.popupBody = this.querySelector('[data-bms-popup-body]');
+        this.activePopup = null;
+        this.lastFocus = null;
+        this.products = [];
+        this.selectedVariantIds = [];
+
+        if (!this.productId || !this.list) {
+          this.hidden = true;
+          return;
+        }
+
+        this.addEventListener('click', (event) => this.onClick(event));
+        this.addEventListener('change', (event) => this.onChange(event));
+        this.addEventListener('keydown', (event) => this.onKeyDown(event));
+
+        this.fetchRecommendations();
+      }
+
+      formatMoney(cents) {
+        const root = this.closest('blocky-featured-product');
+        if (root && typeof root.formatMoney === 'function') return root.formatMoney(cents);
+
+        if (window.Shopify && typeof window.Shopify.formatMoney === 'function') {
+          return window.Shopify.formatMoney(cents, window.Shopify.money_format || '${{amount}}');
+        }
+
+        return '$' + (Number(cents) / 100).toFixed(2);
+      }
+
+      escapeAttr(value) {
+        return String(value == null ? '' : value)
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      escapeHtml(value) {
+        return String(value == null ? '' : value)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      sizeImage(url, width) {
+        if (!url) return '';
+        if (typeof url !== 'string') url = (url && url.src) || '';
+        if (!url) return '';
+        return url + (url.indexOf('?') === -1 ? '?' : '&') + 'width=' + width;
+      }
+
+      discountedPrice(basePrice, percent) {
+        const base = Number(basePrice) || 0;
+        const rate = Math.max(0, Math.min(100, Number(percent) || 0));
+        if (rate <= 0) return base;
+        return Math.round((base * (100 - rate)) / 100);
+      }
+
+      imageSrc(image) {
+        if (!image) return '';
+        return typeof image === 'string' ? image : (image.src || '');
+      }
+
+      productImages(product) {
+        const raw = Array.isArray(product.images) ? product.images : [];
+        const images = raw.map((image) => this.imageSrc(image)).filter((src) => src);
+        const featured = this.imageSrc(product.featured_image) || images[0] || '';
+        if (!featured) return images;
+        return [featured].concat(images.filter((src) => src !== featured));
+      }
+
+      firstAvailableVariant(product) {
+        const variants = Array.isArray(product.variants) ? product.variants : [];
+        return variants.find((variant) => variant.available) || variants[0] || null;
+      }
+
+      basePriceForVariant(variant) {
+        if (!variant) return 0;
+        const compare = Number(variant.compare_at_price);
+        if (compare > 0) return compare;
+        const price = Number(variant.price) || 0;
+        // No compare-at price: the variant's own price is the base, but there is
+        // no original price to strike through, so callers must not render one.
+        return price;
+      }
+
+      hasCompareAtPrice(variant) {
+        return !!variant && Number(variant.compare_at_price) > 0;
+      }
+
+      priceDataForVariant(product, variant) {
+        const base = this.hasCompareAtPrice(variant)
+          ? Number(variant.compare_at_price)
+          : Number(variant.price) || 0;
+        return {
+          id: variant ? String(variant.id) : '',
+          base: base,
+          discounted: this.discountedPrice(base, this.savePercent),
+          percent: this.savePercent,
+          hasCompareAt: this.hasCompareAtPrice(variant)
+        };
+      }
+
+      fetchRecommendations() {
+        const limit = Math.min(5, Math.max(this.maxProducts, 5));
+        const url = '/recommendations/products.json?product_id=' + this.productId + '&limit=' + limit + '&intent=complementary';
+
+        fetch(url)
+          .then((response) => (response.ok ? response.json() : { products: [] }))
+          .then((data) => {
+            const products = (data && data.products) || [];
+            if (products.length) {
+              this.renderList(products);
+              return;
+            }
+
+            return fetch('/recommendations/products.json?product_id=' + this.productId + '&limit=' + limit + '&intent=related')
+              .then((response) => (response.ok ? response.json() : { products: [] }))
+              .then((relatedData) => this.renderList((relatedData && relatedData.products) || []));
+          })
+          .catch(() => {
+            this.hidden = true;
+          });
+      }
+
+      renderList(products) {
+        const list = (products || []).slice(0, Math.min(this.maxProducts, 5));
+        this.products = list;
+
+        if (!list.length) {
+          this.hidden = true;
+          return;
+        }
+
+        this.list.innerHTML = list.map((product, index) => this.buildRow(product, index)).join('');
+        this.hidden = false;
+        this.updateClaimState();
+      }
+
+      buildRow(product, index) {
+        const variant = this.firstAvailableVariant(product);
+        const images = this.productImages(product);
+        const image = this.sizeImage(images[0] || '', 200);
+        const media = image
+          ? '<img class="blocky-bms__thumb" src="' + this.escapeAttr(image) + '" alt="" loading="lazy" width="80" height="80">'
+          : '<span class="blocky-bms__thumb blocky-bms__thumb--placeholder" aria-hidden="true"></span>';
+
+        const price = this.priceDataForVariant(product, variant);
+        const rowId = 'blocky-bms-' + this.id + '-row-' + index;
+
+        let selectHtml = '';
+        if (Array.isArray(product.variants) && product.variants.length > 1) {
+          const options = product.variants.map((item) => {
+            const itemPrice = this.priceDataForVariant(product, item);
+            const label = this.escapeHtml(item.public_title || item.title || '');
+            const unavailable = item.available ? '' : ' data-bms-unavailable="true"';
+            return '<option value="' + this.escapeAttr(item.id) + '"' + unavailable + '>' + label + '</option>';
+          }).join('');
+          selectHtml = '<select class="blocky-bms__variant" data-bms-variant aria-label="' + this.escapeAttr('Variant for ' + (product.title || '')) + '">' + options + '</select>';
+        }
+
+        let priceHtml = '';
+        if (price.hasCompareAt && price.discounted < price.base) {
+          priceHtml = '<span class="blocky-bms__prices">'
+            + '<span class="blocky-bms__price" data-bms-price>' + this.escapeHtml(this.formatMoney(price.discounted)) + '</span>'
+            + '<s class="blocky-bms__compare" data-bms-compare>' + this.escapeHtml(this.formatMoney(price.base)) + '</s>'
+            + '</span>';
+        } else if (price.hasCompareAt) {
+          priceHtml = '<span class="blocky-bms__prices">'
+            + '<span class="blocky-bms__price" data-bms-price>' + this.escapeHtml(this.formatMoney(price.discounted)) + '</span>'
+            + '</span>';
+        } else {
+          priceHtml = '<span class="blocky-bms__prices">'
+            + '<span class="blocky-bms__price" data-bms-price>' + this.escapeHtml(this.formatMoney(price.discounted)) + '</span>'
+            + '</span>';
+        }
+
+        let tagHtml = '';
+        if (this.showSaveTag && this.savePercent > 0 && price.hasCompareAt && price.discounted < price.base) {
+          tagHtml = '<span class="blocky-bms__tag">' + this.escapeHtml(this.saveTagText) + '</span>';
+        }
+
+        return ''
+          + '<li class="blocky-bms-row" data-bms-row data-product-id="' + this.escapeAttr(product.id) + '">'
+          +   '<span class="blocky-bms__order">Add-on ' + (index + 1) + '</span>'
+          +   '<label class="blocky-bms__select" for="' + this.escapeAttr(rowId) + '">'
+          +     '<input type="checkbox" id="' + this.escapeAttr(rowId) + '" data-bms-select role="switch" aria-checked="false">'
+          +     '<span class="blocky-bms__select-box" aria-hidden="true"></span>'
+          +     '<span class="blocky-visually-hidden">' + this.escapeHtml('Select ' + (product.title || '') + ' as an add-on') + '</span>'
+          +   '</label>'
+          +   media
+          +   '<div class="blocky-bms__content">'
+          +     '<a class="blocky-bms__title" href="' + this.escapeAttr(product.url || '') + '">' + this.escapeHtml(product.title || '') + '</a>'
+          +     selectHtml
+          +     priceHtml
+          +     tagHtml
+          +   '</div>'
+          +   '<button type="button" class="blocky-bms__preview" data-bms-preview aria-label="' + this.escapeAttr('Preview ' + (product.title || '')) + '">'
+          +     '<span aria-hidden="true">' + this.escapeHtml(this.previewText) + '</span>'
+          +   '</button>'
+          +   '<span hidden data-bms-price-data data-variant-id="' + this.escapeAttr(price.id) + '" data-variant-price="' + this.escapeAttr(price.discounted) + '" data-variant-compare-at="' + this.escapeAttr(price.base) + '" data-product-id="' + this.escapeAttr(product.id) + '"></span>'
+          + '</li>';
+      }
+
+      onClick(event) {
+        const previewButton = event.target.closest('[data-bms-preview]');
+        if (previewButton) {
+          event.preventDefault();
+          const row = previewButton.closest('[data-bms-row]');
+          this.openPopup(row, previewButton);
+          return;
+        }
+
+        const media = event.target.closest('.blocky-bms__thumb, .blocky-bms__title');
+        if (media) {
+          const row = media.closest('[data-bms-row]');
+          if (!row) return;
+
+          // plain click on the media/title opens the preview; modifier-click
+          // still opens the product page in a new tab
+          if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+          event.preventDefault();
+          const previewButton = row.querySelector('[data-bms-preview]');
+          if (previewButton) this.openPopup(row, previewButton);
+          return;
+        }
+
+        if (event.target.closest('[data-bms-popup-close]')) {
+          this.closePopup();
+          return;
+        }
+
+        if (event.target.closest('[data-bms-popup-overlay]')) {
+          this.closePopup();
+          return;
+        }
+
+        if (event.target.closest('[data-bms-claim]')) {
+          this.handleClaim();
+          return;
+        }
+
+        if (event.target.closest('[data-bms-popup-add]')) {
+          this.handlePopupAdd();
+          return;
+        }
+
+        const galleryItem = event.target.closest('[data-bms-gallery-item]');
+        if (galleryItem) {
+          this.handlePopupGallery(galleryItem);
+        }
+      }
+
+      onChange(event) {
+        const checkbox = event.target.closest('[data-bms-select]');
+        if (checkbox) {
+          this.setRowSelected(checkbox.closest('[data-bms-row]'), checkbox.checked);
+          return;
+        }
+
+        const select = event.target.closest('[data-bms-variant]');
+        if (select) {
+          this.handleRowVariantChange(select);
+          return;
+        }
+
+        const popupSelect = event.target.closest('[data-bms-popup-variant]');
+        if (popupSelect) {
+          this.handlePopupVariantChange(popupSelect);
+        }
+      }
+
+      onKeyDown(event) {
+        const checkbox = event.target.closest('[data-bms-select]');
+        if (checkbox && event.target === checkbox) {
+          if (event.key === ' ' || event.key === 'Enter') {
+            event.preventDefault();
+            checkbox.checked = !checkbox.checked;
+            this.setRowSelected(checkbox.closest('[data-bms-row]'), checkbox.checked);
+          }
+          return;
+        }
+
+        if (event.key === 'Escape' && this.activePopup) {
+          this.closePopup();
+        }
+      }
+
+      setRowSelected(row, selected) {
+        if (!row) return;
+        const checkbox = row.querySelector('[data-bms-select]');
+        const data = row.querySelector('[data-bms-price-data]');
+
+        if (checkbox) checkbox.setAttribute('aria-checked', selected ? 'true' : 'false');
+        row.classList.toggle('is-selected', selected);
+
+        if (selected) {
+          if (data && !this.selectedVariantIds.includes(data.dataset.variantId)) {
+            this.selectedVariantIds.push(data.dataset.variantId);
+          }
+        } else if (data) {
+          this.selectedVariantIds = this.selectedVariantIds.filter((id) => id !== data.dataset.variantId);
+        }
+
+        this.updateClaimState();
+      }
+
+      updateClaimState() {
+        if (!this.claimButton) return;
+        this.claimButton.disabled = this.selectedVariantIds.length === 0;
+      }
+
+      handleRowVariantChange(select) {
+        const row = select.closest('[data-bms-row]');
+        const data = row ? row.querySelector('[data-bms-price-data]') : null;
+        const productId = data ? data.dataset.productId : null;
+        const product = this.products.find((item) => String(item.id) === String(productId));
+        const variant = product ? product.variants.find((item) => String(item.id) === String(select.value)) : null;
+        if (!data || !variant || !product) return;
+
+        const previousId = data.getAttribute('data-variant-id');
+        const price = this.priceDataForVariant(product, variant);
+        data.setAttribute('data-variant-id', price.id);
+        data.setAttribute('data-variant-price', price.discounted);
+        data.setAttribute('data-variant-compare-at', price.base);
+
+        const priceEl = row.querySelector('[data-bms-price]');
+        const compareEl = row.querySelector('[data-bms-compare]');
+        const pricesEl = row.querySelector('.blocky-bms__prices');
+
+        if (priceEl) priceEl.textContent = this.formatMoney(price.discounted);
+
+        if (compareEl) {
+          if (price.hasCompareAt && price.discounted < price.base) {
+            compareEl.textContent = this.formatMoney(price.base);
+            compareEl.hidden = false;
+          } else {
+            compareEl.hidden = true;
+          }
+        } else if (pricesEl && price.hasCompareAt && price.discounted < price.base) {
+          const compare = document.createElement('s');
+          compare.className = 'blocky-bms__compare';
+          compare.setAttribute('data-bms-compare', '');
+          compare.textContent = this.formatMoney(price.base);
+          pricesEl.appendChild(compare);
+        }
+
+        const tag = row.querySelector('.blocky-bms__tag');
+        if (tag) tag.hidden = !(this.showSaveTag && this.savePercent > 0 && price.hasCompareAt && price.discounted < price.base);
+
+        if (row.classList.contains('is-selected')) {
+          if (previousId && previousId !== price.id) {
+            this.selectedVariantIds = this.selectedVariantIds.filter((id) => id !== previousId);
+          }
+          if (!this.selectedVariantIds.includes(price.id)) this.selectedVariantIds.push(price.id);
+        }
+        this.updateClaimState();
+      }
+
+      getSelectedVariantIds() {
+        return this.selectedVariantIds.slice();
+      }
+
+      buildClaimPayload() {
+        const root = this.closest('blocky-featured-product');
+        const items = [];
+
+        if (root) {
+          const variantInput = root.querySelector('[data-blocky-variant-id]');
+          const quantityInput = root.querySelector('[data-blocky-form-quantity]') || root.querySelector('[data-blocky-quantity-input]');
+          const variantId = variantInput ? variantInput.value : '';
+          const quantity = Math.max(1, parseInt(quantityInput ? quantityInput.value : '1', 10) || 1);
+
+          if (variantId) items.push({ id: variantId, quantity: quantity });
+        }
+
+        this.selectedVariantIds.forEach((id) => items.push({ id: id, quantity: 1 }));
+        return items;
+      }
+
+      showClaimStatus(message) {
+        if (!this.claimStatus) return;
+        this.claimStatus.textContent = message || '';
+        this.claimStatus.hidden = !message;
+
+        if (message) {
+          clearTimeout(this.claimStatusTimer);
+          this.claimStatusTimer = setTimeout(() => {
+            this.claimStatus.hidden = true;
+            this.claimStatus.textContent = '';
+          }, 5000);
+        }
+      }
+
+      handleClaim() {
+        if (!this.claimButton || this.claimButton.disabled || this.claimButton.dataset.bmsBusy === 'true') return;
+
+        const items = this.buildClaimPayload();
+        if (!items.length) {
+          window.location.href = {{ routes.cart_url | json }};
+          return;
+        }
+
+        const params = items
+          .map((item, index) => 'items[' + index + '][id]=' + encodeURIComponent(item.id) + '&items[' + index + '][quantity]=' + encodeURIComponent(item.quantity))
+          .join('&');
+
+        const sections = this.getCartSections();
+        let body = params;
+        if (sections) body += '&sections=' + encodeURIComponent(sections) + '&sections_url=' + encodeURIComponent(window.location.pathname);
+
+        this.claimButton.disabled = true;
+        this.claimButton.dataset.bmsBusy = 'true';
+
+        fetch({{ routes.cart_add_url | append: '.js' | json }}, {
+          method: 'POST',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+          .then((response) => response.json().then((data) => ({ ok: response.ok, data: data })))
+          .then((result) => {
+            if (!result.ok || result.data.status) throw result.data;
+            return this.renderCartForResponse(result.data, '');
+          })
+          .then(() => {
+            this.claimButton.disabled = false;
+            delete this.claimButton.dataset.bmsBusy;
+            this.showClaimStatus('Offer claimed. Items added to your cart.');
+          })
+          .catch((error) => {
+            console.error(error);
+            this.claimButton.disabled = false;
+            delete this.claimButton.dataset.bmsBusy;
+            this.showClaimStatus('Something went wrong adding your items. Please try again.');
+          });
+      }
+
+      getCartSections() {
+        const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+        if (cart && typeof cart.getSectionsToRender === 'function') {
+          const ids = cart.getSectionsToRender().map((section) => section.id);
+          if (ids.length) return ids.join(',');
+        }
+        return '';
+      }
+
+      renderCartForResponse(data, sourceId) {
+        const cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
+
+        if (cart && typeof cart.renderContents === 'function') {
+          const payload = data && data.sections ? data : { sections: {} };
+          cart.classList.remove('is-empty');
+          cart.renderContents(payload);
+          return;
+        }
+
+        const drawer = document.querySelector('cart-drawer-component');
+        if (!drawer) {
+          window.location.href = {{ routes.cart_url | json }};
+          return;
+        }
+
+        document.dispatchEvent(new CustomEvent('cart:update', {
+          bubbles: true,
+          detail: {
+            resource: data,
+            sourceId: sourceId || '',
+            data: { source: 'blocky-buy-more-save', itemCount: 1, sections: data && data.sections }
+          }
+        }));
+
+        if (typeof drawer.open === 'function') drawer.open();
+        else window.location.href = {{ routes.cart_url | json }};
+      }
+
+      openPopup(row, trigger) {
+        if (!row || !this.popup || !this.popupBody) return;
+
+        const data = row.querySelector('[data-bms-price-data]');
+        if (!data) return;
+
+        const product = this.products.find((item) => String(item.id) === String(data.dataset.productId));
+        if (!product) return;
+
+        this.activePopup = { row: row, product: product };
+        this.lastFocus = trigger;
+
+        this.popupBody.innerHTML = this.buildPopupContent(product);
+        this.popup.hidden = false;
+        this.popup.setAttribute('data-bms-open', 'true');
+        document.documentElement.style.overflow = 'hidden';
+
+        // focus moves into the dialog on open
+        const closeButton = this.popup.querySelector('[data-bms-popup-close]');
+        const firstField = this.popupBody.querySelector('select, button, a[href], input');
+        const target = closeButton || firstField;
+        if (target) target.focus();
+        else {
+          this.popupBody.setAttribute('tabindex', '-1');
+          this.popupBody.focus();
+        }
+      }
+
+      closePopup() {
+        if (!this.popup) return;
+        this.popup.hidden = true;
+        this.popup.removeAttribute('data-bms-open');
+        this.activePopup = null;
+        document.documentElement.style.overflow = '';
+
+        if (this.lastFocus && typeof this.lastFocus.focus === 'function') this.lastFocus.focus();
+      }
+
+      buildPopupContent(product) {
+        const variant = this.firstAvailableVariant(product);
+        const price = this.priceDataForVariant(product, variant);
+        const images = this.productImages(product);
+        const gallery = images.map((src, index) => {
+          const sized = this.sizeImage(src, 800);
+          return '<button type="button" class="blocky-bms__gallery-item' + (index === 0 ? ' is-active' : '') + '" data-bms-gallery-item aria-label="' + this.escapeAttr('Show image ' + (index + 1)) + '" aria-current="' + (index === 0 ? 'true' : 'false') + '"><img src="' + this.escapeAttr(sized) + '" alt="" loading="lazy"></button>';
+        }).join('');
+
+        let variantHtml = '';
+        if (Array.isArray(product.variants) && product.variants.length > 1) {
+          const options = product.variants.map((item) => {
+            const label = this.escapeHtml(item.public_title || item.title || '');
+            const unavailable = item.available ? '' : ' data-bms-unavailable="true"';
+            return '<option value="' + this.escapeAttr(item.id) + '"' + unavailable + '>' + label + '</option>';
+          }).join('');
+          variantHtml = '<label class="blocky-bms__popup-field"><span class="blocky-bms__popup-label">' + this.escapeHtml('Variant') + '</span><select class="blocky-bms__popup-variant" data-bms-popup-variant>' + options + '</select></label>';
+        }
+
+        const description = product.description_html || product.description || '';
+        const descriptionHtml = description ? '<div class="blocky-bms__popup-description">' + description + '</div>' : '';
+
+        return ''
+          + '<div class="blocky-bms__popup-grid">'
+          +   '<div class="blocky-bms__popup-media">'
+          +     '<div class="blocky-bms__popup-main" data-bms-popup-media><img src="' + this.escapeAttr(this.sizeImage(images[0] || '', 800)) + '" alt=""></div>'
+          +     (images.length > 1 ? '<div class="blocky-bms__popup-gallery">' + gallery + '</div>' : '')
+          +   '</div>'
+          +   '<div class="blocky-bms__popup-info">'
+          +     '<h2 class="blocky-bms__popup-title" id="blocky-bms-' + this.escapeAttr(this.id) + '-popup-title">' + this.escapeHtml(product.title || '') + '</h2>'
+          +     '<div class="blocky-bms__popup-prices">'
+          +       '<span class="blocky-bms__popup-price" data-bms-popup-price>' + this.escapeHtml(this.formatMoney(price.discounted)) + '</span>'
+          +       (price.hasCompareAt && price.discounted < price.base ? '<s class="blocky-bms__popup-compare" data-bms-popup-compare>' + this.escapeHtml(this.formatMoney(price.base)) + '</s>' : '')
+          +     '</div>'
+          +     variantHtml
+          +     descriptionHtml
+          +     '<button type="button" class="blocky-bms__popup-add" data-bms-popup-add data-bms-popup-variant-id="' + this.escapeAttr(variant ? variant.id : '') + '"' + (variant && variant.available ? '' : ' disabled') + '>' + this.escapeHtml('Add to cart') + '</button>'
+          +   '</div>'
+          + '</div>';
+      }
+
+      handlePopupGallery(item) {
+        if (!this.popupBody) return;
+        const image = item.querySelector('img');
+        const main = this.popupBody.querySelector('[data-bms-popup-media] img');
+        if (!image || !main) return;
+
+        main.src = image.getAttribute('src') || '';
+        this.popupBody.querySelectorAll('[data-bms-gallery-item]').forEach((other) => {
+          const active = other === item;
+          other.classList.toggle('is-active', active);
+          other.setAttribute('aria-current', active ? 'true' : 'false');
+        });
+      }
+
+      handlePopupVariantChange(select) {
+        if (!this.activePopup) return;
+        const product = this.activePopup.product;
+        const variant = product.variants.find((item) => String(item.id) === String(select.value));
+        if (!variant) return;
+
+        const price = this.priceDataForVariant(product, variant);
+        const priceEl = this.popupBody.querySelector('[data-bms-popup-price]');
+        const compareEl = this.popupBody.querySelector('[data-bms-popup-compare]');
+        const addButton = this.popupBody.querySelector('[data-bms-popup-add]');
+        const mediaEl = this.popupBody.querySelector('[data-bms-popup-media] img');
+
+        if (priceEl) priceEl.textContent = this.formatMoney(price.discounted);
+        if (compareEl) {
+          compareEl.textContent = this.formatMoney(price.base);
+          compareEl.hidden = !(price.hasCompareAt && price.discounted < price.base);
+        } else if (price.hasCompareAt && price.discounted < price.base) {
+          const pricesEl = this.popupBody.querySelector('.blocky-bms__popup-prices');
+          if (pricesEl && !pricesEl.querySelector('[data-bms-popup-compare]')) {
+            const compare = document.createElement('s');
+            compare.className = 'blocky-bms__popup-compare';
+            compare.setAttribute('data-bms-popup-compare', '');
+            compare.textContent = this.formatMoney(price.base);
+            pricesEl.appendChild(compare);
+          }
+        }
+        if (addButton) {
+          addButton.disabled = !variant.available;
+          addButton.setAttribute('data-bms-popup-variant-id', String(variant.id));
+        }
+        if (mediaEl && variant.featured_image && variant.featured_image.src) {
+          mediaEl.src = this.sizeImage(variant.featured_image.src, 800);
+        }
+      }
+
+      handlePopupAdd() {
+        if (!this.activePopup || !this.popupBody) return;
+        const addButton = this.popupBody.querySelector('[data-bms-popup-add]');
+        const variantId = addButton ? addButton.getAttribute('data-bms-popup-variant-id') : '';
+        if (!variantId || !addButton || addButton.disabled || addButton.dataset.bmsBusy === 'true') return;
+
+        addButton.disabled = true;
+        addButton.dataset.bmsBusy = 'true';
+
+        let body = 'id=' + encodeURIComponent(variantId) + '&quantity=1';
+        const sections = this.getCartSections();
+        if (sections) body += '&sections=' + encodeURIComponent(sections) + '&sections_url=' + encodeURIComponent(window.location.pathname);
+
+        fetch({{ routes.cart_add_url | append: '.js' | json }}, {
+          method: 'POST',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        })
+          .then((response) => response.json().then((data) => ({ ok: response.ok, data: data })))
+          .then((result) => {
+            if (!result.ok || result.data.status) throw result.data;
+            this.renderCartForResponse(result.data, '');
+            this.closePopup();
+          })
+          .then(() => {
+            addButton.disabled = false;
+            delete addButton.dataset.bmsBusy;
+            this.showClaimStatus('Added to your cart.');
+          })
+          .catch((error) => {
+            console.error(error);
+            addButton.disabled = false;
+            delete addButton.dataset.bmsBusy;
+            this.showClaimStatus('Something went wrong adding this item. Please try again.');
+          });
+      }
+
+      disconnectedCallback() {
+        if (this.activePopup) this.closePopup();
+      }
+    });
+  }
 </script>
 
 {% schema %}
@@ -2973,6 +3735,75 @@
         { "type": "text", "id": "unavailable_text", "default": "Unavailable", "label": "Unavailable text" },
         { "type": "header", "content": "Spacing" },
         { "type": "paragraph", "content": "Controls the gap above and below the buttons, independent of the section's 'Spacing between blocks' setting." },
+        { "type": "range", "id": "margin_top", "min": 0, "max": 5, "step": 0.1, "unit": "rem", "label": "Margin top", "default": 1.5 },
+        { "type": "range", "id": "margin_bottom", "min": 0, "max": 5, "step": 0.1, "unit": "rem", "label": "Margin bottom", "default": 1.5 }
+      ]
+    },
+    {
+      "type": "buy_more_save",
+      "name": "Buy More & Save",
+      "limit": 5,
+      "settings": [
+        { "type": "paragraph", "content": "Offers recommended add-on products at a percentage off. Products come from Shopify's recommendation engine for the product shown on this page (Search & Discovery app), capped at 5 rows. The percentage changes the displayed price only - manage any real discount in Shopify." },
+        { "type": "text", "id": "heading", "default": "Get 20% Off These Add-Ons", "label": "Heading" },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "info": "Optional line under the heading. Leave blank to hide." },
+        { "type": "range", "id": "save_percent", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Save percentage", "default": 20, "info": "Applied to each add-on's compare-at price, or its price when there is no compare-at price. Rounded to the nearest cent, so 33% on 100.00 shows 67.00. Use 0 to show only the undiscounted price." },
+        { "type": "range", "id": "max_products", "min": 1, "max": 5, "step": 1, "label": "Maximum add-ons to show", "default": 5 },
+        { "type": "checkbox", "id": "show_save_tag", "default": true, "label": "Show save tag on each row" },
+        { "type": "text", "id": "claim_button_text", "default": "Claim Offer", "label": "Claim offer button text" },
+        { "type": "text", "id": "preview_button_text", "default": "Preview", "label": "Preview button text" },
+        { "type": "header", "content": "Row" },
+        { "type": "color", "id": "row_bg_color", "label": "Row background", "default": "#ffffff" },
+        { "type": "color", "id": "row_border_color", "label": "Row border", "default": "#e4e4e4" },
+        { "type": "range", "id": "row_border_width", "label": "Row border width", "min": 0, "max": 4, "step": 1, "unit": "px", "default": 1 },
+        { "type": "range", "id": "row_radius", "label": "Row border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 12 },
+        { "type": "range", "id": "row_padding", "label": "Row padding", "min": 4, "max": 40, "step": 1, "unit": "px", "default": 14 },
+        { "type": "range", "id": "row_gap", "label": "Gap between rows", "min": 4, "max": 40, "step": 1, "unit": "px", "default": 14 },
+        { "type": "range", "id": "block_gap", "label": "Gap between heading, rows and button", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 14 },
+        { "type": "header", "content": "Heading" },
+        { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#111111" },
+        { "type": "range", "id": "heading_size", "label": "Heading size", "min": 14, "max": 40, "step": 1, "unit": "px", "default": 24 },
+        { "type": "color", "id": "subtitle_color", "label": "Subtitle color", "default": "#666666" },
+        { "type": "range", "id": "subtitle_size", "label": "Subtitle size", "min": 10, "max": 24, "step": 1, "unit": "px", "default": 14 },
+        { "type": "header", "content": "Thumbnail" },
+        { "type": "range", "id": "thumbnail_size", "label": "Thumbnail size", "min": 40, "max": 140, "step": 1, "unit": "px", "default": 80 },
+        { "type": "range", "id": "thumbnail_radius", "label": "Thumbnail border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 8 },
+        { "type": "header", "content": "Selection control" },
+        { "type": "color", "id": "select_color", "label": "Selected color", "default": "#000000" },
+        { "type": "color", "id": "select_bg_color", "label": "Unselected background", "default": "#ffffff" },
+        { "type": "color", "id": "select_border_color", "label": "Border color", "default": "#000000" },
+        { "type": "range", "id": "select_size", "label": "Control size", "min": 12, "max": 40, "step": 1, "unit": "px", "default": 20 },
+        { "type": "header", "content": "Variant select" },
+        { "type": "color", "id": "variant_text_color", "label": "Text color", "default": "#111111" },
+        { "type": "range", "id": "variant_text_size", "label": "Text size", "min": 10, "max": 24, "step": 1, "unit": "px", "default": 14 },
+        { "type": "color", "id": "variant_bg_color", "label": "Background", "default": "#ffffff" },
+        { "type": "color", "id": "variant_border_color", "label": "Border", "default": "#d8d8d8" },
+        { "type": "range", "id": "variant_radius", "label": "Border radius", "min": 0, "max": 30, "step": 1, "unit": "px", "default": 6 },
+        { "type": "header", "content": "Price" },
+        { "type": "color", "id": "price_color", "label": "Discounted price color", "default": "#111111" },
+        { "type": "range", "id": "price_size", "label": "Discounted price size", "min": 12, "max": 40, "step": 1, "unit": "px", "default": 18 },
+        { "type": "color", "id": "compare_color", "label": "Compare-at price color", "default": "#999999" },
+        { "type": "range", "id": "compare_size", "label": "Compare-at price size", "min": 10, "max": 32, "step": 1, "unit": "px", "default": 14 },
+        { "type": "header", "content": "Save tag" },
+        { "type": "color", "id": "tag_bg_color", "label": "Background", "default": "#d98e5f" },
+        { "type": "color", "id": "tag_text_color", "label": "Text color", "default": "#ffffff" },
+        { "type": "range", "id": "tag_text_size", "label": "Text size", "min": 10, "max": 20, "step": 1, "unit": "px", "default": 12 },
+        { "type": "header", "content": "Claim offer button" },
+        { "type": "color", "id": "claim_bg_color", "label": "Background", "default": "#000000" },
+        { "type": "color", "id": "claim_text_color", "label": "Text color", "default": "#ffffff" },
+        { "type": "range", "id": "claim_height", "label": "Button height", "min": 36, "max": 80, "step": 2, "unit": "px", "default": 52 },
+        { "type": "range", "id": "claim_text_size", "label": "Text size", "min": 12, "max": 24, "step": 1, "unit": "px", "default": 16 },
+        { "type": "range", "id": "claim_radius", "label": "Border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 8 },
+        { "type": "header", "content": "Preview popup" },
+        { "type": "color", "id": "popup_bg_color", "label": "Background", "default": "#ffffff" },
+        { "type": "color", "id": "popup_text_color", "label": "Text color", "default": "#111111" },
+        { "type": "range", "id": "popup_text_size", "label": "Text size", "min": 10, "max": 24, "step": 1, "unit": "px", "default": 14 },
+        { "type": "range", "id": "popup_heading_size", "label": "Title size", "min": 14, "max": 40, "step": 1, "unit": "px", "default": 24 },
+        { "type": "range", "id": "popup_radius", "label": "Border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 16 },
+        { "type": "range", "id": "popup_max_width", "label": "Popup width", "min": 400, "max": 1200, "step": 20, "unit": "px", "default": 900 },
+        { "type": "range", "id": "popup_overlay_color_opacity", "min": 0, "max": 90, "step": 5, "unit": "%", "label": "Overlay opacity", "default": 60 },
+        { "type": "header", "content": "Spacing" },
+        { "type": "paragraph", "content": "Controls the gap above and below the block, independent of the section's 'Spacing between blocks' setting." },
         { "type": "range", "id": "margin_top", "min": 0, "max": 5, "step": 0.1, "unit": "rem", "label": "Margin top", "default": 1.5 },
         { "type": "range", "id": "margin_bottom", "min": 0, "max": 5, "step": 0.1, "unit": "rem", "label": "Margin bottom", "default": 1.5 }
       ]
@@ -3810,6 +4641,7 @@
         { "type": "description" },
         { "type": "variant_picker" },
         { "type": "buy_buttons" },
+        { "type": "buy_more_save" },
         { "type": "urgency_progress" },
         { "type": "guarantee_badge" },
         { "type": "review_carousel" },
