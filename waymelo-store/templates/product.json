@@ -182,6 +182,20 @@
             "margin_bottom": 1.7
           }
         },
+        "buy_more_save_bmS1": {
+          "type": "buy_more_save",
+          "settings": {
+            "heading": "Get 20% Off These Add-Ons",
+            "subtitle": "",
+            "save_percent": 20,
+            "max_products": 5,
+            "product_source": "recommendations",
+            "max_price": 30,
+            "show_save_tag": true,
+            "claim_button_text": "Claim Offer",
+            "preview_button_text": "Preview"
+          }
+        },
         "payment_badges_edFzPC": {
           "type": "payment_badges",
           "settings": {
@@ -315,6 +329,7 @@
         "variant_picker",
         "pumper_bundles_app_block_qb_EHeEkM",
         "buy_buttons",
+        "buy_more_save_bmS1",
         "payment_badges_edFzPC",
         "upsell_com_ex_reconvert_product_upsell_c8Nb7R",
         "guarantee_badge_AaBfap",
