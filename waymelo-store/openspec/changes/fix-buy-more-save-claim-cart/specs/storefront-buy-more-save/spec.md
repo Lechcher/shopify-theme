@@ -30,6 +30,11 @@ Activating the block's claim action SHALL add the selected variant of every sele
 - **WHEN** the add-on rows are built from any product source, including a random source
 - **THEN** activating the claim action adds the selected add-ons the same way as with recommended add-ons
 
+#### Scenario: Claim survives third-party cart interception
+
+- **WHEN** a store app intercepts cart adds and drops all but one line from a multi-item request
+- **THEN** activating the claim action still adds the displayed product and every selected add-on to the cart
+
 #### Scenario: Cart reflects the added add-ons
 
 - **WHEN** the claim action succeeds and the theme provides a cart drawer or cart notification
