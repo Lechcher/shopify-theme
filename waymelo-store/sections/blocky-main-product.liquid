@@ -3312,8 +3312,8 @@
       }
 
       buildClaimPayload() {
+        const itemsById = new Map();
         const root = this.closest('blocky-featured-product');
-        const items = [];
 
         if (root) {
           const variantInput = root.querySelector('[data-blocky-variant-id]');
@@ -3321,11 +3321,18 @@
           const variantId = variantInput ? variantInput.value : '';
           const quantity = Math.max(1, parseInt(quantityInput ? quantityInput.value : '1', 10) || 1);
 
-          if (variantId) items.push({ id: variantId, quantity: quantity });
+          if (variantId) itemsById.set(String(variantId), quantity);
         }
 
-        this.selectedVariantIds.forEach((id) => items.push({ id: id, quantity: 1 }));
-        return items;
+        // Merge each selected add-on at quantity one. When a selected add-on
+        // shares the displayed product's variant, keep the displayed product's
+        // quantity so the same variant is never sent twice in one request.
+        this.selectedVariantIds.forEach((id) => {
+          const key = String(id);
+          if (!itemsById.has(key)) itemsById.set(key, 1);
+        });
+
+        return Array.from(itemsById, (entry) => ({ id: entry[0], quantity: entry[1] }));
       }
 
       showClaimStatus(message) {
@@ -3349,10 +3356,7 @@
           payload.sections_url = window.location.pathname;
         }
 
-        this.claimButton.disabled = true;
-        this.claimButton.dataset.bmsBusy = 'true';
-
-        fetch({{ routes.cart_add_url | append: '.js' | json }}, {
+        return fetch({{ routes.cart_add_url | append: '.js' | json }}, {
           method: 'POST',
           headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -3360,20 +3364,46 @@
           .then((response) => response.json().then((data) => ({ ok: response.ok, data: data })))
           .then((result) => {
             if (!result.ok || result.data.status) throw result.data;
-            return this.renderCartForResponse(result.data, '');
-          })
-          .then(() => {
-            this.claimButton.disabled = false;
-            delete this.claimButton.dataset.bmsBusy;
-            this.showClaimStatus('Offer claimed. Items added to your cart.');
-          })
-          .catch((error) => {
-            console.error(error);
-            this.claimButton.disabled = false;
-            delete this.claimButton.dataset.bmsBusy;
-            const reason = error && (error.description || error.message);
-            this.showClaimStatus(reason || 'Something went wrong adding your items. Please try again.');
+            return result.data;
           });
+      }
+
+      async handleClaim() {
+        if (!this.claimButton || this.claimButton.disabled || this.claimButton.dataset.bmsBusy === 'true') return;
+
+        const items = this.buildClaimPayload();
+        if (!items.length) {
+          window.location.href = {{ routes.cart_url | json }};
+          return;
+        }
+
+        this.claimButton.disabled = true;
+        this.claimButton.dataset.bmsBusy = 'true';
+
+        // Third-party bundle/quantity-break apps on this store (e.g. Profit
+        // Pumper Bundles) intercept multi-item /cart/add.js requests and
+        // collapse them to a single line. Adding one line per request avoids
+        // that; the bundled cart sections are requested on the final add so the
+        // drawer renders once with the complete cart.
+        const sections = this.getCartSections();
+
+        try {
+          let finalData = null;
+          for (let index = 0; index < items.length; index += 1) {
+            finalData = await this.addClaimItem(items[index], index === items.length - 1, sections);
+          }
+
+          await this.renderCartForResponse(finalData, '');
+          this.claimButton.disabled = false;
+          delete this.claimButton.dataset.bmsBusy;
+          this.showClaimStatus('Offer claimed. Items added to your cart.');
+        } catch (error) {
+          console.error(error);
+          this.claimButton.disabled = false;
+          delete this.claimButton.dataset.bmsBusy;
+          const reason = error && (error.description || error.message);
+          this.showClaimStatus(reason || 'Something went wrong adding your items. Please try again.');
+        }
       }
 
       getCartSections() {

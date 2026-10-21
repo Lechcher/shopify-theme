@@ -246,10 +246,6 @@
             "margin_bottom": 1.5
           }
         },
-        "upsell_com_ex_reconvert_product_upsell_c8Nb7R": {
-          "type": "shopify://apps/upsell-com-ex-reconvert/blocks/product-upsell/72c64c30-2f7c-4a71-ae4c-efd1d5d1d2e2",
-          "settings": {}
-        },
         "guarantee_badge_AaBfap": {
           "type": "guarantee_badge",
           "settings": {
@@ -374,7 +370,6 @@
         "buy_buttons",
         "payment_badges_edFzPC",
         "buy_more_save_bmS1",
-        "upsell_com_ex_reconvert_product_upsell_c8Nb7R",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
         "collapsible_tab_pnakVM",
@@ -497,96 +492,6 @@
       "name": "Video Showcase",
       "settings": {}
     },
-    "blocky_product_feature_3_3LE4A8": {
-      "type": "blocky-product-feature-3",
-      "blocks": {
-        "feature_JHGFRN": {
-          "type": "feature",
-          "disabled": true,
-          "settings": {
-            "side": "left",
-            "y_offset": 0,
-            "title_position": "below",
-            "title": "FEATURE",
-            "text": ""
-          }
-        },
-        "feature_JpkBCA": {
-          "type": "feature",
-          "settings": {
-            "side": "left",
-            "y_offset": 32,
-            "title_position": "above",
-            "title": "&nbsp;<strong>🎒 Lightweight & Portable</strong>&nbsp;",
-            "text": "<p>Easy to carry at home or on the go.</p>"
-          }
-        },
-        "feature_44Kfqk": {
-          "type": "feature",
-          "settings": {
-            "side": "left",
-            "y_offset": -20,
-            "title_position": "above",
-            "title": "&nbsp;<strong>🧵 100% Cotton Cover</strong>&nbsp;",
-            "text": "<p>Soft, breathable fabric for daily use.</p><p></p>"
-          }
-        },
-        "feature_d7iDcb": {
-          "type": "feature",
-          "settings": {
-            "side": "right",
-            "y_offset": 32,
-            "title_position": "above",
-            "title": "&nbsp;<strong>🔗 Adjustable Straps</strong>&nbsp;",
-            "text": "<p>Easy to adjust for a personalized fit.</p>"
-          }
-        },
-        "feature_b6fVTa": {
-          "type": "feature",
-          "settings": {
-            "side": "right",
-            "y_offset": -20,
-            "title_position": "above",
-            "title": "&nbsp;<strong>🫧 Easy-Care Design</strong>&nbsp;",
-            "text": "<p>Removable cover for convenient washing.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "feature_JHGFRN",
-        "feature_JpkBCA",
-        "feature_44Kfqk",
-        "feature_d7iDcb",
-        "feature_b6fVTa"
-      ],
-      "name": "Blocky Product Feature 2",
-      "settings": {
-        "body_text": "PRODUCT FEATURES",
-        "title": "&nbsp;Designed for Everyday Comfort&nbsp;",
-        "title_size": 40,
-        "title_color": "#000000",
-        "body_size": 13,
-        "body_color": "#000000",
-        "device_image": "shopify://shop_images/G_i_tr_em_h_ng_h_a_ti_t_dang_yeu.png",
-        "device_image_alt": "",
-        "device_link": "",
-        "device_height": 460,
-        "device_radius": 39,
-        "feature_title_size": 20,
-        "feature_title_color": "#000000",
-        "feature_body_size": 14,
-        "feature_body_color": "#7a5168",
-        "accent_color": "#7a5168",
-        "desktop_content_alignment": "center",
-        "mobile_content_alignment": "center",
-        "spacing_eyebrow_title": 12,
-        "spacing_title_media": 24,
-        "page_width": 1300,
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "background_color": "#ffffff"
-      }
-    },
     "image_with_text_qwjtti": {
       "type": "image-with-text",
       "blocks": {
@@ -681,6 +586,96 @@
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "blocky_product_feature_3_3LE4A8": {
+      "type": "blocky-product-feature-3",
+      "blocks": {
+        "feature_JHGFRN": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "side": "left",
+            "y_offset": 0,
+            "title_position": "below",
+            "title": "FEATURE",
+            "text": ""
+          }
+        },
+        "feature_JpkBCA": {
+          "type": "feature",
+          "settings": {
+            "side": "left",
+            "y_offset": 32,
+            "title_position": "above",
+            "title": "&nbsp;<strong>🎒 Lightweight & Portable</strong>&nbsp;",
+            "text": "<p>Easy to carry at home or on the go.</p>"
+          }
+        },
+        "feature_44Kfqk": {
+          "type": "feature",
+          "settings": {
+            "side": "left",
+            "y_offset": -20,
+            "title_position": "above",
+            "title": "&nbsp;<strong>🧵 100% Cotton Cover</strong>&nbsp;",
+            "text": "<p>Soft, breathable fabric for daily use.</p><p></p>"
+          }
+        },
+        "feature_d7iDcb": {
+          "type": "feature",
+          "settings": {
+            "side": "right",
+            "y_offset": 32,
+            "title_position": "above",
+            "title": "&nbsp;<strong>🔗 Adjustable Straps</strong>&nbsp;",
+            "text": "<p>Easy to adjust for a personalized fit.</p>"
+          }
+        },
+        "feature_b6fVTa": {
+          "type": "feature",
+          "settings": {
+            "side": "right",
+            "y_offset": -20,
+            "title_position": "above",
+            "title": "&nbsp;<strong>🫧 Easy-Care Design</strong>&nbsp;",
+            "text": "<p>Removable cover for convenient washing.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_JHGFRN",
+        "feature_JpkBCA",
+        "feature_44Kfqk",
+        "feature_d7iDcb",
+        "feature_b6fVTa"
+      ],
+      "name": "Blocky Product Feature 2",
+      "settings": {
+        "body_text": "PRODUCT FEATURES",
+        "title": "&nbsp;Designed for Everyday Comfort&nbsp;",
+        "title_size": 40,
+        "title_color": "#000000",
+        "body_size": 13,
+        "body_color": "#000000",
+        "device_image": "shopify://shop_images/G_i_tr_em_h_ng_h_a_ti_t_dang_yeu.png",
+        "device_image_alt": "",
+        "device_link": "",
+        "device_height": 460,
+        "device_radius": 39,
+        "feature_title_size": 20,
+        "feature_title_color": "#000000",
+        "feature_body_size": 14,
+        "feature_body_color": "#7a5168",
+        "accent_color": "#7a5168",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "spacing_eyebrow_title": 12,
+        "spacing_title_media": 24,
+        "page_width": 1300,
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "background_color": "#ffffff"
       }
     },
     "blocky_video_with_text_97hNbH": {
