@@ -182,6 +182,13 @@
             "margin_bottom": 1.7
           }
         },
+        "payment_badges_edFzPC": {
+          "type": "payment_badges",
+          "settings": {
+            "icon_size": 38,
+            "alignment": "center"
+          }
+        },
         "buy_more_save_bmS1": {
           "type": "buy_more_save",
           "settings": {
@@ -189,18 +196,54 @@
             "subtitle": "",
             "save_percent": 20,
             "max_products": 5,
-            "product_source": "recommendations",
-            "max_price": 30,
+            "product_source": "random_price",
+            "max_price": 60,
             "show_save_tag": true,
             "claim_button_text": "Claim Offer",
-            "preview_button_text": "Preview"
-          }
-        },
-        "payment_badges_edFzPC": {
-          "type": "payment_badges",
-          "settings": {
-            "icon_size": 38,
-            "alignment": "center"
+            "preview_button_text": "Preview",
+            "row_bg_color": "#ffffff",
+            "row_border_color": "#7a5168",
+            "row_border_width": 3,
+            "row_radius": 12,
+            "row_padding": 14,
+            "row_gap": 14,
+            "block_gap": 14,
+            "heading_color": "#111111",
+            "heading_size": 24,
+            "subtitle_color": "#666666",
+            "subtitle_size": 14,
+            "thumbnail_size": 80,
+            "thumbnail_radius": 8,
+            "select_color": "#7a5168",
+            "select_bg_color": "#ffffff",
+            "select_border_color": "#7a5168",
+            "select_size": 20,
+            "variant_text_color": "#111111",
+            "variant_text_size": 14,
+            "variant_bg_color": "#ffffff",
+            "variant_border_color": "#d8d8d8",
+            "variant_radius": 6,
+            "price_color": "#111111",
+            "price_size": 18,
+            "compare_color": "#999999",
+            "compare_size": 14,
+            "tag_bg_color": "#d98e5f",
+            "tag_text_color": "#ffffff",
+            "tag_text_size": 12,
+            "claim_bg_color": "#7a5168",
+            "claim_text_color": "#ffffff",
+            "claim_height": 52,
+            "claim_text_size": 16,
+            "claim_radius": 8,
+            "popup_bg_color": "#ffffff",
+            "popup_text_color": "#111111",
+            "popup_text_size": 14,
+            "popup_heading_size": 24,
+            "popup_radius": 16,
+            "popup_max_width": 900,
+            "popup_overlay_color_opacity": 60,
+            "margin_top": 1.5,
+            "margin_bottom": 1.5
           }
         },
         "upsell_com_ex_reconvert_product_upsell_c8Nb7R": {
@@ -329,8 +372,8 @@
         "variant_picker",
         "pumper_bundles_app_block_qb_EHeEkM",
         "buy_buttons",
-        "buy_more_save_bmS1",
         "payment_badges_edFzPC",
+        "buy_more_save_bmS1",
         "upsell_com_ex_reconvert_product_upsell_c8Nb7R",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
@@ -474,8 +517,8 @@
             "side": "left",
             "y_offset": 32,
             "title_position": "above",
-            "title": "Hands-Free Wearable Design",
-            "text": "<p>Adjustable shoulder and waist straps lock the pillow in place, relieving arm strain and letting baby sleep securely on long flights.</p>"
+            "title": "&nbsp;<strong>🎒 Lightweight & Portable</strong>&nbsp;",
+            "text": "<p>Easy to carry at home or on the go.</p>"
           }
         },
         "feature_44Kfqk": {
@@ -484,8 +527,8 @@
             "side": "left",
             "y_offset": -20,
             "title_position": "above",
-            "title": "Breathable Premium Fabrics",
-            "text": "<p>Crafted with a 100% soft cotton cover and high-resilience pearl cotton filling for all-day cozy, cool comfort in tight cabin seats.</p><p></p>"
+            "title": "&nbsp;<strong>🧵 100% Cotton Cover</strong>&nbsp;",
+            "text": "<p>Soft, breathable fabric for daily use.</p><p></p>"
           }
         },
         "feature_d7iDcb": {
@@ -494,8 +537,8 @@
             "side": "right",
             "y_offset": 32,
             "title_position": "above",
-            "title": "3-Point Ergonomic Support",
-            "text": "<p>Includes a built-in infant head pillow and back support cushion to keep baby elevated at the ideal feeding and napping height.</p>"
+            "title": "&nbsp;<strong>🔗 Adjustable Straps</strong>&nbsp;",
+            "text": "<p>Easy to adjust for a personalized fit.</p>"
           }
         },
         "feature_b6fVTa": {
@@ -504,8 +547,8 @@
             "side": "right",
             "y_offset": -20,
             "title_position": "above",
-            "title": "Easy Zip-Off & Washable Cover",
-            "text": "<p>Equipped with a smooth zipper for quick removal, making cleanup effortless after in-flight spills or messes.</p>"
+            "title": "&nbsp;<strong>🫧 Easy-Care Design</strong>&nbsp;",
+            "text": "<p>Removable cover for convenient washing.</p>"
           }
         }
       },
@@ -519,16 +562,16 @@
       "name": "Blocky Product Feature 2",
       "settings": {
         "body_text": "PRODUCT FEATURES",
-        "title": "New Best Selling Product",
+        "title": "&nbsp;Designed for Everyday Comfort&nbsp;",
         "title_size": 40,
         "title_color": "#000000",
         "body_size": 13,
         "body_color": "#000000",
-        "device_image": "shopify://shop_images/Light_Blue_3_34c2b690-da5f-4bc6-a63a-12ff865f8996.jpg",
+        "device_image": "shopify://shop_images/G_i_tr_em_h_ng_h_a_ti_t_dang_yeu.png",
         "device_image_alt": "",
         "device_link": "",
-        "device_height": 400,
-        "device_radius": 15,
+        "device_height": 460,
+        "device_radius": 39,
         "feature_title_size": 20,
         "feature_title_color": "#000000",
         "feature_body_size": 14,
@@ -542,6 +585,102 @@
         "padding_top": 48,
         "padding_bottom": 48,
         "background_color": "#ffffff"
+      }
+    },
+    "image_with_text_qwjtti": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_JADT8M": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Comfort for Baby. Joy for Parents.</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_Vyg3wz": {
+          "type": "text",
+          "settings": {
+            "text": "<h4>💙 Make every feeding moment more comfortable with BabyEase.</h4><h4>👶 Thoughtfully designed to support your little one and help parents enjoy precious bonding moments.</h4><h4>✈️ 🏡 Perfect for home or on the go.</h4>",
+            "text_style": "body"
+          }
+        },
+        "button_iYPkAa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Make It Yours →",
+            "button_link": "shopify://collections/nursing-pillows",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_JADT8M",
+        "text_Vyg3wz",
+        "button_iYPkAa"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Em_be_h_nh_phuc_cung_BabyEase_tren_may_bay.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_rM7AJq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_THDmLm": {
+          "type": "heading",
+          "settings": {
+            "heading": "&nbsp;<strong>More Comfort, Less Arm Strain</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_frtURj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>💙 <strong>Less Arm Fatigue</strong> – Helps reduce arm strain while holding your baby.</p><p>👶 <strong>Comfortable Baby Holding</strong> – Soft cushioning supports your little one during cuddles and feeding.</p><p>🤱 <strong>Relax & Bond</strong> – Enjoy precious moments with your baby more comfortably.</p><p>✈️ <strong>Everyday & Travel Ready</strong> – Convenient for home, travel, and on-the-go use.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_TXFDAJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop BabyEase →",
+            "button_link": "shopify://products/wearable-nursing-pillow",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_THDmLm",
+        "text_frtURj",
+        "button_TXFDAJ"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/nhgg.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "blocky_video_with_text_97hNbH": {
@@ -582,8 +721,8 @@
             "button_link": "shopify://products/wearable-nursing-pillow",
             "button_border_radius": "round",
             "button_style": "regular",
-            "button_background_color": "#cd7e8f",
-            "button_text_color": "#050423"
+            "button_background_color": "#7a5168",
+            "button_text_color": "#ffffff"
           }
         }
       },
@@ -797,6 +936,23 @@
         "padding_bottom": 36
       }
     },
+    "1792516308479ab041": {
+      "type": "apps",
+      "blocks": {
+        "upsell_com_ex_reconvert_slot_tpL9Cd": {
+          "type": "shopify://apps/upsell-com-ex-reconvert/blocks/slot/72c64c30-2f7c-4a71-ae4c-efd1d5d1d2e2",
+          "settings": {
+            "slot_id": "1"
+          }
+        }
+      },
+      "block_order": [
+        "upsell_com_ex_reconvert_slot_tpL9Cd"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "blocky_faq_cFeeU6": {
       "type": "blocky-faq",
       "blocks": {
@@ -932,46 +1088,16 @@
         "padding_bottom": 0
       }
     },
-    "179217406534353e97": {
-      "type": "apps",
+    "quick_order_list_7RBgkh": {
+      "type": "quick-order-list",
       "disabled": true,
+      "name": "t:sections.quick-order-list.presets.name",
       "settings": {
-        "include_margins": true
-      }
-    },
-    "179242884483554a12": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "17925160144122ba54": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1792516120b9c58200": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1792516308479ab041": {
-      "type": "apps",
-      "blocks": {
-        "upsell_com_ex_reconvert_slot_tpL9Cd": {
-          "type": "shopify://apps/upsell-com-ex-reconvert/blocks/slot/72c64c30-2f7c-4a71-ae4c-efd1d5d1d2e2",
-          "settings": {
-            "slot_id": "1"
-          }
-        }
-      },
-      "block_order": [
-        "upsell_com_ex_reconvert_slot_tpL9Cd"
-      ],
-      "settings": {
-        "include_margins": true
+        "show_image": false,
+        "show_sku": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -980,16 +1106,15 @@
     "blocky_announcement_bar_H6FtGh",
     "custom_liquid_jfQF7P",
     "179162975708a3df6e",
+    "image_with_text_qwjtti",
+    "image_with_text_rM7AJq",
     "blocky_product_feature_3_3LE4A8",
     "blocky_video_with_text_97hNbH",
     "reviews_section_7Waym",
+    "1792516308479ab041",
     "blocky_faq_cFeeU6",
     "newsletter_HjqpNj",
     "blocky_section_divider_7AQYYY",
-    "179217406534353e97",
-    "179242884483554a12",
-    "17925160144122ba54",
-    "1792516120b9c58200",
-    "1792516308479ab041"
+    "quick_order_list_7RBgkh"
   ]
 }

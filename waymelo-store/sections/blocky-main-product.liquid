@@ -3312,8 +3312,8 @@
       }
 
       buildClaimPayload() {
-        const itemsById = new Map();
         const root = this.closest('blocky-featured-product');
+        const items = [];
 
         if (root) {
           const variantInput = root.querySelector('[data-blocky-variant-id]');
@@ -3321,18 +3321,11 @@
           const variantId = variantInput ? variantInput.value : '';
           const quantity = Math.max(1, parseInt(quantityInput ? quantityInput.value : '1', 10) || 1);
 
-          if (variantId) itemsById.set(String(variantId), quantity);
+          if (variantId) items.push({ id: variantId, quantity: quantity });
         }
 
-        // Merge each selected add-on at quantity one. When a selected add-on
-        // shares the displayed product's variant, keep the displayed product's
-        // quantity so the same variant is never sent twice in one request.
-        this.selectedVariantIds.forEach((id) => {
-          const key = String(id);
-          if (!itemsById.has(key)) itemsById.set(key, 1);
-        });
-
-        return Array.from(itemsById, (entry) => ({ id: entry[0], quantity: entry[1] }));
+        this.selectedVariantIds.forEach((id) => items.push({ id: id, quantity: 1 }));
+        return items;
       }
 
       showClaimStatus(message) {
@@ -3358,20 +3351,21 @@
           return;
         }
 
-        const payload = { items: items };
+        const params = items
+          .map((item, index) => 'items[' + index + '][id]=' + encodeURIComponent(item.id) + '&items[' + index + '][quantity]=' + encodeURIComponent(item.quantity))
+          .join('&');
+
         const sections = this.getCartSections();
-        if (sections) {
-          payload.sections = sections;
-          payload.sections_url = window.location.pathname;
-        }
+        let body = params;
+        if (sections) body += '&sections=' + encodeURIComponent(sections) + '&sections_url=' + encodeURIComponent(window.location.pathname);
 
         this.claimButton.disabled = true;
         this.claimButton.dataset.bmsBusy = 'true';
 
         fetch({{ routes.cart_add_url | append: '.js' | json }}, {
           method: 'POST',
-          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+          headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
         })
           .then((response) => response.json().then((data) => ({ ok: response.ok, data: data })))
           .then((result) => {
@@ -3387,8 +3381,7 @@
             console.error(error);
             this.claimButton.disabled = false;
             delete this.claimButton.dataset.bmsBusy;
-            const reason = error && (error.description || error.message);
-            this.showClaimStatus(reason || 'Something went wrong adding your items. Please try again.');
+            this.showClaimStatus('Something went wrong adding your items. Please try again.');
           });
       }
 
