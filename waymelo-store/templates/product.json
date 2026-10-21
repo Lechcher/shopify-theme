@@ -162,12 +162,6 @@
             "using_page_builder": false
           }
         },
-        "custom_liquid_3JEXmK": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div style=\"margin:2px 0;\">\n  <label for=\"color-choices\"\n    style=\"display:block;margin-bottom:6px;font-weight:700;font-size:14px;\">\n    Different Color Requests\n  </label>\n\n  <input\n    id=\"color-choices\"\n    type=\"text\"\n    name=\"properties[Different Color Requests]\"\n    form=\"{{ product_form_id }}\"\n    maxlength=\"150\"\n    placeholder=\"e.g. 1 Pink, 1 Blue\"\n    style=\"width:100%;height:40px;padding:8px 12px;border:1px solid #ccc;border-radius:6px;font-size:13px;box-sizing:border-box;\"\n  >\n\n  <small style=\"display:block;margin-top:6px;color:#555;font-size:12px;font-weight:600;line-height:1.5;\">\n    Only fill this in if you want different colors for your items. Leave blank to keep your selected color.\n  </small>\n</div>"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -194,6 +188,10 @@
             "icon_size": 38,
             "alignment": "center"
           }
+        },
+        "upsell_com_ex_reconvert_product_upsell_c8Nb7R": {
+          "type": "shopify://apps/upsell-com-ex-reconvert/blocks/product-upsell/72c64c30-2f7c-4a71-ae4c-efd1d5d1d2e2",
+          "settings": {}
         },
         "guarantee_badge_AaBfap": {
           "type": "guarantee_badge",
@@ -302,6 +300,7 @@
         },
         "judge_me_reviews_preview_badge_Wz6wam": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -315,9 +314,9 @@
         "description",
         "variant_picker",
         "pumper_bundles_app_block_qb_EHeEkM",
-        "custom_liquid_3JEXmK",
         "buy_buttons",
         "payment_badges_edFzPC",
+        "upsell_com_ex_reconvert_product_upsell_c8Nb7R",
         "guarantee_badge_AaBfap",
         "review_carousel_fxV7nG",
         "collapsible_tab_pnakVM",
@@ -510,7 +509,7 @@
         "title_color": "#000000",
         "body_size": 13,
         "body_color": "#000000",
-        "device_image": "shopify://shop_images/cvcv.jpg",
+        "device_image": "shopify://shop_images/Light_Blue_3_34c2b690-da5f-4bc6-a63a-12ff865f8996.jpg",
         "device_image_alt": "",
         "device_link": "",
         "device_height": 400,
@@ -548,7 +547,7 @@
         "title_nDYf4Y": {
           "type": "title",
           "settings": {
-            "title": "Made with Powerful Ingredients",
+            "title": "Comfortable Feeding, Wherever You Go",
             "title_size": 42,
             "title_color": "#000000"
           }
@@ -556,7 +555,7 @@
         "body_zYyMTy": {
           "type": "body",
           "settings": {
-            "body_text": "<h4><strong>Bioactive Peptide Complex&nbsp;</strong></h4><p>Supports cellular renewal for smoother, healthier tissue.</p><p></p><h4><strong>HydroLock Technology&nbsp;</strong></h4><p>Creates a moisture-retaining barrier to maximize comfort.<br/></p><p></p><h4><strong>Ionic Mineral Complex</strong></h4><p>Helps reduce the appearance of fine lines and wrinkles</p><p></p><h4><strong>Adaptive Antioxidants</strong></h4><p>Neutralize free radicals to protect and maintain response quality.</p>",
+            "body_text": "<p><strong>Gentle Feeding Support</strong></p><p>Soft cushioning helps support your baby during feeding while easing the load on your arms.</p><p><strong>Adjustable for Your Comfort</strong></p><p>The adjustable buckle strap helps you find a comfortable, secure fit.</p><p><strong>Soft & Cozy Design</strong></p><p>A cushioned shape adds comfort to everyday feeding moments.</p><p><strong>Perfect for Life on the Go</strong></p><p>Enjoy convenient feeding support at home, while visiting family, or during travel.</p>",
             "body_size": 16,
             "body_color": "#000000"
           }
@@ -568,8 +567,8 @@
             "button_link": "shopify://products/wearable-nursing-pillow",
             "button_border_radius": "round",
             "button_style": "regular",
-            "button_background_color": "#7A5168",
-            "button_text_color": "#FFFFFF"
+            "button_background_color": "#cd7e8f",
+            "button_text_color": "#050423"
           }
         }
       },
@@ -930,6 +929,35 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "17925160144122ba54": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1792516120b9c58200": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1792516308479ab041": {
+      "type": "apps",
+      "blocks": {
+        "upsell_com_ex_reconvert_slot_tpL9Cd": {
+          "type": "shopify://apps/upsell-com-ex-reconvert/blocks/slot/72c64c30-2f7c-4a71-ae4c-efd1d5d1d2e2",
+          "settings": {
+            "slot_id": "1"
+          }
+        }
+      },
+      "block_order": [
+        "upsell_com_ex_reconvert_slot_tpL9Cd"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -944,6 +972,9 @@
     "newsletter_HjqpNj",
     "blocky_section_divider_7AQYYY",
     "179217406534353e97",
-    "179242884483554a12"
+    "179242884483554a12",
+    "17925160144122ba54",
+    "1792516120b9c58200",
+    "1792516308479ab041"
   ]
 }
